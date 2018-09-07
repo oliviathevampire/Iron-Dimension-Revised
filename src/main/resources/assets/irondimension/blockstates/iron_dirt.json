@@ -1,0 +1,14 @@
+{
+  "forge_marker": 1,
+  "defaults": {
+    "model": "cube_all"
+  },
+  "variants": {
+    "normal": [
+      { "textures": { "all": "irondimension:block/irondirt" }},
+      { "textures": { "all": "irondimension:block/irondirt" }, "x": 90, "y": 90 },
+      { "textures": { "all": "irondimension:block/irondirt" }, "x": 180, "y": 180 },
+      { "textures": { "all": "irondimension:block/irondirt" }, "x": 270, "y": 270 }
+    ]
+  }
+}
