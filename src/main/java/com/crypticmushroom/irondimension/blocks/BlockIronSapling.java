@@ -1,8 +1,11 @@
 package com.crypticmushroom.irondimension.blocks;
 
+import com.crypticmushroom.irondimension.TabIDL;
 import com.crypticmushroom.irondimension.registry.util.RegisterModelUtil;
+import com.crypticmushroom.irondimension.world.gen.WorldGenIronTree;
 import net.minecraft.block.BlockBush;
 import net.minecraft.block.IGrowable;
+import net.minecraft.block.SoundType;
 import net.minecraft.block.state.IBlockState;
 import net.minecraft.client.renderer.block.model.ModelResourceLocation;
 import net.minecraft.init.Blocks;
@@ -22,6 +25,8 @@ public class BlockIronSapling extends BlockBush implements RegisterModelUtil, IG
     protected static final AxisAlignedBB SAPLING_AABB = new AxisAlignedBB(0.09999999403953552D, 0.0D, 0.09999999403953552D, 0.8999999761581421D, 0.800000011920929D, 0.8999999761581421D);
 
     public BlockIronSapling() {
+        setCreativeTab(TabIDL.tabIDL);
+        setSoundType(SoundType.PLANT);
     }
 
     @Override
@@ -66,6 +71,7 @@ public class BlockIronSapling extends BlockBush implements RegisterModelUtil, IG
     @SideOnly(Side.CLIENT)
     @Override
     public void registerModel() {
+        //noinspection ConstantConditions
         ModelLoader.setCustomModelResourceLocation(Item.getItemFromBlock(this), 0, new ModelResourceLocation((Item.getItemFromBlock(this)).getRegistryName(), "inventory"));
     }
 }

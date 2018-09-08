@@ -30,9 +30,9 @@ public class ItemRadioactiveIronArmor extends ItemArmor implements RegisterModel
     @Override
     public String getArmorTexture(ItemStack itemstack, Entity entity, EntityEquipmentSlot slot, String layer) {
         if (slot == EntityEquipmentSlot.LEGS) {
-            return IronDimension.ARMOR_DIR + "radioactive_armor_2.png";
+            return IronDimension.ARMOR_DIR + "radioactive_iron_2.png";
         } else {
-            return IronDimension.ARMOR_DIR + "radioactive_armor_1.png";
+            return IronDimension.ARMOR_DIR + "radioactive_iron_1.png";
         }
     }
 
