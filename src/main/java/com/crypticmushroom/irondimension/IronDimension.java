@@ -24,6 +24,8 @@ public class IronDimension {
     public static final BlocksIDL blocks = new BlocksIDL();
     public static final ItemsIDL items = new ItemsIDL();
     public static final String ARMOR_DIR = "irondimension:textures/armor/";
+    public static final String MODEL_DIR = "irondimension:textures/entity/";
+
 
     private static Logger logger = LogManager.getLogger(MODID);
 
