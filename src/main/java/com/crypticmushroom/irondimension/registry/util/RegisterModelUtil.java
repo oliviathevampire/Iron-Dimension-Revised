@@ -11,7 +11,6 @@ public interface RegisterModelUtil {
 
     @SideOnly(Side.CLIENT)
     default void registerModel() {
-        //Register model for Items
         if (this instanceof Item) {
             ModelLoader.setCustomModelResourceLocation((Item) this, 0, new ModelResourceLocation(((Item) this).getRegistryName(), "inventory"));
         } else if (this instanceof Block) {

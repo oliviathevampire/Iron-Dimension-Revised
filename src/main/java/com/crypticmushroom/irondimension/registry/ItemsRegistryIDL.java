@@ -14,6 +14,7 @@ import net.minecraftforge.fml.common.Mod;
 import net.minecraftforge.fml.common.eventhandler.SubscribeEvent;
 import net.minecraftforge.registries.IForgeRegistry;
 
+import javax.annotation.Nullable;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -58,7 +59,7 @@ public class ItemsRegistryIDL {
         items.registerBlock(BlocksIDL.iron_grass);
         items.registerBlock(BlocksIDL.iron_log);
         items.registerBlock(BlocksIDL.iron_leaves);
-        //items.registerBlock(BlocksIDL.iron_sapling);
+        items.registerBlock(BlocksIDL.iron_sapling);
         items.registerBlock(BlocksIDL.soft_iron);
         items.registerBlock(BlocksIDL.iron_bricks);
         items.registerBlock(BlocksIDL.iron_brick_stairs);
@@ -66,7 +67,6 @@ public class ItemsRegistryIDL {
         items.registerBlock(BlocksIDL.super_iron_block);
         items.registerBlock(BlocksIDL.radioactive_iron_ore);
         items.registerBlock(BlocksIDL.radioactive_iron_block);
-
     }
 
     public static class ItemRegistryHelper {
@@ -98,6 +98,7 @@ public class ItemsRegistryIDL {
         }
 
         private void register(ItemBlock item) {
+            //noinspection ConstantConditions
             item.setRegistryName(item.getBlock().getRegistryName());
             item.setTranslationKey(item.getBlock().getTranslationKey());
             registry.register(item);

@@ -73,10 +73,4 @@ public class BlockIronLeaves extends BlockLeaves implements RegisterModelUtil {
         }
         return i;
     }
-
-    @SideOnly(Side.CLIENT)
-    @Override
-    public void registerModel() {
-        ModelLoader.setCustomStateMapper(this, new StateMap.Builder().ignore(CHECK_DECAY, DECAYABLE).build());
-    }
 }
