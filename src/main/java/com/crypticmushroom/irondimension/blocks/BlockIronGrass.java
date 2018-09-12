@@ -4,6 +4,7 @@ import com.crypticmushroom.irondimension.TabIDL;
 import com.crypticmushroom.irondimension.registry.BlocksIDL;
 import com.crypticmushroom.irondimension.registry.util.RegisterModelUtil;
 import net.minecraft.block.Block;
+import net.minecraft.block.SoundType;
 import net.minecraft.block.material.MapColor;
 import net.minecraft.block.material.Material;
 import net.minecraft.block.state.IBlockState;
@@ -25,6 +26,7 @@ public class BlockIronGrass extends Block implements RegisterModelUtil {
     public BlockIronGrass() {
         super(Material.GRASS, MapColor.SILVER);
 
+        setSoundType(SoundType.PLANT);
         setHardness(0.5F);
         setTickRandomly(true);
         setCreativeTab(TabIDL.tabIDL);

@@ -5,7 +5,11 @@
     "textures": { "all": "irondimension:block/iron_leaf" }
   },
   "variants": {
-    "normal": [{}],
-    "inventory": [{}]
+    "normal": [{ }],
+    "inventory": [{ }],
+    "check_decay=true,decayable=true":[{ }],
+    "check_decay=true,decayable=false":[{ }],
+    "check_decay=false,decayable=true":[{ }],
+    "check_decay=false,decayable=false":[{ }]
   }
 }

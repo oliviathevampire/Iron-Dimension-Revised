@@ -25,7 +25,7 @@ public final class BlocksRegistryIDL {
         blocks.register("iron_grass", new BlockIronGrass());
         blocks.register("iron_log", new BlockIronLog());
         blocks.register("iron_leaves", new BlockIronLeaves());
-       // blocks.register("iron_sapling", new BlockIronSapling());
+        blocks.register("iron_sapling", new BlockIronSapling());
         blocks.register("soft_iron", new BlockSoftIron());
         blocks.register("iron_bricks", new BlockIronBricks());
         Block ironBrick = new BlockIronBricks();

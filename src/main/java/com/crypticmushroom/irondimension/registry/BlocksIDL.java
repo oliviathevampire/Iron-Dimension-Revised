@@ -2,17 +2,19 @@ package com.crypticmushroom.irondimension.registry;
 
 import com.crypticmushroom.irondimension.IronDimension;
 import net.minecraft.block.Block;
-import net.minecraftforge.fml.common.registry.GameRegistry;
+import net.minecraft.block.BlockPortal;
+import net.minecraft.init.Blocks;
+import net.minecraftforge.fml.common.registry.GameRegistry.ObjectHolder;
 
-@GameRegistry.ObjectHolder(IronDimension.MODID)
+@ObjectHolder(IronDimension.MODID)
 public class BlocksIDL {
 
-    //public static final Block iron_dim_portal = null;
+    //public static final BlockPortal iron_dim_portal = null;
     public static final Block iron_dirt = null;
     public static final Block iron_grass = null;
     public static final Block iron_log = null;
     public static final Block iron_leaves = null;
-   // public static final Block iron_sapling = null;
+    public static final Block iron_sapling = null;
     public static final Block soft_iron = null;
     public static final Block iron_bricks = null;
     public static final Block iron_brick_stairs = null;
