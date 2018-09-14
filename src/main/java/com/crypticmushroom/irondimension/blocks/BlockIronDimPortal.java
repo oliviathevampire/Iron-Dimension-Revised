@@ -3,6 +3,7 @@ package com.crypticmushroom.irondimension.blocks;
 import com.crypticmushroom.irondimension.registry.BlocksIDL;
 import com.crypticmushroom.irondimension.registry.ConfigIDL;
 import com.crypticmushroom.irondimension.registry.util.RegisterModelUtil;
+import com.crypticmushroom.irondimension.world.TeleporterIronDim;
 import net.minecraft.block.Block;
 import net.minecraft.block.BlockPortal;
 import net.minecraft.block.material.Material;
@@ -139,11 +140,11 @@ public class BlockIronDimPortal extends BlockPortal implements RegisterModelUtil
                     if (thePlayer.dimension != ConfigIDL.dimension.dimensionID)
                     {
                         if(!ForgeHooks.onTravelToDimension(thePlayer, ConfigIDL.dimension.dimensionID)) return;
-                        thePlayer.server.getPlayerList().transferPlayerToDimension(thePlayer, ConfigIDL.dimension.dimensionID, new TeleporterIronDim(thePlayer.server.getWorld(ConfigIDL.dimension.dimensionID), this, Blocks.GOLD_BLOCK.getDefaultState()));
+                        thePlayer.server.getPlayerList().transferPlayerToDimension(thePlayer, ConfigIDL.dimension.dimensionID, new TeleporterIronDim(thePlayer.server.getWorld(ConfigIDL.dimension.dimensionID), this, Blocks.IRON_BLOCK.getDefaultState()));
                     }
                     else {
                         if(!ForgeHooks.onTravelToDimension(thePlayer, 0)) return;
-                        thePlayer.server.getPlayerList().transferPlayerToDimension(thePlayer, 0, new TeleporterIronDim(thePlayer.server.getWorld(0), this, Blocks.GOLD_BLOCK.getDefaultState()));
+                        thePlayer.server.getPlayerList().transferPlayerToDimension(thePlayer, 0, new TeleporterIronDim(thePlayer.server.getWorld(0), this, Blocks.IRON_BLOCK.getDefaultState()));
                     }
                 } else {
                     MinecraftServer server = FMLCommonHandler.instance().getMinecraftServerInstance();
@@ -159,7 +160,7 @@ public class BlockIronDimPortal extends BlockPortal implements RegisterModelUtil
 
                         entityIn.isDead = false;
 
-                        server.getPlayerList().transferEntityToWorld(entityIn, i, server.getWorld(i), server.getWorld(ConfigIDL.dimension.dimensionID), new TeleporterIronDim(server.getWorld(ConfigIDL.dimension.dimensionID), this, Blocks.GOLD_BLOCK.getDefaultState()));
+                        server.getPlayerList().transferEntityToWorld(entityIn, i, server.getWorld(i), server.getWorld(ConfigIDL.dimension.dimensionID), new TeleporterIronDim(server.getWorld(ConfigIDL.dimension.dimensionID), this, Blocks.IRON_BLOCK.getDefaultState()));
                     } else {
                         if(!ForgeHooks.onTravelToDimension(entityIn, 0)) return;
 
@@ -168,7 +169,7 @@ public class BlockIronDimPortal extends BlockPortal implements RegisterModelUtil
 
                         entityIn.isDead = false;
 
-                        server.getPlayerList().transferEntityToWorld(entityIn, ConfigIDL.dimension.dimensionID, server.getWorld(ConfigIDL.dimension.dimensionID), server.getWorld(0), new TeleporterIronDim(server.getWorld(0), this, Blocks.GOLD_BLOCK.getDefaultState()));
+                        server.getPlayerList().transferEntityToWorld(entityIn, ConfigIDL.dimension.dimensionID, server.getWorld(ConfigIDL.dimension.dimensionID), server.getWorld(0), new TeleporterIronDim(server.getWorld(0), this, Blocks.IRON_BLOCK.getDefaultState()));
                     }
                 }
             } else entityIn.timeUntilPortal = entityIn.getPortalCooldown();
@@ -302,13 +303,13 @@ public class BlockIronDimPortal extends BlockPortal implements RegisterModelUtil
             for (i = 0; i < 22; ++i) {
                 BlockPos blockpos = pos.offset(facing, i);
 
-                if (!isEmptyBlock(world.getBlockState(blockpos).getBlock()) || world.getBlockState(blockpos.down()) != Blocks.GOLD_BLOCK.getDefaultState()) {
+                if (!isEmptyBlock(world.getBlockState(blockpos).getBlock()) || world.getBlockState(blockpos.down()) != Blocks.IRON_BLOCK.getDefaultState()) {
                     break;
                 }
             }
 
             IBlockState block = world.getBlockState(pos.offset(facing, i));
-            return block == Blocks.GOLD_BLOCK.getDefaultState() ? i : 0;
+            return block == Blocks.IRON_BLOCK.getDefaultState() ? i : 0;
         }
 
         public int getHeight() {
@@ -338,14 +339,14 @@ public class BlockIronDimPortal extends BlockPortal implements RegisterModelUtil
                     if (i == 0) {
                         block = world.getBlockState(blockpos.offset(leftDir));
 
-                        if (block != Blocks.GOLD_BLOCK.getDefaultState()) {
+                        if (block != Blocks.IRON_BLOCK.getDefaultState()) {
                             break label56;
                         }
                     }
                     else if (i == this.width) {
                         block = world.getBlockState(blockpos.offset(rightDir));
 
-                        if (block != Blocks.GOLD_BLOCK.getDefaultState()) {
+                        if (block != Blocks.IRON_BLOCK.getDefaultState()) {
                             break label56;
                         }
                     }
@@ -353,7 +354,7 @@ public class BlockIronDimPortal extends BlockPortal implements RegisterModelUtil
             }
 
             for (int j = 0; j < width; ++j) {
-                if (world.getBlockState(bottomLeft.offset(rightDir, j).up(height)) != Blocks.GOLD_BLOCK.getDefaultState()) {
+                if (world.getBlockState(bottomLeft.offset(rightDir, j).up(height)) != Blocks.IRON_BLOCK.getDefaultState()) {
                     height = 0;
                     break;
                 }
