@@ -12,13 +12,18 @@ import net.minecraft.world.World;
 import net.minecraft.world.biome.Biome;
 import net.minecraft.world.chunk.ChunkPrimer;
 import net.minecraft.world.gen.feature.WorldGenAbstractTree;
+import net.minecraftforge.event.terraingen.DecorateBiomeEvent;
+import net.minecraftforge.fml.common.eventhandler.SubscribeEvent;
 import net.minecraftforge.fml.relauncher.Side;
 import net.minecraftforge.fml.relauncher.SideOnly;
 
 import java.util.Random;
 
+import static net.minecraftforge.fml.common.eventhandler.Event.Result.DENY;
+
 public class BiomeIronDimension extends Biome {
 
+    public BlockPos chunkPos;
     private WorldGenAbstractTree genTree;
 
     public BiomeIronDimension(BiomeProperties props) {
@@ -27,9 +32,9 @@ public class BiomeIronDimension extends Biome {
         spawnableCreatureList.clear();
         spawnableMonsterList.clear();
 
-        spawnableMonsterList.add(new SpawnListEntry(EntityIronCow.class, 20, 1, 4));
-        spawnableMonsterList.add(new SpawnListEntry(EntityIronPig.class, 20, 1, 4));
-        spawnableMonsterList.add(new SpawnListEntry(EntityIronGolem.class, 20, 1, 4));
+        spawnableCreatureList.add(new SpawnListEntry(EntityIronCow.class, 20, 1, 4));
+        spawnableCreatureList.add(new SpawnListEntry(EntityIronPig.class, 40, 2, 4));
+        spawnableCreatureList.add(new SpawnListEntry(EntityIronGolem.class, 40, 2, 4));
 
         topBlock = BlocksIDL.iron_grass.getDefaultState();
         fillerBlock = BlocksIDL.iron_dirt.getDefaultState();
@@ -37,7 +42,6 @@ public class BiomeIronDimension extends Biome {
         genTree = new WorldGenIronTree(false);
 
         decorator.flowersPerChunk = -999;
-        decorator.reedsPerChunk = -999;
         decorator.treesPerChunk = 3;
         decorator.grassPerChunk = -999;
     }
@@ -56,7 +60,7 @@ public class BiomeIronDimension extends Biome {
 
     @Override
     public WorldGenAbstractTree getRandomTreeFeature(Random par1Random) {
-        return par1Random.nextInt(3) == 0 ? new WorldGenNoTree() : par1Random.nextInt(12) == 0 ? genTree : new WorldGenNoTree();
+        return par1Random.nextInt(3) == 0 ? new WorldGenNoTree() : par1Random.nextInt(9) == 0 ? genTree : new WorldGenNoTree();
     }
 
     @Override
