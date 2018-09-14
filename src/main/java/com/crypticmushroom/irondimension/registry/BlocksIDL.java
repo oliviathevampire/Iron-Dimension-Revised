@@ -9,7 +9,7 @@ import net.minecraftforge.fml.common.registry.GameRegistry.ObjectHolder;
 @ObjectHolder(IronDimension.MODID)
 public class BlocksIDL {
 
-    //public static final BlockPortal iron_dim_portal = null;
+    public static final BlockPortal iron_dim_portal = null;
     public static final Block iron_dirt = null;
     public static final Block iron_grass = null;
     public static final Block iron_log = null;

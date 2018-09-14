@@ -20,7 +20,7 @@ public final class BlocksRegistryIDL {
     public static void registerBlocks(RegistryEvent.Register<Block> event) {
         BlockRegistryHelper blocks = new BlockRegistryHelper(event.getRegistry());
 
-        //blocks.register("iron_dim_portal", new BlockIronDimPortal());
+        blocks.register("iron_dim_portal", new BlockIronDimPortal());
         blocks.register("iron_dirt", new BlockIronDirt());
         blocks.register("iron_grass", new BlockIronGrass());
         blocks.register("iron_log", new BlockIronLog());

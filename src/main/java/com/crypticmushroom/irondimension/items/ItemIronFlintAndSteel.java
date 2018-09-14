@@ -1,6 +1,8 @@
 package com.crypticmushroom.irondimension.items;
 
 import com.crypticmushroom.irondimension.TabIDL;
+import com.crypticmushroom.irondimension.blocks.BlockIronDimPortal;
+import com.crypticmushroom.irondimension.registry.BlocksIDL;
 import com.crypticmushroom.irondimension.registry.util.RegisterModelUtil;
 import net.minecraft.advancements.CriteriaTriggers;
 import net.minecraft.entity.player.EntityPlayer;
@@ -32,9 +34,15 @@ public class ItemIronFlintAndSteel extends Item implements RegisterModelUtil {
         if (!player.canPlayerEdit(pos, facing, itemstack)) {
             return EnumActionResult.FAIL;
         } else {
-            if (worldIn.isAirBlock(pos)) {
-                worldIn.playSound(player, pos, SoundEvents.ITEM_FLINTANDSTEEL_USE, SoundCategory.BLOCKS, 1.0F, itemRand.nextFloat() * 0.4F + 0.8F);
-                worldIn.setBlockState(pos, Blocks.FIRE.getDefaultState(), 11);
+            if (worldIn.getBlockState(pos.add(0, -1, 0)).getBlock() != Blocks.IRON_BLOCK || !((BlockIronDimPortal) BlocksIDL.iron_dim_portal).tryToCreatePortal(worldIn, pos)) {
+                if (!worldIn.isSideSolid(pos.down(), EnumFacing.UP)) {
+                    worldIn.setBlockToAir(pos);
+                } else {
+                    if (worldIn.isAirBlock(pos)) {
+                        worldIn.playSound(player, pos, SoundEvents.ITEM_FLINTANDSTEEL_USE, SoundCategory.BLOCKS, 1.0F, itemRand.nextFloat() * 0.4F + 0.8F);
+                        worldIn.setBlockState(pos, Blocks.FIRE.getDefaultState(), 11);
+                    }
+                }
             }
 
             if (player instanceof EntityPlayerMP) {
