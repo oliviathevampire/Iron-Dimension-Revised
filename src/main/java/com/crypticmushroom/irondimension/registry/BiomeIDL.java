@@ -19,7 +19,7 @@ public class BiomeIDL {
             .setRainfall(0)
             .setTemperature(0.7F)
             .setHeightVariation(0.1F)
-            .setBaseHeight(0.05F));
+            .setBaseHeight(0.2F));
 
     @SubscribeEvent
     public static void registerBiomes(RegistryEvent.Register<Biome> event) {
