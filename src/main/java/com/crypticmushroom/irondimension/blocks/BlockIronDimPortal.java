@@ -4,11 +4,17 @@ import com.crypticmushroom.irondimension.registry.BlocksIDL;
 import com.crypticmushroom.irondimension.registry.ConfigIDL;
 import com.crypticmushroom.irondimension.registry.util.RegisterModelUtil;
 import com.crypticmushroom.irondimension.world.TeleporterIronDim;
+import com.google.common.cache.LoadingCache;
 import net.minecraft.block.Block;
-import net.minecraft.block.BlockPortal;
+import net.minecraft.block.BlockBreakable;
 import net.minecraft.block.material.Material;
+import net.minecraft.block.properties.IProperty;
+import net.minecraft.block.properties.PropertyEnum;
+import net.minecraft.block.state.BlockFaceShape;
 import net.minecraft.block.state.BlockStateContainer;
+import net.minecraft.block.state.BlockWorldState;
 import net.minecraft.block.state.IBlockState;
+import net.minecraft.block.state.pattern.BlockPattern;
 import net.minecraft.entity.Entity;
 import net.minecraft.entity.player.EntityPlayerMP;
 import net.minecraft.init.Blocks;
@@ -25,21 +31,36 @@ import net.minecraftforge.fml.common.FMLCommonHandler;
 import net.minecraftforge.fml.relauncher.Side;
 import net.minecraftforge.fml.relauncher.SideOnly;
 
-import javax.annotation.Nonnull;
 import javax.annotation.Nullable;
 import java.util.Random;
 
-public class BlockIronDimPortal extends BlockPortal implements RegisterModelUtil {
+public class BlockIronDimPortal extends BlockBreakable implements RegisterModelUtil {
+
+    public static final PropertyEnum<EnumFacing.Axis> AXIS = PropertyEnum.create("axis", EnumFacing.Axis.class, EnumFacing.Axis.X, EnumFacing.Axis.Z);
+    protected static final AxisAlignedBB X_AABB = new AxisAlignedBB(0.0D, 0.0D, 0.375D, 1.0D, 1.0D, 0.625D);
+    protected static final AxisAlignedBB Z_AABB = new AxisAlignedBB(0.375D, 0.0D, 0.0D, 0.625D, 1.0D, 1.0D);
+    protected static final AxisAlignedBB Y_AABB = new AxisAlignedBB(0.375D, 0.0D, 0.375D, 0.625D, 1.0D, 0.625D);
 
     public BlockIronDimPortal() {
-        super();
+        super(Material.PORTAL, false);
         this.setDefaultState(this.blockState.getBaseState().withProperty(AXIS, EnumFacing.Axis.X));
         this.setTickRandomly(true);
-        this.setLightLevel(1.0F);
     }
 
     @Override
-    @Deprecated
+    public AxisAlignedBB getBoundingBox(IBlockState state, IBlockAccess source, BlockPos pos) {
+        switch (state.getValue(AXIS)) {
+            case X:
+                return X_AABB;
+            case Y:
+            default:
+                return Y_AABB;
+            case Z:
+                return Z_AABB;
+        }
+    }
+
+    @Override
     @Nullable
     public AxisAlignedBB getCollisionBoundingBox(IBlockState blockState, IBlockAccess worldIn, BlockPos pos) {
         return NULL_AABB;
@@ -48,22 +69,26 @@ public class BlockIronDimPortal extends BlockPortal implements RegisterModelUtil
     public static int getMetaForAxis(EnumFacing.Axis axis) {
         if (axis == EnumFacing.Axis.X) {
             return 1;
-        }
-        else {
+        } else {
             return axis == EnumFacing.Axis.Z ? 2 : 0;
         }
+    }
+
+    @Override
+    public boolean isFullCube(IBlockState state) {
+        return false;
     }
 
     public boolean tryToCreatePortal(World worldIn, BlockPos pos) {
         BlockIronDimPortal.Size blockportal$size = new BlockIronDimPortal.Size(worldIn, pos, EnumFacing.Axis.X);
 
-        if (blockportal$size.isValid() && blockportal$size.portalBlockCount == 0 && pos.getY() < 32) {
+        if (blockportal$size.isValid() && blockportal$size.portalBlockCount == 0) {
             blockportal$size.placePortalBlocks();
             return true;
         } else {
             BlockIronDimPortal.Size blockportal$size1 = new BlockIronDimPortal.Size(worldIn, pos, EnumFacing.Axis.Z);
 
-            if (blockportal$size1.isValid() && blockportal$size1.portalBlockCount == 0 && pos.getY() < 32) {
+            if (blockportal$size1.isValid() && blockportal$size1.portalBlockCount == 0) {
                 blockportal$size1.placePortalBlocks();
                 return true;
             } else {
@@ -73,7 +98,7 @@ public class BlockIronDimPortal extends BlockPortal implements RegisterModelUtil
     }
 
     @Override
-    public void neighborChanged(IBlockState state, @Nullable World worldIn, @Nullable BlockPos pos, Block blockIn, BlockPos fromPos) {
+    public void neighborChanged(IBlockState state, World worldIn, BlockPos pos, Block blockIn, BlockPos fromPos) {
         EnumFacing.Axis enumfacing$axis = state.getValue(AXIS);
 
         if (enumfacing$axis == EnumFacing.Axis.X) {
@@ -82,8 +107,7 @@ public class BlockIronDimPortal extends BlockPortal implements RegisterModelUtil
             if (!blockportal$size.isValid() || blockportal$size.portalBlockCount < blockportal$size.width * blockportal$size.height) {
                 worldIn.setBlockState(pos, Blocks.AIR.getDefaultState());
             }
-        }
-        else if (enumfacing$axis == EnumFacing.Axis.Z) {
+        } else if (enumfacing$axis == EnumFacing.Axis.Z) {
             BlockIronDimPortal.Size blockportal$size1 = new BlockIronDimPortal.Size(worldIn, pos, EnumFacing.Axis.Z);
 
             if (!blockportal$size1.isValid() || blockportal$size1.portalBlockCount < blockportal$size1.width * blockportal$size1.height) {
@@ -94,33 +118,40 @@ public class BlockIronDimPortal extends BlockPortal implements RegisterModelUtil
 
     @Override
     @SideOnly(Side.CLIENT)
-    public boolean doesSideBlockRendering(IBlockState state, IBlockAccess access, BlockPos pos, EnumFacing side) {
+    public boolean shouldSideBeRendered(IBlockState blockState, IBlockAccess blockAccess, BlockPos pos, EnumFacing side) {
+        pos = pos.offset(side);
         EnumFacing.Axis enumfacing$axis = null;
 
         if (blockState.getBlock() == this) {
-            enumfacing$axis = state.getValue(AXIS);
+            enumfacing$axis = blockState.getValue(AXIS);
 
             if (enumfacing$axis == null) {
                 return false;
             }
-
             if (enumfacing$axis == EnumFacing.Axis.Z && side != EnumFacing.EAST && side != EnumFacing.WEST) {
                 return false;
             }
-
             if (enumfacing$axis == EnumFacing.Axis.X && side != EnumFacing.SOUTH && side != EnumFacing.NORTH) {
                 return false;
             }
         }
 
-        boolean flag = access.getBlockState(pos.west()).getBlock() == this && access.getBlockState(pos.west(2)).getBlock() != this;
-        boolean flag1 = access.getBlockState(pos.east()).getBlock() == this && access.getBlockState(pos.east(2)).getBlock() != this;
-        boolean flag2 = access.getBlockState(pos.north()).getBlock() == this && access.getBlockState(pos.north(2)).getBlock() != this;
-        boolean flag3 = access.getBlockState(pos.south()).getBlock() == this && access.getBlockState(pos.south(2)).getBlock() != this;
+        boolean flag = blockAccess.getBlockState(pos.west()).getBlock() == this && blockAccess.getBlockState(pos.west(2)).getBlock() != this;
+        boolean flag1 = blockAccess.getBlockState(pos.east()).getBlock() == this && blockAccess.getBlockState(pos.east(2)).getBlock() != this;
+        boolean flag2 = blockAccess.getBlockState(pos.north()).getBlock() == this && blockAccess.getBlockState(pos.north(2)).getBlock() != this;
+        boolean flag3 = blockAccess.getBlockState(pos.south()).getBlock() == this && blockAccess.getBlockState(pos.south(2)).getBlock() != this;
         boolean flag4 = flag || flag1 || enumfacing$axis == EnumFacing.Axis.X;
         boolean flag5 = flag2 || flag3 || enumfacing$axis == EnumFacing.Axis.Z;
 
-        return flag4 && side == EnumFacing.WEST || (flag4 && side == EnumFacing.EAST || (flag5 && side == EnumFacing.NORTH || flag5 && side == EnumFacing.SOUTH));
+        if (flag4 && side == EnumFacing.WEST) {
+            return true;
+        } else if (flag4 && side == EnumFacing.EAST) {
+            return true;
+        } else if (flag5 && side == EnumFacing.NORTH) {
+            return true;
+        } else {
+            return flag5 && side == EnumFacing.SOUTH;
+        }
     }
 
     @Override
@@ -129,7 +160,7 @@ public class BlockIronDimPortal extends BlockPortal implements RegisterModelUtil
     }
 
     @Override
-    public void onEntityCollision(World worldIn, @Nullable BlockPos pos, IBlockState state, Entity entityIn) {
+    public void onEntityCollision(World worldIn, BlockPos pos, IBlockState state, Entity entityIn) {
 
         if (!entityIn.isRiding() && !entityIn.isBeingRidden() && !worldIn.isRemote)
             if(entityIn.timeUntilPortal <= 0){
@@ -140,11 +171,11 @@ public class BlockIronDimPortal extends BlockPortal implements RegisterModelUtil
                     if (thePlayer.dimension != ConfigIDL.dimension.dimensionID)
                     {
                         if(!ForgeHooks.onTravelToDimension(thePlayer, ConfigIDL.dimension.dimensionID)) return;
-                        thePlayer.server.getPlayerList().transferPlayerToDimension(thePlayer, ConfigIDL.dimension.dimensionID, new TeleporterIronDim(thePlayer.server.getWorld(ConfigIDL.dimension.dimensionID), this, Blocks.IRON_BLOCK.getDefaultState()));
+                        thePlayer.server.getPlayerList().transferPlayerToDimension(thePlayer, ConfigIDL.dimension.dimensionID, new TeleporterIronDim(thePlayer.server.getWorld(ConfigIDL.dimension.dimensionID), this, Blocks.GOLD_BLOCK.getDefaultState()));
                     }
                     else {
                         if(!ForgeHooks.onTravelToDimension(thePlayer, 0)) return;
-                        thePlayer.server.getPlayerList().transferPlayerToDimension(thePlayer, 0, new TeleporterIronDim(thePlayer.server.getWorld(0), this, Blocks.IRON_BLOCK.getDefaultState()));
+                        thePlayer.server.getPlayerList().transferPlayerToDimension(thePlayer, 0, new TeleporterIronDim(thePlayer.server.getWorld(0), this, Blocks.GOLD_BLOCK.getDefaultState()));
                     }
                 } else {
                     MinecraftServer server = FMLCommonHandler.instance().getMinecraftServerInstance();
@@ -160,7 +191,7 @@ public class BlockIronDimPortal extends BlockPortal implements RegisterModelUtil
 
                         entityIn.isDead = false;
 
-                        server.getPlayerList().transferEntityToWorld(entityIn, i, server.getWorld(i), server.getWorld(ConfigIDL.dimension.dimensionID), new TeleporterIronDim(server.getWorld(ConfigIDL.dimension.dimensionID), this, Blocks.IRON_BLOCK.getDefaultState()));
+                        server.getPlayerList().transferEntityToWorld(entityIn, i, server.getWorld(i), server.getWorld(ConfigIDL.dimension.dimensionID), new TeleporterIronDim(server.getWorld(ConfigIDL.dimension.dimensionID), this, Blocks.GOLD_BLOCK.getDefaultState()));
                     } else {
                         if(!ForgeHooks.onTravelToDimension(entityIn, 0)) return;
 
@@ -169,7 +200,7 @@ public class BlockIronDimPortal extends BlockPortal implements RegisterModelUtil
 
                         entityIn.isDead = false;
 
-                        server.getPlayerList().transferEntityToWorld(entityIn, ConfigIDL.dimension.dimensionID, server.getWorld(ConfigIDL.dimension.dimensionID), server.getWorld(0), new TeleporterIronDim(server.getWorld(0), this, Blocks.IRON_BLOCK.getDefaultState()));
+                        server.getPlayerList().transferEntityToWorld(entityIn, ConfigIDL.dimension.dimensionID, server.getWorld(ConfigIDL.dimension.dimensionID), server.getWorld(0), new TeleporterIronDim(server.getWorld(0), this, Blocks.GOLD_BLOCK.getDefaultState()));
                     }
                 }
             } else entityIn.timeUntilPortal = entityIn.getPortalCooldown();
@@ -193,29 +224,26 @@ public class BlockIronDimPortal extends BlockPortal implements RegisterModelUtil
 
     @Override
     @SideOnly(Side.CLIENT)
-    public void randomDisplayTick(IBlockState stateIn, @Nullable World worldIn, @Nullable BlockPos pos, Random rand) {
+    public void randomDisplayTick(IBlockState stateIn, World worldIn, BlockPos pos, Random rand) {
         if (rand.nextInt(100) == 0) {
-            worldIn.playSound((double)pos.getX() + 0.5D, (double)pos.getY() + 0.5D, (double)pos.getZ() + 0.5D, SoundEvents.BLOCK_PORTAL_AMBIENT, SoundCategory.BLOCKS, 0.5F, rand.nextFloat() * 0.4F + 0.8F, false);
+            worldIn.playSound((double) pos.getX() + 0.5D, (double) pos.getY() + 0.5D, (double) pos.getZ() + 0.5D, SoundEvents.BLOCK_PORTAL_AMBIENT, SoundCategory.BLOCKS, 0.5F, rand.nextFloat() * 0.4F + 0.8F, false);
         }
 
         for (int i = 0; i < 4; ++i) {
-            double d0 = (double)((float)pos.getX() + rand.nextFloat());
-            double d1 = (double)((float)pos.getY() + rand.nextFloat());
-            double d2 = (double)((float)pos.getZ() + rand.nextFloat());
-            double d3 = ((double)rand.nextFloat() - 0.5D) * 0.5D;
-            double d4 = ((double)rand.nextFloat() - 0.5D) * 0.5D;
-            double d5 = ((double)rand.nextFloat() - 0.5D) * 0.5D;
+            double d0 = (double) ((float) pos.getX() + rand.nextFloat());
+            double d1 = (double) ((float) pos.getY() + rand.nextFloat());
+            double d2 = (double) ((float) pos.getZ() + rand.nextFloat());
+            double d3 = ((double) rand.nextFloat() - 0.5D) * 0.5D;
+            double d4 = ((double) rand.nextFloat() - 0.5D) * 0.5D;
+            double d5 = ((double) rand.nextFloat() - 0.5D) * 0.5D;
             int j = rand.nextInt(2) * 2 - 1;
 
-            if (worldIn.getBlockState(pos.west()).getBlock() != this && worldIn.getBlockState(pos.east()).getBlock() != this)
-            {
-                d0 = (double)pos.getX() + 0.5D + 0.25D * (double)j;
-                d3 = (double)(rand.nextFloat() * 2.0F * (float)j);
-            }
-            else
-            {
-                d2 = (double)pos.getZ() + 0.5D + 0.25D * (double)j;
-                d5 = (double)(rand.nextFloat() * 2.0F * (float)j);
+            if (worldIn.getBlockState(pos.west()).getBlock() != this && worldIn.getBlockState(pos.east()).getBlock() != this) {
+                d0 = (double) pos.getX() + 0.5D + 0.25D * (double) j;
+                d3 = (double) (rand.nextFloat() * 2.0F * (float) j);
+            } else {
+                d2 = (double) pos.getZ() + 0.5D + 0.25D * (double) j;
+                d5 = (double) (rand.nextFloat() * 2.0F * (float) j);
             }
 
             worldIn.spawnParticle(EnumParticleTypes.PORTAL, d0, d1, d2, d3, d4, d5);
@@ -228,8 +256,7 @@ public class BlockIronDimPortal extends BlockPortal implements RegisterModelUtil
     }
 
     @Override
-    @Deprecated
-    public IBlockState withRotation(@Nonnull IBlockState state, Rotation rot) {
+    public IBlockState withRotation(IBlockState state, Rotation rot) {
         switch (rot) {
             case COUNTERCLOCKWISE_90:
             case CLOCKWISE_90:
@@ -253,115 +280,161 @@ public class BlockIronDimPortal extends BlockPortal implements RegisterModelUtil
         return new BlockStateContainer(this, AXIS);
     }
 
+    public BlockPattern.PatternHelper createPatternHelper(World worldIn, BlockPos pos) {
+        EnumFacing.Axis enumfacing$axis = EnumFacing.Axis.Z;
+        BlockIronDimPortal.Size blockportal$size = new BlockIronDimPortal.Size(worldIn, pos, EnumFacing.Axis.X);
+        LoadingCache<BlockPos, BlockWorldState> loadingcache = BlockPattern.createLoadingCache(worldIn, true);
+
+        if (!blockportal$size.isValid()) {
+            enumfacing$axis = EnumFacing.Axis.X;
+            blockportal$size = new BlockIronDimPortal.Size(worldIn, pos, EnumFacing.Axis.Z);
+        }
+
+        if (!blockportal$size.isValid()) {
+            return new BlockPattern.PatternHelper(pos, EnumFacing.NORTH, EnumFacing.UP, loadingcache, 1, 1, 1);
+        } else {
+            int[] aint = new int[EnumFacing.AxisDirection.values().length];
+            EnumFacing enumfacing = blockportal$size.rightDir.rotateYCCW();
+            BlockPos blockpos = blockportal$size.bottomLeft.up(blockportal$size.getHeight() - 1);
+
+            for (EnumFacing.AxisDirection enumfacing$axisdirection : EnumFacing.AxisDirection.values()) {
+                BlockPattern.PatternHelper blockpattern$patternhelper = new BlockPattern.PatternHelper(enumfacing.getAxisDirection() == enumfacing$axisdirection ? blockpos : blockpos.offset(blockportal$size.rightDir, blockportal$size.getWidth() - 1), EnumFacing.getFacingFromAxis(enumfacing$axisdirection, enumfacing$axis), EnumFacing.UP, loadingcache, blockportal$size.getWidth(), blockportal$size.getHeight(), 1);
+
+                for (int i = 0; i < blockportal$size.getWidth(); ++i) {
+                    for (int j = 0; j < blockportal$size.getHeight(); ++j) {
+                        BlockWorldState blockworldstate = blockpattern$patternhelper.translateOffset(i, j, 1);
+
+                        if (blockworldstate.getBlockState() != null && blockworldstate.getBlockState().getMaterial() != Material.AIR) {
+                            ++aint[enumfacing$axisdirection.ordinal()];
+                        }
+                    }
+                }
+            }
+
+            EnumFacing.AxisDirection enumfacing$axisdirection1 = EnumFacing.AxisDirection.POSITIVE;
+
+            for (EnumFacing.AxisDirection enumfacing$axisdirection2 : EnumFacing.AxisDirection.values()) {
+                if (aint[enumfacing$axisdirection2.ordinal()] < aint[enumfacing$axisdirection1.ordinal()]) {
+                    enumfacing$axisdirection1 = enumfacing$axisdirection2;
+                }
+            }
+
+            return new BlockPattern.PatternHelper(enumfacing.getAxisDirection() == enumfacing$axisdirection1 ? blockpos : blockpos.offset(blockportal$size.rightDir, blockportal$size.getWidth() - 1), EnumFacing.getFacingFromAxis(enumfacing$axisdirection1, enumfacing$axis), EnumFacing.UP, loadingcache, blockportal$size.getWidth(), blockportal$size.getHeight(), 1);
+        }
+    }
+
+    @Override
+    public BlockFaceShape getBlockFaceShape(IBlockAccess worldIn, IBlockState state, BlockPos pos, EnumFacing face) {
+        return BlockFaceShape.UNDEFINED;
+    }
+
     public static class Size {
         private final World world;
         private final EnumFacing.Axis axis;
         private final EnumFacing rightDir;
         private final EnumFacing leftDir;
-        private int portalBlockCount = 0;
+        private int portalBlockCount;
         private BlockPos bottomLeft;
         private int height;
         private int width;
 
-        public Size(World worldIn, BlockPos pos, EnumFacing.Axis facing) {
-            world = worldIn;
-            axis = facing;
+        public Size(World worldIn, BlockPos axisPos, EnumFacing.Axis enumAxis) {
+            this.world = worldIn;
+            this.axis = enumAxis;
 
-            if (facing == EnumFacing.Axis.X) {
-                leftDir = EnumFacing.EAST;
-                rightDir = EnumFacing.WEST;
-            }
-            else {
-                leftDir = EnumFacing.NORTH;
-                rightDir = EnumFacing.SOUTH;
+            if (enumAxis == EnumFacing.Axis.X) {
+                this.leftDir = EnumFacing.EAST;
+                this.rightDir = EnumFacing.WEST;
+            } else {
+                this.leftDir = EnumFacing.NORTH;
+                this.rightDir = EnumFacing.SOUTH;
             }
 
-            for (BlockPos blockpos = pos; pos.getY() > blockpos.getY() - 21 && pos.getY() > 0 && isEmptyBlock(worldIn.getBlockState(pos.down()).getBlock()); pos = pos.down()) {
+            for (BlockPos blockpos = axisPos; axisPos.getY() > blockpos.getY() - 21 && axisPos.getY() > 0 && this.isEmptyBlock(worldIn.getBlockState(axisPos.down()).getBlock()); axisPos = axisPos.down()) {
                 ;
             }
 
-            int i = getDistanceUntilEdge(pos, leftDir) - 1;
+            int i = this.getDistanceUntilEdge(axisPos, this.leftDir) - 1;
 
             if (i >= 0) {
-                bottomLeft = pos.offset(leftDir, i);
-                width = this.getDistanceUntilEdge(bottomLeft, rightDir);
+                this.bottomLeft = axisPos.offset(this.leftDir, i);
+                this.width = this.getDistanceUntilEdge(this.bottomLeft, this.rightDir);
 
-                if (width < 2 || width > 21) {
-                    bottomLeft = null;
-                    width = 0;
+                if (this.width < 2 || this.width > 21) {
+                    this.bottomLeft = null;
+                    this.width = 0;
                 }
             }
 
             if (this.bottomLeft != null) {
-                height = calculatePortalHeight();
+                this.height = this.calculatePortalHeight();
             }
         }
 
-        protected int getDistanceUntilEdge(BlockPos pos, EnumFacing facing) {
+        protected int getDistanceUntilEdge(BlockPos p_180120_1_, EnumFacing p_180120_2_) {
             int i;
 
             for (i = 0; i < 22; ++i) {
-                BlockPos blockpos = pos.offset(facing, i);
+                BlockPos blockpos = p_180120_1_.offset(p_180120_2_, i);
 
-                if (!isEmptyBlock(world.getBlockState(blockpos).getBlock()) || world.getBlockState(blockpos.down()) != Blocks.IRON_BLOCK.getDefaultState()) {
+                if (!this.isEmptyBlock(this.world.getBlockState(blockpos).getBlock()) || this.world.getBlockState(blockpos.down()).getBlock() != Blocks.IRON_BLOCK) {
                     break;
                 }
             }
 
-            IBlockState block = world.getBlockState(pos.offset(facing, i));
-            return block == Blocks.IRON_BLOCK.getDefaultState() ? i : 0;
+            Block block = this.world.getBlockState(p_180120_1_.offset(p_180120_2_, i)).getBlock();
+            return block == Blocks.IRON_BLOCK ? i : 0;
         }
 
         public int getHeight() {
-            return height;
+            return this.height;
         }
 
         public int getWidth() {
-            return width;
+            return this.width;
         }
 
         protected int calculatePortalHeight() {
             label56:
 
-            for (height = 0; height < 21; ++height) {
-                for (int i = 0; i < width; ++i) {
-                    BlockPos blockpos = bottomLeft.offset(rightDir, i).up(height);
-                    IBlockState block = world.getBlockState(blockpos);
+            for (this.height = 0; this.height < 21; ++this.height) {
+                for (int i = 0; i < this.width; ++i) {
+                    BlockPos blockpos = this.bottomLeft.offset(this.rightDir, i).up(this.height);
+                    Block block = this.world.getBlockState(blockpos).getBlock();
 
-                    if (!isEmptyBlock(block.getBlock())) {
+                    if (!this.isEmptyBlock(block)) {
                         break label56;
                     }
 
-                    if (block.getBlock() == BlocksIDL.iron_dim_portal) {
+                    if (block == BlocksIDL.iron_dim_portal) {
                         ++this.portalBlockCount;
                     }
 
                     if (i == 0) {
-                        block = world.getBlockState(blockpos.offset(leftDir));
+                        block = this.world.getBlockState(blockpos.offset(this.leftDir)).getBlock();
 
-                        if (block != Blocks.IRON_BLOCK.getDefaultState()) {
+                        if (block != Blocks.IRON_BLOCK) {
                             break label56;
                         }
-                    }
-                    else if (i == this.width) {
-                        block = world.getBlockState(blockpos.offset(rightDir));
+                    } else if (i == this.width - 1) {
+                        block = this.world.getBlockState(blockpos.offset(this.rightDir)).getBlock();
 
-                        if (block != Blocks.IRON_BLOCK.getDefaultState()) {
+                        if (block != Blocks.IRON_BLOCK) {
                             break label56;
                         }
                     }
                 }
             }
 
-            for (int j = 0; j < width; ++j) {
-                if (world.getBlockState(bottomLeft.offset(rightDir, j).up(height)) != Blocks.IRON_BLOCK.getDefaultState()) {
-                    height = 0;
+            for (int j = 0; j < this.width; ++j) {
+                if (this.world.getBlockState(this.bottomLeft.offset(this.rightDir, j).up(this.height)).getBlock() != Blocks.IRON_BLOCK) {
+                    this.height = 0;
                     break;
                 }
             }
 
-            if (height <= 21 && height >= 3) {
-                return height;
+            if (this.height <= 21 && this.height >= 3) {
+                return this.height;
             } else {
                 this.bottomLeft = null;
                 this.width = 0;
@@ -370,21 +443,20 @@ public class BlockIronDimPortal extends BlockPortal implements RegisterModelUtil
             }
         }
 
-        @SuppressWarnings("deprecation")
         protected boolean isEmptyBlock(Block blockIn) {
             return blockIn.getMaterial(blockIn.getDefaultState()) == Material.AIR || blockIn == Blocks.FIRE || blockIn == BlocksIDL.iron_dim_portal;
         }
 
         public boolean isValid() {
-            return bottomLeft != null && width >= 2 && width <= 21 && height >= 3 && this.height <= 21;
+            return this.bottomLeft != null && this.width >= 2 && this.width <= 21 && this.height >= 3 && this.height <= 21;
         }
 
         public void placePortalBlocks() {
             for (int i = 0; i < this.width; ++i) {
-                BlockPos blockpos = bottomLeft.offset(rightDir, i);
+                BlockPos blockpos = this.bottomLeft.offset(this.rightDir, i);
 
-                for (int j = 0; j < height; ++j) {
-                    world.setBlockState(blockpos.up(j), BlocksIDL.iron_dim_portal.getDefaultState().withProperty(BlockPortal.AXIS, axis), 2);
+                for (int j = 0; j < this.height; ++j) {
+                    this.world.setBlockState(blockpos.up(j), BlocksIDL.iron_dim_portal.getDefaultState().withProperty(BlockIronDimPortal.AXIS, this.axis), 2);
                 }
             }
         }

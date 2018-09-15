@@ -1,5 +1,6 @@
 package com.crypticmushroom.irondimension.world;
 
+import com.crypticmushroom.irondimension.blocks.BlockIronDimPortal;
 import com.crypticmushroom.irondimension.registry.BlocksIDL;
 import it.unimi.dsi.fastutil.longs.Long2ObjectMap;
 import it.unimi.dsi.fastutil.longs.Long2ObjectOpenHashMap;
@@ -86,7 +87,7 @@ public class TeleporterIronDim extends Teleporter {
                 this.destinationCoordinateCache.put(1, new PortalPosition(blockpos, this.world.getTotalWorldTime()));
             }
 
-            BlockPattern.PatternHelper blockpattern$patternhelper = BlocksIDL.iron_dim_portal.createPatternHelper(this.world, blockpos);
+            BlockPattern.PatternHelper blockpattern$patternhelper = ((BlockIronDimPortal)BlocksIDL.iron_dim_portal).createPatternHelper(this.world, blockpos);
             EnumFacing eTD = blockpattern$patternhelper.getForwards();
 
             float f = 0.0F;

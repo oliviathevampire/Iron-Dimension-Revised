@@ -34,8 +34,8 @@ public class ItemIronFlintAndSteel extends Item implements RegisterModelUtil {
         if (!player.canPlayerEdit(pos, facing, itemstack)) {
             return EnumActionResult.FAIL;
         } else {
-            if (worldIn.getBlockState(pos.add(0, -1, 0)).getBlock() != Blocks.IRON_BLOCK || !((BlockIronDimPortal) BlocksIDL.iron_dim_portal).tryToCreatePortal(worldIn, pos)) {
-                if (!worldIn.isSideSolid(pos.down(), EnumFacing.UP)) {
+            if (!((BlockIronDimPortal) BlocksIDL.iron_dim_portal).tryToCreatePortal(worldIn, pos)) {
+                if (!worldIn.getBlockState(pos.down()).isSideSolid(worldIn, pos.down(), EnumFacing.UP)) {
                     worldIn.setBlockToAir(pos);
                 } else {
                     if (worldIn.isAirBlock(pos)) {
