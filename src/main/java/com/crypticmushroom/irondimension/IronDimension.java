@@ -8,6 +8,7 @@ import com.crypticmushroom.irondimension.world.WorldProviderIronDim;
 import net.minecraft.init.Blocks;
 import net.minecraft.world.DimensionType;
 import net.minecraftforge.common.DimensionManager;
+import net.minecraftforge.common.MinecraftForge;
 import net.minecraftforge.fml.common.Mod;
 import net.minecraftforge.fml.common.Mod.EventHandler;
 import net.minecraftforge.fml.common.SidedProxy;
@@ -49,6 +50,8 @@ public class IronDimension {
     public void init(FMLInitializationEvent event) {
         // some example code
         logger.info("DIRT BLOCK >> {}", Blocks.DIRT.getRegistryName());
+
+        MinecraftForge.TERRAIN_GEN_BUS.register(new EventHandlerTerrainIDL());
     }
 
     @EventHandler

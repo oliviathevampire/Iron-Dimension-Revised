@@ -13,6 +13,7 @@ import net.minecraft.world.biome.Biome;
 import net.minecraft.world.chunk.ChunkPrimer;
 import net.minecraft.world.gen.feature.WorldGenAbstractTree;
 import net.minecraftforge.event.terraingen.DecorateBiomeEvent;
+import net.minecraftforge.fml.common.eventhandler.Event;
 import net.minecraftforge.fml.common.eventhandler.SubscribeEvent;
 import net.minecraftforge.fml.relauncher.Side;
 import net.minecraftforge.fml.relauncher.SideOnly;
@@ -23,7 +24,6 @@ import static net.minecraftforge.fml.common.eventhandler.Event.Result.DENY;
 
 public class BiomeIronDimension extends Biome {
 
-    public BlockPos chunkPos;
     private WorldGenAbstractTree genTree;
 
     public BiomeIronDimension(BiomeProperties props) {
@@ -42,6 +42,7 @@ public class BiomeIronDimension extends Biome {
         genTree = new WorldGenIronTree(false);
 
         decorator.flowersPerChunk = -999;
+        decorator.reedsPerChunk = 0;
         decorator.treesPerChunk = 3;
         decorator.grassPerChunk = -999;
     }
