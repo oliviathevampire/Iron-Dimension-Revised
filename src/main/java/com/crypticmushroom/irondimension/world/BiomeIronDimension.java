@@ -31,6 +31,8 @@ public class BiomeIronDimension extends Biome {
 
         spawnableCreatureList.clear();
         spawnableMonsterList.clear();
+        spawnableCaveCreatureList.clear();
+        spawnableWaterCreatureList.clear();
 
         spawnableCreatureList.add(new SpawnListEntry(EntityIronCow.class, 20, 1, 4));
         spawnableCreatureList.add(new SpawnListEntry(EntityIronPig.class, 40, 2, 4));

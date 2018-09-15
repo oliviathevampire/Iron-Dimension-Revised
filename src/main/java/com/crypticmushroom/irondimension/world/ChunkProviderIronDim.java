@@ -5,7 +5,6 @@ import net.minecraft.block.BlockFalling;
 import net.minecraft.entity.EnumCreatureType;
 import net.minecraft.init.Blocks;
 import net.minecraft.util.math.BlockPos;
-import net.minecraft.util.math.ChunkPos;
 import net.minecraft.util.math.MathHelper;
 import net.minecraft.world.World;
 import net.minecraft.world.WorldEntitySpawner;
@@ -41,7 +40,7 @@ public class ChunkProviderIronDim implements IChunkGenerator {
     private double[] maxLimitRegion;
     private double[] depthRegion;
 
-    //private final GDGenCaves caveGenerator = new GDGenCaves();
+    private final WorldGenIronCaves caveGenerator = new WorldGenIronCaves();
 
     public ChunkProviderIronDim(World world, long l, boolean flag) {
         this.world = world;
@@ -73,7 +72,7 @@ public class ChunkProviderIronDim implements IChunkGenerator {
 
         this.biomesForGeneration = world.getBiomeProvider().getBiomes(biomesForGeneration, cx * 16, cz * 16, 16, 16);
         replaceBiomeBlocks(cx, cz, primer, biomesForGeneration);
-        //caveGenerator.generate(world, cx, cz, primer);
+        caveGenerator.generate(world, cx, cz, primer);
 
         Chunk chunk = new Chunk(world, primer, cx, cz);
 
