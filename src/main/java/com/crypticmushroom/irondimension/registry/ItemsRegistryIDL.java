@@ -54,7 +54,6 @@ public class ItemsRegistryIDL {
         items.register("radioactive_iron_boots", new ItemRadioactiveIronArmor(ARMOR_RADIOACTIVE, FEET));
 
         //Blocks
-        //items.registerBlock(BlocksIDL.iron_dim_portal);
         items.registerBlock(BlocksIDL.iron_dirt);
         items.registerBlock(BlocksIDL.iron_grass);
         items.registerBlock(BlocksIDL.iron_log);
