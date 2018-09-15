@@ -12,6 +12,7 @@ import net.minecraft.world.World;
 import net.minecraft.world.biome.Biome;
 import net.minecraft.world.chunk.ChunkPrimer;
 import net.minecraft.world.gen.feature.WorldGenAbstractTree;
+import net.minecraft.world.gen.feature.WorldGenMinable;
 import net.minecraftforge.event.terraingen.DecorateBiomeEvent;
 import net.minecraftforge.fml.common.eventhandler.Event;
 import net.minecraftforge.fml.common.eventhandler.SubscribeEvent;
@@ -47,6 +48,27 @@ public class BiomeIronDimension extends Biome {
         decorator.reedsPerChunk = 0;
         decorator.treesPerChunk = 3;
         decorator.grassPerChunk = -999;
+    }
+
+    @Override
+    public void decorate(World world, Random rand, BlockPos pos) {
+        super.decorate(world, rand, pos);
+
+        for (int i = 0; i < 15; i++) {
+            int Xcoord = pos.getX() + rand.nextInt(16);
+            int Zcoord = pos.getZ() + rand.nextInt(16);
+            int Ycoord = rand.nextInt(64);
+            new WorldGenMinable(BlocksIDL.super_iron_ore.getDefaultState(), 9,
+                    input -> input == BlocksIDL.soft_iron.getDefaultState()).generate(world, rand, new BlockPos(Xcoord, Ycoord, Zcoord));
+        }
+
+        for (int i = 0; i < 10; i++) {
+            int Xcoord = pos.getX() + rand.nextInt(16);
+            int Zcoord = pos.getZ() + rand.nextInt(16);
+            int Ycoord = rand.nextInt(32);
+            new WorldGenMinable(BlocksIDL.radioactive_iron_ore.getDefaultState(), 8,
+                    input -> input == BlocksIDL.soft_iron.getDefaultState()).generate(world, rand, new BlockPos(Xcoord, Ycoord, Zcoord));
+        }
     }
 
     @Override
