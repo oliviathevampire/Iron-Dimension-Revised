@@ -46,7 +46,7 @@ public class BiomeIronDimension extends Biome {
 
         decorator.flowersPerChunk = -999;
         decorator.reedsPerChunk = 0;
-        decorator.treesPerChunk = 3;
+        decorator.treesPerChunk = 5;
         decorator.grassPerChunk = -999;
     }
 
@@ -85,7 +85,7 @@ public class BiomeIronDimension extends Biome {
 
     @Override
     public WorldGenAbstractTree getRandomTreeFeature(Random par1Random) {
-        return par1Random.nextInt(3) == 0 ? new WorldGenNoTree() : par1Random.nextInt(9) == 0 ? genTree : new WorldGenNoTree();
+        return par1Random.nextInt(5) == 0 ? new WorldGenNoTree() : par1Random.nextInt(7) == 0 ? genTree : new WorldGenNoTree();
     }
 
     @Override
