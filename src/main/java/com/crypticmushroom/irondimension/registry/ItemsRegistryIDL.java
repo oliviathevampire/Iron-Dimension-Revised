@@ -56,6 +56,7 @@ public class ItemsRegistryIDL {
         //Blocks
         items.registerBlock(BlocksIDL.iron_dirt);
         items.registerBlock(BlocksIDL.iron_grass);
+        items.registerBlock(BlocksIDL.iron_planks);
         items.registerBlock(BlocksIDL.iron_log);
         items.registerBlock(BlocksIDL.iron_leaves);
         items.registerBlock(BlocksIDL.iron_sapling);

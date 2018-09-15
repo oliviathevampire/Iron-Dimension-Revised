@@ -23,6 +23,7 @@ public final class BlocksRegistryIDL {
         blocks.register("iron_dim_portal", new BlockIronDimPortal());
         blocks.register("iron_dirt", new BlockIronDirt());
         blocks.register("iron_grass", new BlockIronGrass());
+        blocks.register("iron_planks", new BlockIronPlanks());
         blocks.register("iron_log", new BlockIronLog());
         blocks.register("iron_leaves", new BlockIronLeaves());
         blocks.register("iron_sapling", new BlockIronSapling());

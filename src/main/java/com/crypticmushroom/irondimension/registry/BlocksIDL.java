@@ -12,6 +12,7 @@ public class BlocksIDL {
     public static final Block iron_dim_portal = null;
     public static final Block iron_dirt = null;
     public static final Block iron_grass = null;
+    public static final Block iron_planks = null;
     public static final Block iron_log = null;
     public static final Block iron_leaves = null;
     public static final Block iron_sapling = null;
