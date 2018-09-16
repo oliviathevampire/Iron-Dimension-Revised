@@ -1,0 +1,17 @@
+{
+  "forge_marker": 1,
+  "defaults": {
+    "model": "grass",
+    "textures": {
+      "particle": "irondimension:block/irondirt",
+      "bottom": "irondimension:block/irondirt",
+      "top": "irondimension:block/iron_grass_top",
+      "side": "irondimension:block/iron_grass_side",
+      "overlay": "irondimension:block/iron_grass_side"
+    }
+  },
+  "variants": {
+    "normal": [{}],
+    "inventory": [{}]
+  }
+}

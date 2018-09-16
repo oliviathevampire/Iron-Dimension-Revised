@@ -1,0 +1,19 @@
+{
+  "type": "forge:ore_shaped",
+  "pattern": [
+    "III",
+    " S ",
+    " S "
+  ],
+  "key": {
+    "I": {
+      "item": "irondimension:radioactive_iron_ingot"
+    },
+    "S": {
+      "item": "irondimension:iron_stick"
+    }
+  },
+  "result": {
+    "item": "irondimension:radioactive_pickaxe"
+  }
+}

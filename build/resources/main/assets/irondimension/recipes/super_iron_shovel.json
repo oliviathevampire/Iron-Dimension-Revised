@@ -1,0 +1,19 @@
+{
+  "type": "forge:ore_shaped",
+  "pattern": [
+    "I",
+    "S",
+    "S"
+  ],
+  "key": {
+    "I": {
+      "item": "irondimension:super_iron_ingot"
+    },
+    "S": {
+      "item": "irondimension:iron_stick"
+    }
+  },
+  "result": {
+    "item": "irondimension:super_iron_shovel"
+  }
+}

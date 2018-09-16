@@ -1,0 +1,16 @@
+{
+  "type": "forge:ore_shaped",
+  "pattern": [
+    "III",
+    "I I",
+    "I I"
+  ],
+  "key": {
+    "I": {
+      "item": "irondimension:super_iron_ingot"
+    }
+  },
+  "result": {
+    "item": "irondimension:super_iron_legs"
+  }
+}
