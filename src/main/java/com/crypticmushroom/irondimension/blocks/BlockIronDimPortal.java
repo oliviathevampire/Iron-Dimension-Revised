@@ -1,5 +1,7 @@
 package com.crypticmushroom.irondimension.blocks;
 
+import com.crypticmushroom.irondimension.IronDimension;
+import com.crypticmushroom.irondimension.proxy.ClientProxy;
 import com.crypticmushroom.irondimension.registry.BlocksIDL;
 import com.crypticmushroom.irondimension.registry.ConfigIDL;
 import com.crypticmushroom.irondimension.registry.util.RegisterModelUtil;
@@ -45,6 +47,7 @@ public class BlockIronDimPortal extends BlockBreakable implements RegisterModelU
         super(Material.PORTAL, false);
         this.setDefaultState(this.blockState.getBaseState().withProperty(AXIS, EnumFacing.Axis.X));
         this.setTickRandomly(true);
+        this.setLightLevel(1.0F);
     }
 
     @Override
@@ -246,7 +249,7 @@ public class BlockIronDimPortal extends BlockBreakable implements RegisterModelU
                 d5 = (double) (rand.nextFloat() * 2.0F * (float) j);
             }
 
-            worldIn.spawnParticle(EnumParticleTypes.PORTAL, d0, d1, d2, d3, d4, d5);
+            IronDimension.proxy.spawnParticle(worldIn, ClientProxy.ParticleIDL.IRON_PORTAL, d0, d1, d2, d3, d4, d5);
         }
     }
 
