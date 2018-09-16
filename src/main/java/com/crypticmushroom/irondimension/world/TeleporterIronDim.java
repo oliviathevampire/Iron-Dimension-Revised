@@ -24,13 +24,13 @@ public class TeleporterIronDim extends Teleporter {
 
     private final Random random;
     @SuppressWarnings("unchecked")
-    private final Long2ObjectMap<PortalPosition> destinationCoordinateCache = new Long2ObjectOpenHashMap(4096);
+    private final Long2ObjectMap<Teleporter.PortalPosition> destinationCoordinateCache = new Long2ObjectOpenHashMap(4096);
     private final Block portal;
     private final IBlockState frame;
 
-    public TeleporterIronDim(WorldServer worldServer, Block portal, IBlockState frame) {
-        super(worldServer);
-        random = new Random(worldServer.getSeed());
+    public TeleporterIronDim(WorldServer par1WorldServer, Block portal, IBlockState frame) {
+        super(par1WorldServer);
+        random = new Random(par1WorldServer.getSeed());
         this.portal = portal;
         this.frame = frame;
     }
@@ -109,10 +109,10 @@ public class TeleporterIronDim extends Teleporter {
                 f3 = 1.0F;
             }
 
-            double mx = entity.motionX;
-            double mz = entity.motionZ;
-            entity.motionX = mx * (double) f + mz * (double) f3;
-            entity.motionZ = mx * (double) f2 + mz * (double) f1;
+            double d3 = entity.motionX;
+            double d4 = entity.motionZ;
+            entity.motionX = d3 * (double) f + d4 * (double) f3;
+            entity.motionZ = d3 * (double) f2 + d4 * (double) f1;
             entity.rotationYaw = yaw - (float) (eTD.getOpposite().getHorizontalIndex() * 90) + (float) (blockpattern$patternhelper.getForwards().getHorizontalIndex() * 90);
 
             if (entity instanceof EntityPlayerMP)
@@ -128,20 +128,20 @@ public class TeleporterIronDim extends Teleporter {
     public boolean makePortal(Entity entityIn) {
         int i = 16;
         double d0 = -1.0D;
-        int entityX = MathHelper.floor(entityIn.posX);
-        int entityY = MathHelper.floor(entityIn.posY);
-        int entityZ = MathHelper.floor(entityIn.posZ);
-        int ex = entityX;
-        int ey = entityY;
-        int ez = entityZ;
+        int j = MathHelper.floor(entityIn.posX);
+        int k = MathHelper.floor(entityIn.posY);
+        int l = MathHelper.floor(entityIn.posZ);
+        int i1 = j;
+        int j1 = k;
+        int k1 = l;
         int l1 = 0;
         int i2 = this.random.nextInt(4);
         BlockPos.MutableBlockPos blockpos$mutableblockpos = new BlockPos.MutableBlockPos();
 
-        for (int j2 = entityX - i; j2 <= entityX + i; ++j2) {
+        for (int j2 = j - i; j2 <= j + i; ++j2) {
             double d1 = (double)j2 + 0.5D - entityIn.posX;
 
-            for (int l2 = entityZ - i; l2 <= entityZ + i; ++l2) {
+            for (int l2 = l - i; l2 <= l + i; ++l2) {
                 double d2 = (double)l2 + 0.5D - entityIn.posZ;
                 label293:
 
@@ -180,9 +180,9 @@ public class TeleporterIronDim extends Teleporter {
 
                             if (d0 < 0.0D || d7 < d0) {
                                 d0 = d7;
-                                ex = j2;
-                                ey = j3;
-                                ez = l2;
+                                i1 = j2;
+                                j1 = j3;
+                                k1 = l2;
                                 l1 = k3 % 4;
                             }
                         }
@@ -192,11 +192,11 @@ public class TeleporterIronDim extends Teleporter {
         }
 
         if (d0 < 0.0D) {
-            for (int l5 = entityX - i; l5 <= entityX + i; ++l5) {
-                double mx = (double)l5 + 0.5D - entityIn.posX;
+            for (int l5 = j - i; l5 <= j + i; ++l5) {
+                double d3 = (double)l5 + 0.5D - entityIn.posX;
 
-                for (int j6 = entityZ - i; j6 <= entityZ + i; ++j6) {
-                    double mz = (double)j6 + 0.5D - entityIn.posZ;
+                for (int j6 = l - i; j6 <= l + i; ++j6) {
+                    double d4 = (double)j6 + 0.5D - entityIn.posZ;
                     label231:
 
                     for (int i7 = this.world.getActualHeight() - 1; i7 >= 0; --i7) {
@@ -223,13 +223,13 @@ public class TeleporterIronDim extends Teleporter {
                                 }
 
                                 double d6 = (double)i7 + 0.5D - entityIn.posY;
-                                double d8 = mx * mx + d6 * d6 + mz * mz;
+                                double d8 = d3 * d3 + d6 * d6 + d4 * d4;
 
                                 if (d0 < 0.0D || d8 < d0) {
                                     d0 = d8;
-                                    ex = l5;
-                                    ey = i7;
-                                    ez = j6;
+                                    i1 = l5;
+                                    j1 = i7;
+                                    k1 = j6;
                                     l1 = k7 % 2;
                                 }
                             }
@@ -239,9 +239,9 @@ public class TeleporterIronDim extends Teleporter {
             }
         }
 
-        int i6 = ex;
-        int k2 = ey;
-        int k6 = ez;
+        int i6 = i1;
+        int k2 = j1;
+        int k6 = k1;
         int l6 = l1 % 2;
         int i3 = 1 - l6;
 
@@ -251,8 +251,8 @@ public class TeleporterIronDim extends Teleporter {
         }
 
         if (d0 < 0.0D) {
-            ey = MathHelper.clamp(ey, 70, this.world.getActualHeight() - 10);
-            k2 = ey;
+            j1 = MathHelper.clamp(j1, 70, this.world.getActualHeight() - 10);
+            k2 = j1;
 
             for (int j7 = -1; j7 <= 1; ++j7) {
                 for (int l7 = 1; l7 < 3; ++l7) {
