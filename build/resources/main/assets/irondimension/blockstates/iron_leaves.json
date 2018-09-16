@@ -2,7 +2,7 @@
   "forge_marker": 1,
   "defaults": {
     "model": "leaves",
-    "textures": { "all": "irondimension:block/iron_leaf" }
+    "textures": { "all": "irondimension:block/iron/iron_leaves" }
   },
   "variants": {
     "normal": [{ }],

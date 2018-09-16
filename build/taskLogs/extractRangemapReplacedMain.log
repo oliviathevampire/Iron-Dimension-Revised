@@ -1,170 +1,226 @@
 Symbol range map extraction starting
 Processing 56 files
 startProcessing "com\crypticmushroom\irondimension\EventHandlerTerrainIDL.java" md5: cd301fb8355180d05816bb887c781f0a
+Cache Hit!
 endProcessing "com\crypticmushroom\irondimension\EventHandlerTerrainIDL.java"
 
 startProcessing "com\crypticmushroom\irondimension\IronDimension.java" md5: 90ec3899e565a70d6f223839943bf151
+Cache Hit!
 endProcessing "com\crypticmushroom\irondimension\IronDimension.java"
 
 startProcessing "com\crypticmushroom\irondimension\TabIDL.java" md5: 0bb1bdbb2045472260b2713eeac3d9eb
+Cache Hit!
 endProcessing "com\crypticmushroom\irondimension\TabIDL.java"
 
 startProcessing "com\crypticmushroom\irondimension\blocks\BlockCompact.java" md5: 7964b3d72f223b7b407157439c00e42f
+Cache Hit!
 endProcessing "com\crypticmushroom\irondimension\blocks\BlockCompact.java"
 
 startProcessing "com\crypticmushroom\irondimension\blocks\BlockIDLOre.java" md5: 7f30f2be25ce3adb525e5db16d3e5926
+Cache Hit!
 endProcessing "com\crypticmushroom\irondimension\blocks\BlockIDLOre.java"
 
 startProcessing "com\crypticmushroom\irondimension\blocks\BlockIronBrickStairs.java" md5: 28572b72e3e7cb6870c868aa0c552abc
+Cache Hit!
 endProcessing "com\crypticmushroom\irondimension\blocks\BlockIronBrickStairs.java"
 
 startProcessing "com\crypticmushroom\irondimension\blocks\BlockIronBricks.java" md5: e28719cd5ef3b3acb1854a45a0ee3fc3
+Cache Hit!
 endProcessing "com\crypticmushroom\irondimension\blocks\BlockIronBricks.java"
 
 startProcessing "com\crypticmushroom\irondimension\blocks\BlockIronDimPortal.java" md5: 379e1abd48dc3c7d04aebb620c5d94d5
+Cache Hit!
 endProcessing "com\crypticmushroom\irondimension\blocks\BlockIronDimPortal.java"
 
 startProcessing "com\crypticmushroom\irondimension\blocks\BlockIronDirt.java" md5: 45196cc39b8c8b5e6d56abc01c8ce9fa
+Cache Hit!
 endProcessing "com\crypticmushroom\irondimension\blocks\BlockIronDirt.java"
 
 startProcessing "com\crypticmushroom\irondimension\blocks\BlockIronGrass.java" md5: e607d52f2037223322f401ea0c357a4b
+Cache Hit!
 endProcessing "com\crypticmushroom\irondimension\blocks\BlockIronGrass.java"
 
 startProcessing "com\crypticmushroom\irondimension\blocks\BlockIronLeaves.java" md5: 7e4a5f650f1ca936dcf9422b1ebce957
+Cache Hit!
 endProcessing "com\crypticmushroom\irondimension\blocks\BlockIronLeaves.java"
 
 startProcessing "com\crypticmushroom\irondimension\blocks\BlockIronLog.java" md5: de4544a5e374c1998068ece03d1f4741
+Cache Hit!
 endProcessing "com\crypticmushroom\irondimension\blocks\BlockIronLog.java"
 
 startProcessing "com\crypticmushroom\irondimension\blocks\BlockIronPlanks.java" md5: d08bdc2c0ba9d41fe05b08760d5f6d52
+Cache Hit!
 endProcessing "com\crypticmushroom\irondimension\blocks\BlockIronPlanks.java"
 
 startProcessing "com\crypticmushroom\irondimension\blocks\BlockIronSapling.java" md5: 07f8891d78184d9cd96206557f8d9008
+Cache Hit!
 endProcessing "com\crypticmushroom\irondimension\blocks\BlockIronSapling.java"
 
 startProcessing "com\crypticmushroom\irondimension\blocks\BlockSoftIron.java" md5: b3214e3c1cdb8096bd1fce70dc42a3c6
+Cache Hit!
 endProcessing "com\crypticmushroom\irondimension\blocks\BlockSoftIron.java"
 
 startProcessing "com\crypticmushroom\irondimension\entities\EntityIronCow.java" md5: 2d1bb97493d50aa8066a7dbedd43807c
+Cache Hit!
 endProcessing "com\crypticmushroom\irondimension\entities\EntityIronCow.java"
 
 startProcessing "com\crypticmushroom\irondimension\entities\EntityIronPig.java" md5: ffdeeca6f10a3efdf4f9817a2569660d
+Cache Hit!
 endProcessing "com\crypticmushroom\irondimension\entities\EntityIronPig.java"
 
 startProcessing "com\crypticmushroom\irondimension\items\ItemIDLGeneric.java" md5: 412c2ea3fdf7d825c3bbecba1a756d57
+Cache Hit!
 endProcessing "com\crypticmushroom\irondimension\items\ItemIDLGeneric.java"
 
 startProcessing "com\crypticmushroom\irondimension\items\ItemIronFlintAndSteel.java" md5: c2565cbfe2c862cfdfc4d848cf51c736
+Cache Hit!
 endProcessing "com\crypticmushroom\irondimension\items\ItemIronFlintAndSteel.java"
 
 startProcessing "com\crypticmushroom\irondimension\items\ItemRadioactive.java" md5: 7b4ca73f8237833598d46b0f0e6008a1
+Cache Hit!
 endProcessing "com\crypticmushroom\irondimension\items\ItemRadioactive.java"
 
 startProcessing "com\crypticmushroom\irondimension\items\ItemRadioactiveAxe.java" md5: 50bc16f590aa57d4633773d53c0e88dc
+Cache Hit!
 endProcessing "com\crypticmushroom\irondimension\items\ItemRadioactiveAxe.java"
 
 startProcessing "com\crypticmushroom\irondimension\items\ItemRadioactiveHoe.java" md5: 2bd2acc806dc87c3b191a7777d69cb1c
+Cache Hit!
 endProcessing "com\crypticmushroom\irondimension\items\ItemRadioactiveHoe.java"
 
 startProcessing "com\crypticmushroom\irondimension\items\ItemRadioactiveIronArmor.java" md5: 9d11aba2e40e992d19ef0b30283d78b6
+Cache Hit!
 endProcessing "com\crypticmushroom\irondimension\items\ItemRadioactiveIronArmor.java"
 
 startProcessing "com\crypticmushroom\irondimension\items\ItemRadioactivePickaxe.java" md5: d997bdeb1fc65d1b6f26475f6a3c2fe6
+Cache Hit!
 endProcessing "com\crypticmushroom\irondimension\items\ItemRadioactivePickaxe.java"
 
 startProcessing "com\crypticmushroom\irondimension\items\ItemRadioactiveShovel.java" md5: d252863d5a54b5663c672168f99afece
+Cache Hit!
 endProcessing "com\crypticmushroom\irondimension\items\ItemRadioactiveShovel.java"
 
 startProcessing "com\crypticmushroom\irondimension\items\ItemRadioactiveSword.java" md5: 94acc1f3af80101f5f0c1e8c11de7ea7
+Cache Hit!
 endProcessing "com\crypticmushroom\irondimension\items\ItemRadioactiveSword.java"
 
 startProcessing "com\crypticmushroom\irondimension\items\ItemSuperIronArmor.java" md5: 062f23b059d8a6260cf07465039ac912
+Cache Hit!
 endProcessing "com\crypticmushroom\irondimension\items\ItemSuperIronArmor.java"
 
 startProcessing "com\crypticmushroom\irondimension\items\ItemSuperIronAxe.java" md5: 07d951d61d5fad1ae57255d109847451
+Cache Hit!
 endProcessing "com\crypticmushroom\irondimension\items\ItemSuperIronAxe.java"
 
 startProcessing "com\crypticmushroom\irondimension\items\ItemSuperIronHoe.java" md5: 889da43862f7f3ccd0ffc2f9f566896e
+Cache Hit!
 endProcessing "com\crypticmushroom\irondimension\items\ItemSuperIronHoe.java"
 
 startProcessing "com\crypticmushroom\irondimension\items\ItemSuperIronPickaxe.java" md5: 8c258c5a9f1e15bf10e2602896911a20
+Cache Hit!
 endProcessing "com\crypticmushroom\irondimension\items\ItemSuperIronPickaxe.java"
 
 startProcessing "com\crypticmushroom\irondimension\items\ItemSuperIronShovel.java" md5: 27dbe06157d9453a9e94a57566e88729
+Cache Hit!
 endProcessing "com\crypticmushroom\irondimension\items\ItemSuperIronShovel.java"
 
 startProcessing "com\crypticmushroom\irondimension\items\ItemSuperIronSword.java" md5: 9512fb473e6b21cd64258458037f05dd
+Cache Hit!
 endProcessing "com\crypticmushroom\irondimension\items\ItemSuperIronSword.java"
 
 startProcessing "com\crypticmushroom\irondimension\proxy\ClientProxy.java" md5: 40c44bf3ae1dcd210547a0d752e72b34
+Cache Hit!
 endProcessing "com\crypticmushroom\irondimension\proxy\ClientProxy.java"
 
 startProcessing "com\crypticmushroom\irondimension\proxy\CommonProxy.java" md5: d3465631fe4cfd0a0fa353bae606f40e
+Cache Hit!
 endProcessing "com\crypticmushroom\irondimension\proxy\CommonProxy.java"
 
 startProcessing "com\crypticmushroom\irondimension\registry\BiomeIDL.java" md5: 9f085ae860eebbd76756d40fc8682ef2
+Cache Hit!
 endProcessing "com\crypticmushroom\irondimension\registry\BiomeIDL.java"
 
 startProcessing "com\crypticmushroom\irondimension\registry\BlocksIDL.java" md5: 6d47c1d5d1cbf5783f7b0b23e6a8a6c8
+Cache Hit!
 endProcessing "com\crypticmushroom\irondimension\registry\BlocksIDL.java"
 
 startProcessing "com\crypticmushroom\irondimension\registry\BlocksRegistryIDL.java" md5: 842b877bdb75bd72301b9caf84a4601d
+Cache Hit!
 endProcessing "com\crypticmushroom\irondimension\registry\BlocksRegistryIDL.java"
 
 startProcessing "com\crypticmushroom\irondimension\registry\ConfigIDL.java" md5: dbbf559179ef47aa5d65338b7100d927
+Cache Hit!
 endProcessing "com\crypticmushroom\irondimension\registry\ConfigIDL.java"
 
 startProcessing "com\crypticmushroom\irondimension\registry\EntityIDL.java" md5: 7b7f2070eedd0a3e45c0f72a12798178
+Cache Hit!
 endProcessing "com\crypticmushroom\irondimension\registry\EntityIDL.java"
 
 startProcessing "com\crypticmushroom\irondimension\registry\EntityRegistryIDL.java" md5: 0da4bce6e64438d9064ecabb4a3d69c6
+Cache Hit!
 endProcessing "com\crypticmushroom\irondimension\registry\EntityRegistryIDL.java"
 
 startProcessing "com\crypticmushroom\irondimension\registry\ItemsIDL.java" md5: 74438252ba4eba5cb40355880d3ee8e5
+Cache Hit!
 endProcessing "com\crypticmushroom\irondimension\registry\ItemsIDL.java"
 
 startProcessing "com\crypticmushroom\irondimension\registry\ItemsRegistryIDL.java" md5: 1cdba6840c548f6f0b36f0435e45348e
+Cache Hit!
 endProcessing "com\crypticmushroom\irondimension\registry\ItemsRegistryIDL.java"
 
 startProcessing "com\crypticmushroom\irondimension\registry\RecipesIDL.java" md5: 256c656e32ebb21803f52ff954989a78
+Cache Hit!
 endProcessing "com\crypticmushroom\irondimension\registry\RecipesIDL.java"
 
 startProcessing "com\crypticmushroom\irondimension\registry\util\BlockModelUtils.java" md5: 76cb3e5d5af3b388ba8a2c331b2a85f2
+Cache Hit!
 endProcessing "com\crypticmushroom\irondimension\registry\util\BlockModelUtils.java"
 
 startProcessing "com\crypticmushroom\irondimension\registry\util\ModelRendering.java" md5: 155648973128f0ef2d9a8409a6c2756e
+Cache Hit!
 endProcessing "com\crypticmushroom\irondimension\registry\util\ModelRendering.java"
 
 startProcessing "com\crypticmushroom\irondimension\registry\util\RegisterModelUtil.java" md5: 1c3743a1b14d4b10d9cd86f8bc86409f
+Cache Hit!
 endProcessing "com\crypticmushroom\irondimension\registry\util\RegisterModelUtil.java"
 
 startProcessing "com\crypticmushroom\irondimension\renderer\EntityRenderIronCow.java" md5: 9c2116b37e6ca1fa1d3e4f8a1eb65247
+Cache Hit!
 endProcessing "com\crypticmushroom\irondimension\renderer\EntityRenderIronCow.java"
 
 startProcessing "com\crypticmushroom\irondimension\renderer\EntityRenderIronPig.java" md5: 8970f1480f2dc989530974175ca96b16
+Cache Hit!
 endProcessing "com\crypticmushroom\irondimension\renderer\EntityRenderIronPig.java"
 
 startProcessing "com\crypticmushroom\irondimension\world\BiomeIronDimension.java" md5: 59c41a949017652e1431384bef3045db
+Cache Hit!
 endProcessing "com\crypticmushroom\irondimension\world\BiomeIronDimension.java"
 
 startProcessing "com\crypticmushroom\irondimension\world\ChunkProviderIronDim.java" md5: 5c9277afd3f8ea37617e38fecfeac21a
+Cache Hit!
 endProcessing "com\crypticmushroom\irondimension\world\ChunkProviderIronDim.java"
 
 startProcessing "com\crypticmushroom\irondimension\world\TeleporterIronDim.java" md5: ef492b10bab999ced068590fa77b025e
+Cache Hit!
 endProcessing "com\crypticmushroom\irondimension\world\TeleporterIronDim.java"
 
 startProcessing "com\crypticmushroom\irondimension\world\WorldGenIronCaves.java" md5: cc25be4c8e64f18924bf2c096bdc1398
+Cache Hit!
 endProcessing "com\crypticmushroom\irondimension\world\WorldGenIronCaves.java"
 
 startProcessing "com\crypticmushroom\irondimension\world\WorldGenIronLakes.java" md5: 46b494e1e97c33895ac06211f3a3c770
+Cache Hit!
 endProcessing "com\crypticmushroom\irondimension\world\WorldGenIronLakes.java"
 
 startProcessing "com\crypticmushroom\irondimension\world\WorldGenIronTree.java" md5: 24630ae8e5496de50487abc7bdf5b0b6
+Cache Hit!
 endProcessing "com\crypticmushroom\irondimension\world\WorldGenIronTree.java"
 
 startProcessing "com\crypticmushroom\irondimension\world\WorldGenNoTree.java" md5: 094569d1aca593c61c011696f6d66594
+Cache Hit!
 endProcessing "com\crypticmushroom\irondimension\world\WorldGenNoTree.java"
 
 startProcessing "com\crypticmushroom\irondimension\world\WorldProviderIronDim.java" md5: edda5d074c126060837bf336907e7c37
+Cache Hit!
 endProcessing "com\crypticmushroom\irondimension\world\WorldProviderIronDim.java"
 

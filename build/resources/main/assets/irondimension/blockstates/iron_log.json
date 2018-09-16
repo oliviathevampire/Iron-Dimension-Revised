@@ -3,8 +3,8 @@
   "defaults": {
     "model": "cube_column",
     "textures": {
-      "end": "irondimension:block/iron_log_top",
-      "side":"irondimension:block/iron_log"
+      "end": "irondimension:block/iron/iron_log_top",
+      "side":"irondimension:block/iron/iron_log"
     }
   },
   "variants": {
