@@ -171,11 +171,11 @@ public class BlockIronDimPortal extends BlockBreakable implements RegisterModelU
                     if (thePlayer.dimension != ConfigIDL.dimension.dimensionID)
                     {
                         if(!ForgeHooks.onTravelToDimension(thePlayer, ConfigIDL.dimension.dimensionID)) return;
-                        thePlayer.server.getPlayerList().transferPlayerToDimension(thePlayer, ConfigIDL.dimension.dimensionID, new TeleporterIronDim(thePlayer.server.getWorld(ConfigIDL.dimension.dimensionID), this, Blocks.GOLD_BLOCK.getDefaultState()));
+                        thePlayer.server.getPlayerList().transferPlayerToDimension(thePlayer, ConfigIDL.dimension.dimensionID, new TeleporterIronDim(thePlayer.server.getWorld(ConfigIDL.dimension.dimensionID), this, Blocks.IRON_BLOCK.getDefaultState()));
                     }
                     else {
                         if(!ForgeHooks.onTravelToDimension(thePlayer, 0)) return;
-                        thePlayer.server.getPlayerList().transferPlayerToDimension(thePlayer, 0, new TeleporterIronDim(thePlayer.server.getWorld(0), this, Blocks.GOLD_BLOCK.getDefaultState()));
+                        thePlayer.server.getPlayerList().transferPlayerToDimension(thePlayer, 0, new TeleporterIronDim(thePlayer.server.getWorld(0), this, Blocks.IRON_BLOCK.getDefaultState()));
                     }
                 } else {
                     MinecraftServer server = FMLCommonHandler.instance().getMinecraftServerInstance();
@@ -191,7 +191,7 @@ public class BlockIronDimPortal extends BlockBreakable implements RegisterModelU
 
                         entityIn.isDead = false;
 
-                        server.getPlayerList().transferEntityToWorld(entityIn, i, server.getWorld(i), server.getWorld(ConfigIDL.dimension.dimensionID), new TeleporterIronDim(server.getWorld(ConfigIDL.dimension.dimensionID), this, Blocks.GOLD_BLOCK.getDefaultState()));
+                        server.getPlayerList().transferEntityToWorld(entityIn, i, server.getWorld(i), server.getWorld(ConfigIDL.dimension.dimensionID), new TeleporterIronDim(server.getWorld(ConfigIDL.dimension.dimensionID), this, Blocks.IRON_BLOCK.getDefaultState()));
                     } else {
                         if(!ForgeHooks.onTravelToDimension(entityIn, 0)) return;
 
@@ -200,7 +200,7 @@ public class BlockIronDimPortal extends BlockBreakable implements RegisterModelU
 
                         entityIn.isDead = false;
 
-                        server.getPlayerList().transferEntityToWorld(entityIn, ConfigIDL.dimension.dimensionID, server.getWorld(ConfigIDL.dimension.dimensionID), server.getWorld(0), new TeleporterIronDim(server.getWorld(0), this, Blocks.GOLD_BLOCK.getDefaultState()));
+                        server.getPlayerList().transferEntityToWorld(entityIn, ConfigIDL.dimension.dimensionID, server.getWorld(ConfigIDL.dimension.dimensionID), server.getWorld(0), new TeleporterIronDim(server.getWorld(0), this, Blocks.IRON_BLOCK.getDefaultState()));
                     }
                 }
             } else entityIn.timeUntilPortal = entityIn.getPortalCooldown();
