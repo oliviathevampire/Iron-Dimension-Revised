@@ -4,6 +4,7 @@ import com.crypticmushroom.irondimension.IronDimension;
 import net.minecraft.init.SoundEvents;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemArmor;
+import net.minecraft.item.ItemStack;
 import net.minecraftforge.common.util.EnumHelper;
 import net.minecraftforge.fml.common.registry.GameRegistry;
 
@@ -40,4 +41,12 @@ public class ItemsIDL {
     public static final Item radioactive_iron_chestplate = null;
     public static final Item radioactive_iron_legs = null;
     public static final Item radioactive_iron_boots = null;
+
+    public static void initRepairMaterials() {
+        ARMOR_SUPER_IRON.setRepairItem(new ItemStack(ItemsIDL.super_iron_ingot));
+        ARMOR_RADIOACTIVE.setRepairItem(new ItemStack(ItemsIDL.radioactive_iron_ingot));
+
+        TOOL_SUPER_IRON.setRepairItem(new ItemStack(ItemsIDL.super_iron_ingot));
+        TOOL_RADIOACTIVE.setRepairItem(new ItemStack(ItemsIDL.radioactive_iron_ingot));
+    }
 }
