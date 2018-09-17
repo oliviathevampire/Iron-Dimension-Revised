@@ -7,10 +7,10 @@
   ],
   "key": {
     "I": {
-      "item": "iron_ingot"
+      "item": "minecraft:iron_ingot"
     },
     "F": {
-      "item": "flint_and_steel"
+      "item": "minecraft:flint_and_steel"
     }
   },
   "result": {
