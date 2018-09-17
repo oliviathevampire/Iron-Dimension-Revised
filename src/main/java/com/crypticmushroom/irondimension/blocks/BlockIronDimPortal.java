@@ -9,6 +9,7 @@ import com.crypticmushroom.irondimension.world.TeleporterIronDim;
 import com.google.common.cache.LoadingCache;
 import net.minecraft.block.Block;
 import net.minecraft.block.BlockBreakable;
+import net.minecraft.block.SoundType;
 import net.minecraft.block.material.Material;
 import net.minecraft.block.properties.IProperty;
 import net.minecraft.block.properties.PropertyEnum;
@@ -48,6 +49,7 @@ public class BlockIronDimPortal extends BlockBreakable implements RegisterModelU
         this.setDefaultState(this.blockState.getBaseState().withProperty(AXIS, EnumFacing.Axis.X));
         this.setTickRandomly(true);
         this.setLightLevel(1.0F);
+        this.setSoundType(SoundType.METAL);
     }
 
     @Override

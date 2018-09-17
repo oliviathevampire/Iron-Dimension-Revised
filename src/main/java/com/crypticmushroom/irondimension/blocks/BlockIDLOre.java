@@ -13,5 +13,6 @@ public class BlockIDLOre extends Block implements RegisterModelUtil {
         setHardness(3.0F);
         setResistance(5.0F);
         setCreativeTab(TabIDL.tabIDL);
+        setHarvestLevel("pickaxe", 2);
     }
 }

@@ -14,5 +14,6 @@ public class BlockSoftIron extends Block implements RegisterModelUtil {
         setHardness(1.5F);
         setResistance(10.0F);
         setCreativeTab(TabIDL.tabIDL);
+        setHarvestLevel("pickaxe", 2);
     }
 }

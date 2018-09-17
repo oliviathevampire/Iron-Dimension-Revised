@@ -30,6 +30,7 @@ public class BlockIronGrass extends Block implements RegisterModelUtil {
         setHardness(0.5F);
         setTickRandomly(true);
         setCreativeTab(TabIDL.tabIDL);
+        setHarvestLevel("shovel", 2);
     }
 
     @Override

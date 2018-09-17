@@ -15,5 +15,6 @@ public class BlockIronPlanks extends Block implements RegisterModelUtil {
         setResistance(2.0F);
         setSoundType(SoundType.WOOD);
         setCreativeTab(TabIDL.tabIDL);
+        setHarvestLevel("axe", 2);
     }
 }

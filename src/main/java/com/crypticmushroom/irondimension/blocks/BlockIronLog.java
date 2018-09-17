@@ -13,6 +13,8 @@ public class BlockIronLog extends BlockLog implements RegisterModelUtil {
         setResistance(2.0F);
         setCreativeTab(TabIDL.tabIDL);
         setDefaultState(getDefaultState().withProperty(LOG_AXIS, EnumAxis.Y));
+
+        setHarvestLevel("axe", 2);
     }
 
     @Override

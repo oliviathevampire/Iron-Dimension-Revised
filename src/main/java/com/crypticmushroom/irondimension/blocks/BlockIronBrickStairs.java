@@ -23,6 +23,7 @@ public class BlockIronBrickStairs extends BlockStairs implements RegisterModelUt
         setHardness(5.0F);
         setResistance(10.0F);
         setCreativeTab(TabIDL.tabIDL);
+        setHarvestLevel("pickaxe", 2);
 
         this.useNeighborBrightness = true;
     }

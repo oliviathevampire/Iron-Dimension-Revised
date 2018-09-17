@@ -15,5 +15,6 @@ public class BlockCompact extends Block implements RegisterModelUtil {
         setHardness(5.0F);
         setResistance(10.0F);
         setCreativeTab(TabIDL.tabIDL);
+        setHarvestLevel("pickaxe", 2);
     }
 }

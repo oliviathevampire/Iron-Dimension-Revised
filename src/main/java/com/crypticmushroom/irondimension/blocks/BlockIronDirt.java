@@ -21,6 +21,7 @@ public class BlockIronDirt extends Block implements RegisterModelUtil {
         setSoundType(SoundType.GROUND);
         setHardness(0.5F);
         setCreativeTab(TabIDL.tabIDL);
+        setHarvestLevel("shovel", 2);
     }
 
     @Override
