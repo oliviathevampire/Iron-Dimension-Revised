@@ -1,6 +1,7 @@
 {
   "pools": [
     {
+      "name": "ingot",
       "rolls": 1,
       "entries": [
         {
@@ -11,7 +12,7 @@
             {
               "function": "set_count",
               "count": {
-                "min": 0,
+                "min": 1,
                 "max": 3
               }
             },
