@@ -35,9 +35,9 @@ public class BiomeIronDimension extends Biome {
         spawnableCaveCreatureList.clear();
         spawnableWaterCreatureList.clear();
 
-        spawnableCreatureList.add(new SpawnListEntry(EntityIronCow.class, 20, 1, 4));
-        spawnableCreatureList.add(new SpawnListEntry(EntityIronPig.class, 40, 2, 4));
-        spawnableCreatureList.add(new SpawnListEntry(EntityIronGolem.class, 40, 2, 4));
+        spawnableCreatureList.add(new SpawnListEntry(EntityIronCow.class, 60, 2, 4));
+        spawnableCreatureList.add(new SpawnListEntry(EntityIronPig.class, 60, 2, 4));
+        spawnableCreatureList.add(new SpawnListEntry(EntityIronGolem.class, 60, 1, 4));
 
         topBlock = BlocksIDL.iron_grass.getDefaultState();
         fillerBlock = BlocksIDL.iron_dirt.getDefaultState();
