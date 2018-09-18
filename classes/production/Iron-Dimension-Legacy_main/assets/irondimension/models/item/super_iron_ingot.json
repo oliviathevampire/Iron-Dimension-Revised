@@ -1,6 +1,0 @@
-{
-  "parent": "item/generated",
-  "textures": {
-    "layer0": "irondimension:item/materials/super_iron_ingot"
-  }
-}

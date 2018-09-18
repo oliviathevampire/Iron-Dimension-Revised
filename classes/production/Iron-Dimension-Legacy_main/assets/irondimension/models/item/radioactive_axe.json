@@ -1,6 +1,0 @@
-{
-  "parent": "item/handheld",
-  "textures": {
-    "layer0": "irondimension:item/tools/radioactive_iron_axe"
-  }
-}
