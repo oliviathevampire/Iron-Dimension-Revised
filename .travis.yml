@@ -29,4 +29,4 @@ deploy:
   on:
     repo: Cryptic-Mushroom/Iron-Dimension-Legacy
     branch: master
-    tags: true
+    tags: false
