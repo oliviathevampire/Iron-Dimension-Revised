@@ -3,12 +3,14 @@ package com.crypticmushroom.irondimension;
 import com.crypticmushroom.irondimension.proxy.CommonProxy;
 import com.crypticmushroom.irondimension.registry.BlocksIDL;
 import com.crypticmushroom.irondimension.registry.ConfigIDL;
+import com.crypticmushroom.irondimension.registry.FluidsIDL;
 import com.crypticmushroom.irondimension.registry.ItemsIDL;
 import com.crypticmushroom.irondimension.world.WorldProviderIronDim;
 import net.minecraft.init.Blocks;
 import net.minecraft.world.DimensionType;
 import net.minecraftforge.common.DimensionManager;
 import net.minecraftforge.common.MinecraftForge;
+import net.minecraftforge.fluids.FluidRegistry;
 import net.minecraftforge.fml.common.Mod;
 import net.minecraftforge.fml.common.Mod.EventHandler;
 import net.minecraftforge.fml.common.SidedProxy;
@@ -29,6 +31,7 @@ public class IronDimension {
 
     public static final BlocksIDL blocks = new BlocksIDL();
     public static final ItemsIDL items = new ItemsIDL();
+    public static final FluidsIDL fluids = new FluidsIDL();
     public static final String ARMOR_DIR = "irondimension:textures/armor/";
     public static final String MODEL_DIR = "irondimension:textures/entity/";
     public static DimensionType dimType;
@@ -43,7 +46,17 @@ public class IronDimension {
         logger = event.getModLog();
         dimType = DimensionType.register("Iron Dimension", "_irondim", ConfigIDL.dimension.dimensionID, WorldProviderIronDim.class, false);
 
+        FluidRegistry.registerFluid(FluidsIDL.metallicWater);
+        FluidRegistry.registerFluid(FluidsIDL.liquidIron);
+
+        FluidRegistry.addBucketForFluid(FluidsIDL.metallicWater);
+        FluidRegistry.addBucketForFluid(FluidsIDL.liquidIron);
+
         proxy.doPreLoadRegistration();
+    }
+
+    static {
+        FluidRegistry.enableUniversalBucket();
     }
 
     @EventHandler

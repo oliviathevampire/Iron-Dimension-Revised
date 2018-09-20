@@ -42,6 +42,9 @@ public class ItemsIDL {
     public static final Item radioactive_iron_legs = null;
     public static final Item radioactive_iron_boots = null;
 
+    public static ItemStack metallic_water_bucket;
+    public static ItemStack liquid_iron_bucket;
+
     public static void initRepairMaterials() {
         ARMOR_SUPER_IRON.setRepairItem(new ItemStack(ItemsIDL.super_iron_ingot));
         ARMOR_RADIOACTIVE.setRepairItem(new ItemStack(ItemsIDL.radioactive_iron_ingot));
