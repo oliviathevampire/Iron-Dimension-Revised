@@ -18,6 +18,7 @@ public class ItemsIDL {
     public static Item.ToolMaterial TOOL_RADIOACTIVE = EnumHelper.addToolMaterial("SUPER_IRON", 3, 2001, 8.5F, 4.0F, 15);
 
     public static final Item iron_stick = null;
+    public static final Item iron_charcoal = null;
     public static final Item super_iron_ingot = null;
     public static final Item radioactive_iron_ingot = null;
 

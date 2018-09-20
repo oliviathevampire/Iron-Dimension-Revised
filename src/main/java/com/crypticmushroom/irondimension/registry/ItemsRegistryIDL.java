@@ -29,6 +29,12 @@ public class ItemsRegistryIDL {
         ItemRegistryHelper items = new ItemRegistryHelper(event.getRegistry());
 
         items.register("iron_stick", new ItemIDLGeneric());
+        items.register("iron_charcoal", new ItemIDLGeneric() {
+            @Override
+            public int getItemBurnTime(ItemStack itemStack) {
+                return 1600;
+            }
+        });
         items.register("super_iron_ingot", new ItemIDLGeneric());
         items.register("radioactive_iron_ingot", new ItemRadioactive());
 
