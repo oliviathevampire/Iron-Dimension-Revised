@@ -2,9 +2,12 @@ package com.crypticmushroom.irondimension.registry;
 
 import com.crypticmushroom.irondimension.IronDimension;
 import com.crypticmushroom.irondimension.blocks.*;
+import com.crypticmushroom.irondimension.fluid.FluidLiquidIron;
+import com.crypticmushroom.irondimension.fluid.FluidMetallicWater;
 import com.crypticmushroom.irondimension.registry.util.RegisterModelUtil;
 import com.google.common.collect.ImmutableList;
 import net.minecraft.block.Block;
+import net.minecraft.block.material.Material;
 import net.minecraftforge.event.RegistryEvent;
 import net.minecraftforge.fml.common.Mod;
 import net.minecraftforge.fml.common.eventhandler.SubscribeEvent;
@@ -35,6 +38,9 @@ public final class BlocksRegistryIDL {
         blocks.register("super_iron_block", new BlockCompact());
         blocks.register("radioactive_iron_ore", new BlockIDLOre());
         blocks.register("radioactive_iron_block", new BlockCompact());
+
+        blocks.register("metallic_water_block", new FluidMetallicWater(FluidsIDL.metallicWater, Material.WATER));
+        blocks.register("liquid_iron_block", new FluidLiquidIron(FluidsIDL.liquidIron, Material.LAVA));
     }
 
     public static List<RegisterModelUtil> getBlockModels() {
