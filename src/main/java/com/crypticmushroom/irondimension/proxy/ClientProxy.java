@@ -1,10 +1,12 @@
 package com.crypticmushroom.irondimension.proxy;
 
+import com.crypticmushroom.irondimension.entities.EntityPureIronGolem;
 import com.crypticmushroom.irondimension.particles.ParticleIronPortal;
 import com.crypticmushroom.irondimension.renderer.EntityRenderIronCow;
 import com.crypticmushroom.irondimension.renderer.EntityRenderIronPig;
 import com.crypticmushroom.irondimension.entities.EntityIronCow;
 import com.crypticmushroom.irondimension.entities.EntityIronPig;
+import com.crypticmushroom.irondimension.renderer.EntityRenderPureIronGolem;
 import net.minecraft.client.Minecraft;
 import net.minecraft.client.particle.Particle;
 import net.minecraft.entity.Entity;
@@ -19,6 +21,7 @@ public class ClientProxy extends CommonProxy {
 
         RenderingRegistry.registerEntityRenderingHandler(EntityIronPig.class, m -> new EntityRenderIronPig(m, 0.625F));
         RenderingRegistry.registerEntityRenderingHandler(EntityIronCow.class, m -> new EntityRenderIronCow(m, 0.625F));
+        RenderingRegistry.registerEntityRenderingHandler(EntityPureIronGolem.class, m -> new EntityRenderPureIronGolem(m, 0.5F));
     }
 
     @Override

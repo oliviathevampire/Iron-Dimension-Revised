@@ -3,6 +3,7 @@ package com.crypticmushroom.irondimension.registry;
 import com.crypticmushroom.irondimension.IronDimension;
 import com.crypticmushroom.irondimension.entities.EntityIronCow;
 import com.crypticmushroom.irondimension.entities.EntityIronPig;
+import com.crypticmushroom.irondimension.entities.EntityPureIronGolem;
 import net.minecraft.entity.Entity;
 import net.minecraft.util.ResourceLocation;
 import net.minecraft.world.World;
@@ -22,8 +23,9 @@ public class EntityRegistryIDL {
     public static void registerEntities(RegistryEvent.Register<EntityEntry> event) {
         EntityRegistryHelper entity = new EntityRegistryHelper(event.getRegistry());
 
-        entity.registerEntity(EntityIDL.IRON_PIG, EntityIronPig.class, EntityIronPig::new, 0xc0c0c0, 0x808080);
-        entity.registerEntity(EntityIDL.IRON_COW, EntityIronCow.class, EntityIronCow::new, 0xc0c0c0, 0x808080);
+        entity.registerEntity(EntityIDL.IRON_PIG, EntityIronPig.class, EntityIronPig::new, 0xC0C0C0, 0x808080);
+        entity.registerEntity(EntityIDL.IRON_COW, EntityIronCow.class, EntityIronCow::new, 0xC0C0C0, 0x808080);
+        entity.registerEntity(EntityIDL.PURE_IRON_GOLEM, EntityPureIronGolem.class, EntityPureIronGolem::new, 0xF0F0F0, 0xC0C0C0);
     }
 
     public static class EntityRegistryHelper {
