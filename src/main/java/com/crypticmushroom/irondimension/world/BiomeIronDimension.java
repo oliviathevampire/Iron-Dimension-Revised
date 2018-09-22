@@ -49,7 +49,7 @@ public class BiomeIronDimension extends Biome {
     public void decorate(World world, Random rand, BlockPos pos) {
         super.decorate(world, rand, pos);
 
-        for (int ocean = 0; ocean < 15; ocean++) {
+        for (int ocean = 0; ocean < 10; ocean++) {
             int Xcoord = pos.getX() + rand.nextInt(16);
             int Zcoord = pos.getZ() + rand.nextInt(16);
             int Ycoord = rand.nextInt(64);
@@ -57,7 +57,7 @@ public class BiomeIronDimension extends Biome {
                     input -> input == BlocksIDL.soft_iron.getDefaultState()).generate(world, rand, new BlockPos(Xcoord, Ycoord, Zcoord));
         }
 
-        for (int ocean = 0; ocean < 10; ocean++) {
+        for (int ocean = 0; ocean < 5; ocean++) {
             int Xcoord = pos.getX() + rand.nextInt(16);
             int Zcoord = pos.getZ() + rand.nextInt(16);
             int Ycoord = rand.nextInt(32);

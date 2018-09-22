@@ -41,6 +41,7 @@ public class ChunkProviderIronDim implements IChunkGenerator {
     private double[] depthRegion;
 
     private final WorldGenIronCaves caveGenerator = new WorldGenIronCaves();
+    private final WorldGenIronRavines ravineGenerator = new WorldGenIronRavines();
 
     public ChunkProviderIronDim(World world, long l, boolean flag) {
         this.world = world;
@@ -73,6 +74,7 @@ public class ChunkProviderIronDim implements IChunkGenerator {
         this.biomesForGeneration = world.getBiomeProvider().getBiomes(biomesForGeneration, cx * 16, cz * 16, 16, 16);
         replaceBiomeBlocks(cx, cz, primer, biomesForGeneration);
         caveGenerator.generate(world, cx, cz, primer);
+        ravineGenerator.generate(world, cx, cz, primer);
 
         Chunk chunk = new Chunk(world, primer, cx, cz);
 
