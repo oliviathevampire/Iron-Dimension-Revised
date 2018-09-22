@@ -127,7 +127,7 @@ public class BiomeIronDimension extends Biome {
                                 stateTop = ICE;
                             } else {
                                 //Warmer biomes have Water
-                                stateTop = Blocks.WATER.getDefaultState();
+                                stateTop = BlocksIDL.metallic_water_block.getDefaultState();
                             }
                         }
 

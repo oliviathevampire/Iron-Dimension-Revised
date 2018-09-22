@@ -15,7 +15,7 @@ import java.util.Random;
 
 public class WorldGenIronCaves extends MapGenCaves {
 
-    protected static final IBlockState CAVE_LAVA = Blocks.LAVA.getDefaultState();
+    protected static final IBlockState CAVE_LAVA = BlocksIDL.liquid_iron_block.getDefaultState();
     protected static final IBlockState CAVE_AIR = Blocks.AIR.getDefaultState();
 
 
@@ -212,7 +212,7 @@ public class WorldGenIronCaves extends MapGenCaves {
 
     protected boolean isOceanBlock(ChunkPrimer data, int x, int y, int z, int chunkX, int chunkZ) {
         net.minecraft.block.Block block = data.getBlockState(x, y, z).getBlock();
-        return block == Blocks.FLOWING_WATER || block == Blocks.WATER;
+        return block == BlocksIDL.metallic_water_block;
     }
 
     private boolean isTopBlock(ChunkPrimer data, int x, int y, int z, int chunkX, int chunkZ) {
