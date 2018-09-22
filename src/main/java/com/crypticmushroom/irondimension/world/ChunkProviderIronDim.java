@@ -41,6 +41,7 @@ public class ChunkProviderIronDim implements IChunkGenerator {
     private double[] depthRegion;
 
     private final WorldGenIronCaves caveGenerator = new WorldGenIronCaves();
+    private final WorldGenIronRavines ravineGenerator = new WorldGenIronRavines();
 
     public ChunkProviderIronDim(World world, long l, boolean flag) {
         this.world = world;
@@ -73,6 +74,7 @@ public class ChunkProviderIronDim implements IChunkGenerator {
         this.biomesForGeneration = world.getBiomeProvider().getBiomes(biomesForGeneration, cx * 16, cz * 16, 16, 16);
         replaceBiomeBlocks(cx, cz, primer, biomesForGeneration);
         caveGenerator.generate(world, cx, cz, primer);
+        ravineGenerator.generate(world, cx, cz, primer);
 
         Chunk chunk = new Chunk(world, primer, cx, cz);
 
@@ -129,7 +131,7 @@ public class ChunkProviderIronDim implements IChunkGenerator {
                                 if ((d15 += d16) > 0.0D) {
                                     primer.setBlockState(k * 4 + i3, k2 * 8 + l2, j1 * 4 + k3, BlocksIDL.soft_iron.getDefaultState());
                                 } else if (k2 * 8 + l2 < seaLevel) {
-                                    primer.setBlockState(k * 4 + i3, k2 * 8 + l2, j1 * 4 + k3, Blocks.WATER.getDefaultState());
+                                    primer.setBlockState(k * 4 + i3, k2 * 8 + l2, j1 * 4 + k3, BlocksIDL.metallic_water_block.getDefaultState());
                                 }
                             }
 
@@ -277,7 +279,7 @@ public class ChunkProviderIronDim implements IChunkGenerator {
             int i1 = blockpos.getX() + rand.nextInt(16) + 8;
             int i2 = rand.nextInt(256);
             int i3 = blockpos.getZ() + rand.nextInt(16) + 8;
-            (new WorldGenIronLakes(Blocks.FLOWING_WATER)).generate(world, rand, new BlockPos(i1, i2, i3));
+            (new WorldGenIronLakes(BlocksIDL.metallic_water_block)).generate(world, rand, new BlockPos(i1, i2, i3));
         }
 
         if (rand.nextInt(16) == 0) {
@@ -285,7 +287,7 @@ public class ChunkProviderIronDim implements IChunkGenerator {
             int j2 = rand.nextInt(rand.nextInt(256 - 8) + 8);
             int j3 = blockpos.getZ() + rand.nextInt(16) + 8;
             if (j2 < 63 || rand.nextInt(5) == 0) {
-                (new WorldGenIronLakes(Blocks.FLOWING_LAVA)).generate(world, rand, new BlockPos(j1, j2, j3));
+                (new WorldGenIronLakes(BlocksIDL.liquid_iron_block)).generate(world, rand, new BlockPos(j1, j2, j3));
             }
         }
 
