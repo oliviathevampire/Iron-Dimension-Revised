@@ -26,10 +26,14 @@ public final class BlocksRegistryIDL {
         blocks.register("iron_dim_portal", new BlockIronDimPortal());
         blocks.register("iron_dirt", new BlockIronDirt());
         blocks.register("iron_grass", new BlockIronGrass());
-        blocks.register("iron_planks", new BlockIronPlanks());
-        blocks.register("iron_log", new BlockIronLog());
-        blocks.register("iron_leaves", new BlockIronLeaves());
-        blocks.register("iron_sapling", new BlockIronSapling());
+        blocks.register("ironwood_planks", new BlockIronPlanks());
+        blocks.register("hornbeam_planks", new BlockIronPlanks());
+        blocks.register("ironwood_log", new BlockIronLog());
+        blocks.register("hornbeam_log", new BlockIronLog());
+        blocks.register("ironwood_leaves", new BlockIronLeaves(() -> BlocksIDL.ironwood_sapling));
+        blocks.register("hornbeam_leaves", new BlockIronLeaves(() -> BlocksIDL.hornbeam_sapling));
+        blocks.register("ironwood_sapling", new BlockIronSapling());
+        blocks.register("hornbeam_sapling", new BlockHornbeamSapling());
         blocks.register("soft_iron", new BlockSoftIron());
         blocks.register("iron_bricks", new BlockIronBricks());
         Block ironBrick = new BlockIronBricks();

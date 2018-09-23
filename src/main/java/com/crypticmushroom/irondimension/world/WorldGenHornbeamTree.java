@@ -10,9 +10,9 @@ import net.minecraft.world.gen.feature.WorldGenAbstractTree;
 
 import java.util.Random;
 
-public class WorldGenIronTree extends WorldGenAbstractTree {
+public class WorldGenHornbeamTree extends WorldGenAbstractTree {
 
-    public WorldGenIronTree(boolean flag) {
+    public WorldGenHornbeamTree(boolean flag) {
         super(flag);
     }
 
@@ -102,7 +102,7 @@ public class WorldGenIronTree extends WorldGenAbstractTree {
                         blockID = block.getBlock();
 
                         if (blockID == Blocks.AIR || blockID.isLeaves(block, world, cPos)) {
-                            this.setBlockAndNotifyAdequately(world, cPos, BlocksIDL.ironwood_log.getDefaultState());
+                            this.setBlockAndNotifyAdequately(world, cPos, BlocksIDL.hornbeam_log.getDefaultState());
                         }
                     }
 

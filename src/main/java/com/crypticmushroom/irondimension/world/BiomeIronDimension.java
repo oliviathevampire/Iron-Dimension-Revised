@@ -20,7 +20,7 @@ import java.util.Random;
 
 public class BiomeIronDimension extends Biome {
 
-    private WorldGenAbstractTree genTree;
+    private WorldGenAbstractTree genIronTree, genHornbeamTree;
 
     public BiomeIronDimension(BiomeProperties props) {
         super(props);
@@ -37,11 +37,12 @@ public class BiomeIronDimension extends Biome {
         topBlock = BlocksIDL.iron_grass.getDefaultState();
         fillerBlock = BlocksIDL.iron_dirt.getDefaultState();
 
-        genTree = new WorldGenIronTree(false);
+        genIronTree = new WorldGenIronTree(false);
+        genHornbeamTree = new WorldGenHornbeamTree(false);
 
         decorator.flowersPerChunk = -999;
         decorator.reedsPerChunk = 0;
-        decorator.treesPerChunk = 5;
+        decorator.treesPerChunk = 2;
         decorator.grassPerChunk = -999;
     }
 
@@ -79,8 +80,16 @@ public class BiomeIronDimension extends Biome {
     }
 
     @Override
-    public WorldGenAbstractTree getRandomTreeFeature(Random par1Random) {
-        return par1Random.nextInt(5) == 0 ? new WorldGenNoTree() : par1Random.nextInt(7) == 0 ? genTree : new WorldGenNoTree();
+    public WorldGenAbstractTree getRandomTreeFeature(Random random) {
+        if (random.nextInt(5) == 0) {
+            if (random.nextInt(5) == 0) {
+                return genHornbeamTree;
+            } else {
+                return genIronTree;
+            }
+        } else {
+            return new WorldGenNoTree();
+        }
     }
 
     @Override

@@ -4,6 +4,7 @@ import com.crypticmushroom.irondimension.TabIDL;
 import com.crypticmushroom.irondimension.registry.BlocksIDL;
 import com.crypticmushroom.irondimension.registry.util.RegisterModelUtil;
 import com.google.common.collect.Lists;
+import net.minecraft.block.Block;
 import net.minecraft.block.BlockLeaves;
 import net.minecraft.block.BlockPlanks;
 import net.minecraft.block.state.BlockStateContainer;
@@ -19,14 +20,19 @@ import net.minecraftforge.fml.relauncher.SideOnly;
 
 import java.util.List;
 import java.util.Random;
+import java.util.function.Supplier;
 
 public class BlockIronLeaves extends BlockLeaves implements RegisterModelUtil {
 
-    public BlockIronLeaves() {
+    private final Supplier<Block> sapling;
+
+    public BlockIronLeaves(Supplier<Block> blockSupplier) {
         setHardness(0.2F);
         setLightOpacity(1);
         setCreativeTab(TabIDL.tabIDL);
         setDefaultState(blockState.getBaseState().withProperty(CHECK_DECAY, true).withProperty(DECAYABLE, true));
+
+        sapling = blockSupplier;
     }
 
     @Override
@@ -41,7 +47,7 @@ public class BlockIronLeaves extends BlockLeaves implements RegisterModelUtil {
 
     @Override
     public Item getItemDropped(IBlockState state, Random par2Random, int par3) {
-        return Item.getItemFromBlock(BlocksIDL.iron_sapling);
+        return Item.getItemFromBlock(sapling.get());
     }
 
     @Override

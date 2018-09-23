@@ -62,10 +62,14 @@ public class ItemsRegistryIDL {
         //Blocks
         items.registerBlock(BlocksIDL.iron_dirt);
         items.registerBlock(BlocksIDL.iron_grass);
-        items.registerBlock(BlocksIDL.iron_planks);
-        items.registerBlock(BlocksIDL.iron_log);
-        items.registerBlock(BlocksIDL.iron_leaves);
-        items.registerBlock(BlocksIDL.iron_sapling);
+        items.registerBlock(BlocksIDL.ironwood_planks);
+        items.registerBlock(BlocksIDL.hornbeam_planks);
+        items.registerBlock(BlocksIDL.ironwood_log);
+        items.registerBlock(BlocksIDL.hornbeam_log);
+        items.registerBlock(BlocksIDL.ironwood_leaves);
+        items.registerBlock(BlocksIDL.hornbeam_leaves);
+        items.registerBlock(BlocksIDL.ironwood_sapling);
+        items.registerBlock(BlocksIDL.hornbeam_sapling);
         items.registerBlock(BlocksIDL.soft_iron);
         items.registerBlock(BlocksIDL.iron_bricks);
         items.registerBlock(BlocksIDL.iron_brick_stairs);
