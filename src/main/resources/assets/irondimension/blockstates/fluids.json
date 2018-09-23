@@ -1,0 +1,13 @@
+{
+  "forge_marker": 1,
+  "variants": {
+    "metallic_water": {
+      "model": "forge:fluid",
+      "custom": { "fluid": "metallic_water" }
+    },
+    "liquid_iron": {
+      "model": "forge:fluid",
+      "custom": { "fluid": "liquid_iron" }
+    }
+  }
+}
