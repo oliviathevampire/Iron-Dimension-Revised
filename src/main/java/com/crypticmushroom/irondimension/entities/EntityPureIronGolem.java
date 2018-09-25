@@ -1,13 +1,17 @@
 package com.crypticmushroom.irondimension.entities;
 
 import com.crypticmushroom.irondimension.IronDimension;
+import com.google.common.base.Predicate;
 import net.minecraft.block.Block;
 import net.minecraft.block.material.Material;
 import net.minecraft.block.state.IBlockState;
 import net.minecraft.entity.Entity;
+import net.minecraft.entity.EntityLiving;
 import net.minecraft.entity.SharedMonsterAttributes;
 import net.minecraft.entity.ai.*;
+import net.minecraft.entity.monster.EntityCreeper;
 import net.minecraft.entity.monster.EntityIronGolem;
+import net.minecraft.entity.monster.IMob;
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.init.SoundEvents;
 import net.minecraft.util.DamageSource;
@@ -18,6 +22,8 @@ import net.minecraft.util.math.MathHelper;
 import net.minecraft.world.World;
 import net.minecraftforge.fml.relauncher.Side;
 import net.minecraftforge.fml.relauncher.SideOnly;
+
+import javax.annotation.Nullable;
 
 public class EntityPureIronGolem extends EntityIronGolem {
 
@@ -37,6 +43,7 @@ public class EntityPureIronGolem extends EntityIronGolem {
         this.tasks.addTask(4, new EntityAIWatchClosest(this, EntityPlayer.class, 6.0F));
         this.tasks.addTask(5, new EntityAILookIdle(this));
         this.targetTasks.addTask(1, new EntityAIHurtByTarget(this, false));
+        this.targetTasks.addTask(3, new EntityAINearestAttackableTarget(this, EntityLiving.class, 10, false, true, (Predicate<EntityLiving>) apply -> apply != null && IMob.VISIBLE_MOB_SELECTOR.apply(apply) && !(apply instanceof EntityCreeper)));
     }
 
     @Override
@@ -91,6 +98,11 @@ public class EntityPureIronGolem extends EntityIronGolem {
         } else {
             super.handleStatusUpdate(id);
         }
+    }
+
+    @SideOnly(Side.CLIENT)
+    public int getAttackTimer() {
+        return this.attackTimer;
     }
 
     @Override
