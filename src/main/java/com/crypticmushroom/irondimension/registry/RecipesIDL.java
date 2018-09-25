@@ -21,6 +21,8 @@ public class RecipesIDL {
         OreDictionary.registerOre("treeLeaves", BlocksIDL.hornbeam_leaves);
         OreDictionary.registerOre("treeSapling", BlocksIDL.ironwood_sapling);
         OreDictionary.registerOre("treeSapling", BlocksIDL.hornbeam_sapling);
+        OreDictionary.registerOre("planksIron", BlocksIDL.ironwood_planks);
+        OreDictionary.registerOre("planksIron", BlocksIDL.hornbeam_planks);
 
         GameRegistry.addSmelting(BlocksIDL.ironwood_log, new ItemStack(ItemsIDL.iron_charcoal, 1, 1), 0.15F);
         GameRegistry.addSmelting(BlocksIDL.hornbeam_log, new ItemStack(ItemsIDL.iron_charcoal, 1, 1), 0.15F);

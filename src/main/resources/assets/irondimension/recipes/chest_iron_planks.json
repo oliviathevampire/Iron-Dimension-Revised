@@ -7,10 +7,10 @@
   ],
   "key": {
     "P": {
-      "item": "irondimension:iron_planks"
+      "item": "#IRONPLANKS"
     }
   },
   "result": {
-    "item": "chest"
+    "item": "minecraft:chest"
   }
 }
