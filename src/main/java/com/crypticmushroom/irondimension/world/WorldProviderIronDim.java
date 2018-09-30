@@ -55,7 +55,7 @@ public class WorldProviderIronDim extends WorldProviderSurface {
     @Override
     public void init() {
         super.init();
-        this.biomeProvider = new BiomeProviderSingle(BiomeIDL.iron_dimension);
+        this.biomeProvider = new BiomeProviderIDL(world);
     }
 
     @Override
@@ -196,7 +196,7 @@ public class WorldProviderIronDim extends WorldProviderSurface {
     public Biome getBiomeForCoords(BlockPos pos) {
         Biome biome = super.getBiomeForCoords(pos);
         if (biome == null) {
-            biome = BiomeIDL.iron_dimension;
+            biome = BiomeIDL.iron_highlands;
         }
         return biome;
     }

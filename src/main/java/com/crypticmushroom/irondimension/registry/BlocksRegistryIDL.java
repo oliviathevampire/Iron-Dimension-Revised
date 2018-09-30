@@ -42,6 +42,7 @@ public final class BlocksRegistryIDL {
         blocks.register("super_iron_block", new BlockCompact());
         blocks.register("radioactive_iron_ore", new BlockIDLOre());
         blocks.register("radioactive_iron_block", new BlockCompact());
+        blocks.register("fervid_iron_ore", new BlockIDLOre());
 
         blocks.register("metallic_water_block", new FluidMetallicWater(FluidsIDL.metallicWater, Material.WATER));
         blocks.register("liquid_iron_block", new FluidLiquidIron(FluidsIDL.liquidIron, Material.LAVA));

@@ -1,4 +1,4 @@
-package com.crypticmushroom.irondimension.world;
+package com.crypticmushroom.irondimension.world.gen;
 
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.world.World;

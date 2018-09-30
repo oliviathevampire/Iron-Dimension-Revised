@@ -28,7 +28,7 @@ import javax.annotation.Nullable;
 public class EntityPureIronGolem extends EntityIronGolem {
 
     private int attackTimer;
-    public static final ResourceLocation LOOT_TABLE = new ResourceLocation(IronDimension.MODID, "pure_iron_golem");
+    public static final ResourceLocation LOOT_TABLE = new ResourceLocation(IronDimension.MODID, "entity/iron/pure_iron_golem");
 
     public EntityPureIronGolem(World world) {
         super(world);

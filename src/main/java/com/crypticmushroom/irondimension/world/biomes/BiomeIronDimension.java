@@ -1,12 +1,13 @@
-package com.crypticmushroom.irondimension.world;
+package com.crypticmushroom.irondimension.world.biomes;
 
 import com.crypticmushroom.irondimension.entities.EntityIronCow;
 import com.crypticmushroom.irondimension.entities.EntityIronPig;
 import com.crypticmushroom.irondimension.entities.EntityPureIronGolem;
 import com.crypticmushroom.irondimension.registry.BlocksIDL;
+import com.crypticmushroom.irondimension.world.gen.WorldGenIronTree;
+import com.crypticmushroom.irondimension.world.gen.WorldGenNoTree;
 import net.minecraft.block.material.Material;
 import net.minecraft.block.state.IBlockState;
-import net.minecraft.init.Blocks;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.world.World;
 import net.minecraft.world.biome.Biome;
@@ -20,7 +21,7 @@ import java.util.Random;
 
 public class BiomeIronDimension extends Biome {
 
-    private WorldGenAbstractTree genIronTree, genHornbeamTree;
+    private WorldGenAbstractTree genIronTree;
 
     public BiomeIronDimension(BiomeProperties props) {
         super(props);
@@ -38,7 +39,6 @@ public class BiomeIronDimension extends Biome {
         fillerBlock = BlocksIDL.iron_dirt.getDefaultState();
 
         genIronTree = new WorldGenIronTree(false);
-        genHornbeamTree = new WorldGenHornbeamTree(false);
 
         decorator.flowersPerChunk = -999;
         decorator.reedsPerChunk = 0;
@@ -70,23 +70,19 @@ public class BiomeIronDimension extends Biome {
     @Override
     @SideOnly(Side.CLIENT)
     public int getGrassColorAtPos(BlockPos pos) {
-        return 0xc0c0c0;
+        return 0xe0e0e0;
     }
 
     @Override
     @SideOnly(Side.CLIENT)
     public int getFoliageColorAtPos(BlockPos pos) {
-        return 0xc0c0c0;
+        return 0xe0e0e0;
     }
 
     @Override
     public WorldGenAbstractTree getRandomTreeFeature(Random random) {
         if (random.nextInt(5) == 0) {
-            if (random.nextInt(5) == 0) {
-                return genHornbeamTree;
-            } else {
-                return genIronTree;
-            }
+            return genIronTree;
         } else {
             return new WorldGenNoTree();
         }

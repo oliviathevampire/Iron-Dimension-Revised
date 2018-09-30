@@ -1,4 +1,4 @@
-package com.crypticmushroom.irondimension.world;
+package com.crypticmushroom.irondimension.world.gen;
 
 import com.crypticmushroom.irondimension.registry.BlocksIDL;
 import net.minecraft.block.Block;

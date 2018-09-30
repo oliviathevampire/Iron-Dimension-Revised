@@ -1,9 +1,11 @@
 package com.crypticmushroom.irondimension.world;
 
 import com.crypticmushroom.irondimension.registry.BlocksIDL;
+import com.crypticmushroom.irondimension.world.gen.WorldGenIronCaves;
+import com.crypticmushroom.irondimension.world.gen.WorldGenIronLakes;
+import com.crypticmushroom.irondimension.world.gen.WorldGenIronRavines;
 import net.minecraft.block.BlockFalling;
 import net.minecraft.entity.EnumCreatureType;
-import net.minecraft.init.Blocks;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.util.math.MathHelper;
 import net.minecraft.world.World;
@@ -15,7 +17,6 @@ import net.minecraft.world.chunk.ChunkPrimer;
 import net.minecraft.world.gen.IChunkGenerator;
 import net.minecraft.world.gen.NoiseGeneratorOctaves;
 import net.minecraft.world.gen.NoiseGeneratorPerlin;
-import net.minecraft.world.gen.feature.WorldGenLakes;
 
 import javax.annotation.Nullable;
 import java.util.List;

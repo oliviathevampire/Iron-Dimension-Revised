@@ -77,6 +77,7 @@ public class ItemsRegistryIDL {
         items.registerBlock(BlocksIDL.super_iron_block);
         items.registerBlock(BlocksIDL.radioactive_iron_ore);
         items.registerBlock(BlocksIDL.radioactive_iron_block);
+        items.registerBlock(BlocksIDL.fervid_iron_ore);
     }
 
     public static class ItemRegistryHelper {

@@ -3,6 +3,7 @@ package com.crypticmushroom.irondimension.entities;
 import com.crypticmushroom.irondimension.IronDimension;
 import com.crypticmushroom.irondimension.registry.BiomeIDL;
 import com.crypticmushroom.irondimension.registry.BlocksIDL;
+import com.crypticmushroom.irondimension.world.biomes.BiomeIronDimension;
 import net.minecraft.entity.EntityAgeable;
 import net.minecraft.entity.passive.EntityPig;
 import net.minecraft.util.ResourceLocation;
@@ -12,7 +13,7 @@ import net.minecraft.world.World;
 
 public class EntityIronPig extends EntityPig {
 
-    public static final ResourceLocation LOOT_TABLE = new ResourceLocation(IronDimension.MODID, "iron_pig");
+    public static final ResourceLocation LOOT_TABLE = new ResourceLocation(IronDimension.MODID, "entity/iron/iron_pig");
 
     public EntityIronPig(World world) {
         super(world);
@@ -32,7 +33,7 @@ public class EntityIronPig extends EntityPig {
         BlockPos blockpos = new BlockPos(x, y, z);
         return this.world.getBlockState(blockpos.down()).getBlock() == BlocksIDL.iron_grass
                 && this.world.getLight(blockpos) > 8
-                && world.getBiome(new BlockPos(this)) == BiomeIDL.iron_dimension;
+                && world.getBiome(new BlockPos(this)) instanceof BiomeIronDimension;
     }
 
     @Override

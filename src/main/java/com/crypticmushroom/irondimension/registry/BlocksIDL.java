@@ -27,6 +27,7 @@ public class BlocksIDL {
     public static final Block super_iron_block = null;
     public static final Block radioactive_iron_ore = null;
     public static final Block radioactive_iron_block = null;
+    public static final Block fervid_iron_ore = null;
 
     public static final Block metallic_water_block = null;
     public static final Block liquid_iron_block = null;
