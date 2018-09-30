@@ -1,6 +1,6 @@
 package com.crypticmushroom.irondimension;
 
-import com.crypticmushroom.irondimension.world.BiomeIronDimension;
+import com.crypticmushroom.irondimension.world.biomes.BiomeIronDimension;
 import net.minecraft.init.Blocks;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.world.gen.feature.WorldGenLiquids;
