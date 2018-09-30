@@ -2,8 +2,7 @@ package com.crypticmushroom.irondimension.blocks;
 
 import com.crypticmushroom.irondimension.TabIDL;
 import com.crypticmushroom.irondimension.registry.util.RegisterModelUtil;
-import com.crypticmushroom.irondimension.world.WorldGenHornbeamTree;
-import com.crypticmushroom.irondimension.world.WorldGenIronTree;
+import com.crypticmushroom.irondimension.world.gen.WorldGenHornbeamTree;
 import net.minecraft.block.BlockBush;
 import net.minecraft.block.IGrowable;
 import net.minecraft.block.SoundType;
