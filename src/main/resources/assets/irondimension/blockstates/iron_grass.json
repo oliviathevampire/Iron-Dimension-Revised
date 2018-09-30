@@ -7,7 +7,7 @@
       "bottom": "irondimension:block/iron/irondirt",
       "top": "irondimension:block/iron/iron_grass_top",
       "side": "irondimension:block/iron/iron_grass_side",
-      "overlay": "irondimension:block/iron/iron_grass_side"
+      "overlay": "irondimension:block/iron/iron_grass_side_overlay"
     }
   },
   "variants": {
