@@ -3,7 +3,7 @@
   "modid": "irondimension",
   "name": "Iron Dimension Legacy",
   "description": "The port of the original Iron Dimension mod.",
-  "version": 1.0.0,
+  "version": "${version}",
   "mcversion": "${mcversion}",
   "url": "https://minecraft.curseforge.com/projects/iron-dimension-legacy",
   "updateUrl": "",
