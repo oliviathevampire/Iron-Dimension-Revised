@@ -13,7 +13,7 @@ import net.minecraft.world.World;
 
 public class EntityIronCow extends EntityCow {
 
-    public static final ResourceLocation LOOT_TABLE = new ResourceLocation(IronDimension.MODID, "entity/iron/iron_cow");
+    public static final ResourceLocation LOOT_TABLE = new ResourceLocation(IronDimension.MODID, "iron_cow");
 
     public EntityIronCow(World world) {
         super(world);
