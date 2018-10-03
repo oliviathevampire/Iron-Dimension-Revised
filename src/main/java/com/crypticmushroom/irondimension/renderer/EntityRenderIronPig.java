@@ -7,7 +7,7 @@ import net.minecraft.entity.passive.EntityPig;
 import net.minecraft.util.ResourceLocation;
 
 public class EntityRenderIronPig extends RenderPig {
-    private static final ResourceLocation textureLoc = new ResourceLocation(IronDimension.MODEL_DIR + "iron_pig.png");
+    private static final ResourceLocation textureLoc = new ResourceLocation(IronDimension.MODEL_DIR + "iron/iron_pig.png");
 
     public EntityRenderIronPig(RenderManager manager, float shadowSize) {
         super(manager);

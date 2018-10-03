@@ -7,7 +7,7 @@ import net.minecraft.entity.monster.EntityIronGolem;
 import net.minecraft.util.ResourceLocation;
 
 public class EntityRenderPureIronGolem extends RenderIronGolem {
-    private static final ResourceLocation textureLoc = new ResourceLocation(IronDimension.MODEL_DIR + "pure_iron_golem.png");
+    private static final ResourceLocation textureLoc = new ResourceLocation(IronDimension.MODEL_DIR + "iron/pure_iron_golem.png");
 
     public EntityRenderPureIronGolem(RenderManager manager, float shadowSize) {
         super(manager);

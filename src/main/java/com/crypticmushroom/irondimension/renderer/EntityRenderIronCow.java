@@ -7,7 +7,7 @@ import net.minecraft.entity.passive.EntityCow;
 import net.minecraft.util.ResourceLocation;
 
 public class EntityRenderIronCow extends RenderCow {
-    private static final ResourceLocation textureLoc = new ResourceLocation(IronDimension.MODEL_DIR + "iron_cow.png");
+    private static final ResourceLocation textureLoc = new ResourceLocation(IronDimension.MODEL_DIR + "iron/iron_cow.png");
 
     public EntityRenderIronCow(RenderManager manager, float shadowSize) {
         super(manager);
