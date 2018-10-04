@@ -4,14 +4,18 @@
     "model": "grass",
     "textures": {
       "particle": "irondimension:block/iron/irondirt",
-      "bottom": "irondimension:block/iron/irondirt",
-      "top": "irondimension:block/iron/iron_grass_top",
-      "side": "irondimension:block/iron/iron_grass_side",
-      "overlay": "irondimension:block/iron/iron_grass_side_overlay"
+      "bottom":   "irondimension:block/iron/irondirt",
+      "side":     "irondimension:block/iron/iron_grass_side",
+      "overlay":  "irondimension:block/iron/iron_grass_side_overlay"
     }
   },
   "variants": {
-    "normal": [{}],
+    "normal": [
+      { "textures": { "top": "irondimension:block/iron/iron_grass_top" } },
+      { "textures": { "top": "irondimension:block/iron/iron_grass_top" }, "y": 90  },
+      { "textures": { "top": "irondimension:block/iron/iron_grass_top" }, "y": 180 },
+      { "textures": { "top": "irondimension:block/iron/iron_grass_top" }, "y": 270 }
+    ],
     "inventory": [{}]
   }
 }
