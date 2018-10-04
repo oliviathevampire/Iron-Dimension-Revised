@@ -1,6 +1,7 @@
 package com.crypticmushroom.irondimension.registry;
 
 import com.crypticmushroom.irondimension.IronDimension;
+import com.crypticmushroom.irondimension.blocks.BlockIronDimPortal;
 import com.crypticmushroom.irondimension.items.*;
 import com.crypticmushroom.irondimension.registry.util.RegisterModelUtil;
 import com.google.common.collect.ImmutableList;
@@ -35,8 +36,15 @@ public class ItemsRegistryIDL {
                 return 1600;
             }
         });
+        items.register("iron_silk", new ItemIDLGeneric());
+        items.register("radioactive_iron_silk", new ItemIDLGeneric());
         items.register("super_iron_ingot", new ItemIDLGeneric());
         items.register("radioactive_iron_ingot", new ItemRadioactive());
+        items.register("radioactive_iron_nugget", new ItemRadioactive());
+        items.register("fervid_iron_ingot", new ItemIDLGeneric());
+        items.register("frozen_iron_ingot", new ItemIDLGeneric());
+        items.register("lumen_iron_nugget", new ItemIDLGeneric());
+        items.register("ultra_iron_ingot", new ItemIDLGeneric());
 
         items.register("super_iron_sword", new ItemSuperIronSword(TOOL_SUPER_IRON));
         items.register("super_iron_pickaxe", new ItemSuperIronPickaxe(TOOL_SUPER_IRON));

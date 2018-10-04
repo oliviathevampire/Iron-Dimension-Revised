@@ -19,8 +19,15 @@ public class ItemsIDL {
 
     public static final Item iron_stick = null;
     public static final Item iron_charcoal = null;
+    public static final Item iron_silk = null;
+    public static final Item radioactive_iron_silk = null;
     public static final Item super_iron_ingot = null;
     public static final Item radioactive_iron_ingot = null;
+    public static final Item radioactive_iron_nugget = null;
+    public static final Item fervid_iron_ingot = null;
+    public static final Item frozen_iron_ingot = null;
+    public static final Item lumen_iron_nugget = null;
+    public static final Item ultra_iron_ingot = null;
 
     public static final Item super_iron_sword = null;
     public static final Item super_iron_pickaxe = null;
