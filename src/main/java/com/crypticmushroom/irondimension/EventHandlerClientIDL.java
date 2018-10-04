@@ -4,7 +4,9 @@ import com.crypticmushroom.irondimension.registry.BlocksIDL;
 import net.minecraft.block.state.IBlockState;
 import net.minecraft.client.renderer.color.BlockColors;
 import net.minecraft.client.renderer.color.IBlockColor;
+import net.minecraft.client.renderer.color.ItemColors;
 import net.minecraft.client.renderer.texture.TextureMap;
+import net.minecraft.item.ItemBlock;
 import net.minecraft.util.ResourceLocation;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.world.ColorizerGrass;
@@ -25,7 +27,21 @@ public class EventHandlerClientIDL {
     public static void registerBlockColors(ColorHandlerEvent.Block e) {
         BlockColors blocks = e.getBlockColors();
 
-        blocks.registerBlockColorHandler((state, worldIn, pos, tintIndex) -> worldIn != null && pos != null ? BiomeColorHelper.getGrassColorAtPos(worldIn, pos) : 0xFFFFFF, BlocksIDL.iron_grass);
+        blocks.registerBlockColorHandler((state, worldIn, pos, tintIndex) -> worldIn != null && pos != null ? BiomeColorHelper.getGrassColorAtPos(worldIn, pos) : 0xFFFFFF,
+                BlocksIDL.iron_grass,
+                BlocksIDL.ironwood_leaves,
+                BlocksIDL.hornbeam_leaves);
+    }
+
+    @SubscribeEvent
+    public static void registerItemColors(ColorHandlerEvent.Item e) {
+        BlockColors blocks = e.getBlockColors();
+        ItemColors items = e.getItemColors();
+
+        items.registerItemColorHandler((stack, tintIndex) -> blocks.colorMultiplier(((ItemBlock)stack.getItem()).getBlock().getDefaultState(), null, null, tintIndex),
+                BlocksIDL.iron_grass,
+                BlocksIDL.ironwood_leaves,
+                BlocksIDL.hornbeam_leaves);
     }
 
     @SubscribeEvent
