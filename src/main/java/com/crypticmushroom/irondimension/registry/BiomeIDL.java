@@ -19,37 +19,37 @@ public class BiomeIDL {
             .setRainfall(0)
             .setTemperature(0.7F)
             .setHeightVariation(0.1F)
-            .setBaseHeight(0.5F));
+            .setBaseHeight(0.2F));
     public static final Biome iron_forest = new BiomeIronForest(new Biome.BiomeProperties("Iron Forest")
             .setRainDisabled()
             .setRainfall(0)
             .setTemperature(0.60F)
             .setHeightVariation(0.2F)
-            .setBaseHeight(0.5F));
+            .setBaseHeight(0.3F));
     public static final Biome iron_plains = new BiomeIronPlains(new Biome.BiomeProperties("Iron Plains")
             .setRainDisabled()
             .setRainfall(0)
             .setTemperature(0.65F)
             .setHeightVariation(0.05F)
-            .setBaseHeight(0.3F));
+            .setBaseHeight(0.1F));
     public static final Biome glowing_cliffs = new BiomeGlowingCliffs(new Biome.BiomeProperties("Glowing Cliffs")
             .setRainDisabled()
             .setRainfall(0)
             .setTemperature(0.75F)
             .setHeightVariation(0.05F)
-            .setBaseHeight(0.8F));
+            .setBaseHeight(1.0F));
     public static final Biome noxious_swamp = new BiomeNoxiousSwamp(new Biome.BiomeProperties("Noxious Swamp")
             .setRainDisabled()
             .setRainfall(0)
             .setTemperature(0.75F)
             .setHeightVariation(0.05F)
-            .setBaseHeight(0.5F));
+            .setBaseHeight(0.15F));
     public static final Biome noxious_plains = new BiomeGlowingCliffs(new Biome.BiomeProperties("Noxious Plains")
             .setRainDisabled()
             .setRainfall(0)
             .setTemperature(0.70F)
             .setHeightVariation(0.05F)
-            .setBaseHeight(0.3F));
+            .setBaseHeight(0.1F));
 
 
     @SubscribeEvent
