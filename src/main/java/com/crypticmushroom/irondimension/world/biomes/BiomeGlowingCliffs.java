@@ -24,7 +24,7 @@ public class BiomeGlowingCliffs extends BiomeIronDimension {
             int Zcoord = pos.getZ() + rand.nextInt(16);
             int Ycoord = rand.nextInt(128);
             new WorldGenMinable(BlocksIDL.fervid_iron_ore.getDefaultState(), 9,
-                    input -> input == BlocksIDL.soft_iron.getDefaultState()).generate(world, rand, new BlockPos(Xcoord, Ycoord, Zcoord));
+                    input -> input == BlocksIDL.ironstone.getDefaultState()).generate(world, rand, new BlockPos(Xcoord, Ycoord, Zcoord));
         }
     }
 

@@ -20,6 +20,7 @@ public class BlocksIDL {
     public static final Block hornbeam_leaves = null;
     public static final Block ironwood_sapling = null;
     public static final Block hornbeam_sapling = null;
+    public static final Block ironstone = null;
     public static final Block soft_iron = null;
     public static final Block iron_bricks = null;
     public static final Block iron_brick_stairs = null;

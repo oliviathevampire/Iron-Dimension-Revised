@@ -188,7 +188,7 @@ public class WorldGenIronRavines extends MapGenRavine {
         IBlockState top = biome.topBlock;
         IBlockState filler = biome.fillerBlock;
 
-        if (state.getBlock() == BlocksIDL.soft_iron || state.getBlock() == top.getBlock() || state.getBlock() == filler.getBlock()) {
+        if (state.getBlock() == BlocksIDL.ironstone || state.getBlock() == top.getBlock() || state.getBlock() == filler.getBlock()) {
             if (y - 1 < 10) {
                 data.setBlockState(x, y, z, FLOWING_LAVA);
             } else {

@@ -78,6 +78,7 @@ public class ItemsRegistryIDL {
         items.registerBlock(BlocksIDL.hornbeam_leaves);
         items.registerBlock(BlocksIDL.ironwood_sapling);
         items.registerBlock(BlocksIDL.hornbeam_sapling);
+        items.registerBlock(BlocksIDL.ironstone);
         items.registerBlock(BlocksIDL.soft_iron);
         items.registerBlock(BlocksIDL.iron_bricks);
         items.registerBlock(BlocksIDL.iron_brick_stairs);

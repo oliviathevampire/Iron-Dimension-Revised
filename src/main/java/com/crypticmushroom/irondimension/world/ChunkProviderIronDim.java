@@ -130,7 +130,7 @@ public class ChunkProviderIronDim implements IChunkGenerator {
 
                             for (int k3 = 0; k3 < 4; ++k3) {
                                 if ((d15 += d16) > 0.0D) {
-                                    primer.setBlockState(k * 4 + i3, k2 * 8 + l2, j1 * 4 + k3, BlocksIDL.soft_iron.getDefaultState());
+                                    primer.setBlockState(k * 4 + i3, k2 * 8 + l2, j1 * 4 + k3, BlocksIDL.ironstone.getDefaultState());
                                 } else if (k2 * 8 + l2 < seaLevel) {
                                     primer.setBlockState(k * 4 + i3, k2 * 8 + l2, j1 * 4 + k3, BlocksIDL.metallic_water_block.getDefaultState());
                                 }

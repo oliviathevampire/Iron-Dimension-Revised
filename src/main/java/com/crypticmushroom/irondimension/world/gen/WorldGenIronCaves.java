@@ -164,7 +164,7 @@ public class WorldGenIronCaves extends MapGenCaves {
     }
 
     protected boolean canReplaceBlock(IBlockState block, IBlockState material) {
-        if (block.getBlock() == BlocksIDL.soft_iron) {
+        if (block.getBlock() == BlocksIDL.ironstone) {
             return true;
         } else if (block.getBlock() == BlocksIDL.iron_dirt) {
             return true;

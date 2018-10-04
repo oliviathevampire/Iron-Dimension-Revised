@@ -50,20 +50,28 @@ public class BiomeIronDimension extends Biome {
     public void decorate(World world, Random rand, BlockPos pos) {
         super.decorate(world, rand, pos);
 
-        for (int ocean = 0; ocean < 10; ocean++) {
+        for (int rarity = 0; rarity < 25; rarity++) {
+            int Xcoord = pos.getX() + rand.nextInt(16);
+            int Zcoord = pos.getZ() + rand.nextInt(16);
+            int Ycoord = rand.nextInt(64);
+            new WorldGenMinable(BlocksIDL.soft_iron.getDefaultState(), 17,
+                    input -> input == BlocksIDL.ironstone.getDefaultState()).generate(world, rand, new BlockPos(Xcoord, Ycoord, Zcoord));
+        }
+
+        for (int rarity = 0; rarity < 10; rarity++) {
             int Xcoord = pos.getX() + rand.nextInt(16);
             int Zcoord = pos.getZ() + rand.nextInt(16);
             int Ycoord = rand.nextInt(64);
             new WorldGenMinable(BlocksIDL.super_iron_ore.getDefaultState(), 9,
-                    input -> input == BlocksIDL.soft_iron.getDefaultState()).generate(world, rand, new BlockPos(Xcoord, Ycoord, Zcoord));
+                    input -> input == BlocksIDL.ironstone.getDefaultState()).generate(world, rand, new BlockPos(Xcoord, Ycoord, Zcoord));
         }
 
-        for (int ocean = 0; ocean < 5; ocean++) {
+        for (int rarity = 0; rarity < 5; rarity++) {
             int Xcoord = pos.getX() + rand.nextInt(16);
             int Zcoord = pos.getZ() + rand.nextInt(16);
             int Ycoord = rand.nextInt(32);
             new WorldGenMinable(BlocksIDL.radioactive_iron_ore.getDefaultState(), 8,
-                    input -> input == BlocksIDL.soft_iron.getDefaultState()).generate(world, rand, new BlockPos(Xcoord, Ycoord, Zcoord));
+                    input -> input == BlocksIDL.ironstone.getDefaultState()).generate(world, rand, new BlockPos(Xcoord, Ycoord, Zcoord));
         }
     }
 
@@ -114,12 +122,12 @@ public class BiomeIronDimension extends Biome {
 
                 if (state.getMaterial() == Material.AIR) {
                     j = -1;
-                } else if (state.getBlock() == BlocksIDL.soft_iron) {
+                } else if (state.getBlock() == BlocksIDL.ironstone) {
                     if (j == -1) {
                         if (depth <= 0) {
                             //We are below the noise depth
                             stateTop = AIR;
-                            stateFiller = BlocksIDL.soft_iron.getDefaultState();
+                            stateFiller = BlocksIDL.ironstone.getDefaultState();
                         } else if (height >= ocean - 4 && height <= ocean + 1) /*Variable height is between 59 and 65*/ {
                             //This is the correct zone to generate the topBlock and fillerBlock
                             stateTop = this.topBlock;
@@ -142,7 +150,7 @@ public class BiomeIronDimension extends Biome {
                             chunkPrimer.setBlockState(zChunk, height, xChunk, stateTop);
                         } else if (height < ocean - 7 - depth) /*Variable height is below the average of 54*/ {
                             stateTop = AIR;
-                            stateFiller = BlocksIDL.soft_iron.getDefaultState();
+                            stateFiller = BlocksIDL.ironstone.getDefaultState();
                             chunkPrimer.setBlockState(zChunk, height, xChunk, BlocksIDL.iron_dirt.getDefaultState());
                         } else {
                             chunkPrimer.setBlockState(zChunk, height, xChunk, stateFiller);
