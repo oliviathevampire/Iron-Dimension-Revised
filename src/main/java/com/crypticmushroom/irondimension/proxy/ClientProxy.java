@@ -20,6 +20,10 @@ public class ClientProxy extends CommonProxy {
         RenderingRegistry.registerEntityRenderingHandler(EntityPureIronGolem.class, m -> new EntityRenderPureIronGolem(m, 0.5F));
         RenderingRegistry.registerEntityRenderingHandler(EntityIronSpider.class, m -> new EntityRenderIronSpider(m, 1.0F));
         RenderingRegistry.registerEntityRenderingHandler(EntityIronZombie.class, m -> new EntityRenderIronZombie(m, 0.5F));
+        RenderingRegistry.registerEntityRenderingHandler(EntityRadioactiveIronGolem.class, m -> new EntityRenderRadioactiveIronGolem(m, 0.5F));
+        RenderingRegistry.registerEntityRenderingHandler(EntityRadioactiveIronSkeleton.class, m -> new EntityRenderRadioactiveIronSkeleton(m, 0.5F));
+        RenderingRegistry.registerEntityRenderingHandler(EntityRadioactiveIronSpider.class, m -> new EntityRenderRadioactiveIronSpider(m, 1.0F));
+        RenderingRegistry.registerEntityRenderingHandler(EntityRadioactiveIronZombie.class, m -> new EntityRenderRadioactiveIronZombie(m, 0.5F));
     }
 
     @Override
