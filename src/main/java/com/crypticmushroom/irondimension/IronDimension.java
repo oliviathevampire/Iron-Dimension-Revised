@@ -65,7 +65,6 @@ public class IronDimension {
         logger.info("DIRT BLOCK >> {}", Blocks.DIRT.getRegistryName());
 
         ItemsIDL.initRepairMaterials();
-        MinecraftForge.TERRAIN_GEN_BUS.register(new EventHandlerTerrainIDL());
     }
 
     @EventHandler

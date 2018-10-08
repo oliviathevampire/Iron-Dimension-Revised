@@ -19,7 +19,7 @@ public class BiomeGlowingCliffs extends BiomeIronDimension {
     public void decorate(World world, Random rand, BlockPos pos) {
         super.decorate(world, rand, pos);
 
-        for (int ocean = 0; ocean < 10; ocean++) {
+        for (int chance = 0; chance < 10; chance++) {
             int Xcoord = pos.getX() + rand.nextInt(16);
             int Zcoord = pos.getZ() + rand.nextInt(16);
             int Ycoord = rand.nextInt(128);

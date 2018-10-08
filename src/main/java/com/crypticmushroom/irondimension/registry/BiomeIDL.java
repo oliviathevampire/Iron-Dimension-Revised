@@ -50,7 +50,18 @@ public class BiomeIDL {
             .setTemperature(0.70F)
             .setHeightVariation(0.05F)
             .setBaseHeight(0.1F));
-
+    public static final Biome molten_peaks = new BiomeMoltenPeaks(new Biome.BiomeProperties("Molten Peaks")
+            .setRainDisabled()
+            .setRainfall(0)
+            .setTemperature(0.90F)
+            .setHeightVariation(0.8F)
+            .setBaseHeight(0.8F));
+    public static final Biome molten_chasm = new BiomeMoltenChasms(new Biome.BiomeProperties("Molten Chasm")
+            .setRainDisabled()
+            .setRainfall(0)
+            .setTemperature(0.90F)
+            .setHeightVariation(0.05F)
+            .setBaseHeight(0.2F));
 
     @SubscribeEvent
     public static void registerBiomes(RegistryEvent.Register<Biome> event) {
@@ -62,6 +73,8 @@ public class BiomeIDL {
         biomes.register("glowing_cliffs", glowing_cliffs, BiomeDictionary.Type.MESA);
         biomes.register("noxious_swamp", noxious_swamp, BiomeDictionary.Type.SWAMP, BiomeDictionary.Type.WASTELAND, BiomeDictionary.Type.WET);
         biomes.register("noxious_plains", noxious_plains, BiomeDictionary.Type.PLAINS, BiomeDictionary.Type.WASTELAND);
+        biomes.register("molten_peaks", molten_peaks, BiomeDictionary.Type.HOT, BiomeDictionary.Type.MOUNTAIN);
+        biomes.register("molten_chasm", molten_chasm, BiomeDictionary.Type.HOT, BiomeDictionary.Type.WASTELAND);
     }
 
     private static class BiomeRegistry {

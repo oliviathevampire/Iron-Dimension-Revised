@@ -21,10 +21,12 @@ import java.util.Random;
 
 public class BiomeIronDimension extends Biome {
 
+    public IronDimDecorator decorator;
     private WorldGenAbstractTree genIronTree;
 
     public BiomeIronDimension(BiomeProperties props) {
         super(props);
+        decorator = getBiomeDecorator();
 
         spawnableCreatureList.clear();
         spawnableMonsterList.clear();
@@ -40,39 +42,16 @@ public class BiomeIronDimension extends Biome {
 
         genIronTree = new WorldGenIronTree(false);
 
-        decorator.flowersPerChunk = -999;
-        decorator.reedsPerChunk = 0;
         decorator.treesPerChunk = 2;
-        decorator.grassPerChunk = -999;
+    }
+
+    public IronDimDecorator getBiomeDecorator() {
+        return new IronDimDecorator();
     }
 
     @Override
     public void decorate(World world, Random rand, BlockPos pos) {
-        super.decorate(world, rand, pos);
-
-        for (int rarity = 0; rarity < 25; rarity++) {
-            int Xcoord = pos.getX() + rand.nextInt(16);
-            int Zcoord = pos.getZ() + rand.nextInt(16);
-            int Ycoord = rand.nextInt(64);
-            new WorldGenMinable(BlocksIDL.soft_iron.getDefaultState(), 17,
-                    input -> input == BlocksIDL.ironstone.getDefaultState()).generate(world, rand, new BlockPos(Xcoord, Ycoord, Zcoord));
-        }
-
-        for (int rarity = 0; rarity < 10; rarity++) {
-            int Xcoord = pos.getX() + rand.nextInt(16);
-            int Zcoord = pos.getZ() + rand.nextInt(16);
-            int Ycoord = rand.nextInt(64);
-            new WorldGenMinable(BlocksIDL.super_iron_ore.getDefaultState(), 9,
-                    input -> input == BlocksIDL.ironstone.getDefaultState()).generate(world, rand, new BlockPos(Xcoord, Ycoord, Zcoord));
-        }
-
-        for (int rarity = 0; rarity < 5; rarity++) {
-            int Xcoord = pos.getX() + rand.nextInt(16);
-            int Zcoord = pos.getZ() + rand.nextInt(16);
-            int Ycoord = rand.nextInt(32);
-            new WorldGenMinable(BlocksIDL.radioactive_iron_ore.getDefaultState(), 8,
-                    input -> input == BlocksIDL.ironstone.getDefaultState()).generate(world, rand, new BlockPos(Xcoord, Ycoord, Zcoord));
-        }
+        this.decorator.decorate(world, rand, this, pos);
     }
 
     @Override
@@ -89,11 +68,7 @@ public class BiomeIronDimension extends Biome {
 
     @Override
     public WorldGenAbstractTree getRandomTreeFeature(Random random) {
-        if (random.nextInt(5) == 0) {
-            return genIronTree;
-        } else {
-            return new WorldGenNoTree();
-        }
+        return random.nextInt(8) == 0 ? new WorldGenNoTree() : random.nextInt(4) == 0 ? genIronTree : new WorldGenNoTree();
     }
 
     @Override
