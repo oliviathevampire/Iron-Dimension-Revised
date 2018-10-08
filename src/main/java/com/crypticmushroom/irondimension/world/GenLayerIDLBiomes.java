@@ -23,8 +23,8 @@ public class GenLayerIDLBiomes extends GenLayer {
     protected Biome rareBiomes[] = (new Biome[] {
             BiomeIDL.noxious_swamp,
             BiomeIDL.noxious_plains,
-            //BiomeIDL.molten_chasm,
-            //BiomeIDL.molten_peaks
+            BiomeIDL.molten_chasm,
+            BiomeIDL.molten_peaks
     });
 
     public GenLayerIDLBiomes(long l, GenLayer genlayer) {
