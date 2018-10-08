@@ -6,6 +6,7 @@ import net.minecraft.util.ResourceLocation;
 public class EntityIDL {
     public static final ResourceLocation IRON_COW = prefix("iron_cow");
     public static final ResourceLocation IRON_PIG = prefix("iron_pig");
+    public static final ResourceLocation IRON_RAM = prefix("iron_ram");
     public static final ResourceLocation PURE_IRON_GOLEM = prefix("pure_iron_golem");
     public static final ResourceLocation IRON_SPIDER = prefix("iron_spider");
     public static final ResourceLocation IRON_ZOMBIE = prefix("iron_zombie");

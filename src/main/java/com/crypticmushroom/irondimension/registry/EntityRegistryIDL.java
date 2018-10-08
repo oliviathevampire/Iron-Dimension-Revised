@@ -23,6 +23,7 @@ public class EntityRegistryIDL {
 
         entity.registerEntity(EntityIDL.IRON_PIG, EntityIronPig.class, EntityIronPig::new, 0xC0C0C0, 0x808080);
         entity.registerEntity(EntityIDL.IRON_COW, EntityIronCow.class, EntityIronCow::new, 0xC0C0C0, 0x808080);
+        entity.registerEntity(EntityIDL.IRON_RAM, EntityIronRam.class, EntityIronRam::new, 0xC0C0C0, 0x808080);
         entity.registerEntity(EntityIDL.PURE_IRON_GOLEM, EntityPureIronGolem.class, EntityPureIronGolem::new, 0xF0F0F0, 0xC0C0C0);
         entity.registerEntity(EntityIDL.IRON_SPIDER, EntityIronSpider.class, EntityIronSpider::new, 0xC0C0C0, 0x900000);
         entity.registerEntity(EntityIDL.IRON_ZOMBIE, EntityIronZombie.class, EntityIronZombie::new, 0x808080, 0xFFFFFF);

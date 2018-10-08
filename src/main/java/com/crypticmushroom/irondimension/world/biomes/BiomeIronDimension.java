@@ -2,6 +2,7 @@ package com.crypticmushroom.irondimension.world.biomes;
 
 import com.crypticmushroom.irondimension.entities.EntityIronCow;
 import com.crypticmushroom.irondimension.entities.EntityIronPig;
+import com.crypticmushroom.irondimension.entities.EntityIronRam;
 import com.crypticmushroom.irondimension.entities.EntityPureIronGolem;
 import com.crypticmushroom.irondimension.registry.BlocksIDL;
 import com.crypticmushroom.irondimension.world.gen.WorldGenIronTree;
@@ -35,6 +36,7 @@ public class BiomeIronDimension extends Biome {
 
         spawnableCreatureList.add(new SpawnListEntry(EntityIronCow.class, 60, 2, 4));
         spawnableCreatureList.add(new SpawnListEntry(EntityIronPig.class, 60, 2, 4));
+        spawnableCreatureList.add(new SpawnListEntry(EntityIronRam.class, 60, 2, 4));
         spawnableCreatureList.add(new SpawnListEntry(EntityPureIronGolem.class, 60, 1, 4));
 
         topBlock = BlocksIDL.iron_grass.getDefaultState();
