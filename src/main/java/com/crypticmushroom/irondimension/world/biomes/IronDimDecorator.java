@@ -27,6 +27,7 @@ public class IronDimDecorator {
 
     public void decorate(World world, Random rand, Biome biome, BlockPos pos) {
         this.chunkPos = pos;
+        this.chunkGeneratorSettings = ChunkGeneratorSettings.Factory.jsonToFactory(world.getWorldInfo().getGeneratorOptions()).build();
 
         for (int i = 0; i < treesPerChunk; ++i) {
             int x = rand.nextInt(16) + 8;
