@@ -15,6 +15,8 @@ public class EntityIDL {
     public static final ResourceLocation RADIOACTIVE_IRON_SPIDER = prefix("radioactive_iron_spider");
     public static final ResourceLocation RADIOACTIVE_IRON_ZOMBIE = prefix("radioactive_iron_zombie");
     public static final ResourceLocation RUSTY_SKELETON = prefix("rusty_skeleton");
+    public static final ResourceLocation SOFT_IRON_CREATURE = prefix("soft_iron_creature");
+    public static final ResourceLocation MOLTEN_IRON_CREATURE = prefix("molten_iron_creature");
 
     private static ResourceLocation prefix(String path) {
         return new ResourceLocation(IronDimension.MODID, path);

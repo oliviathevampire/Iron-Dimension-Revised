@@ -32,6 +32,8 @@ public class EntityRegistryIDL {
         entity.registerEntity(EntityIDL.RADIOACTIVE_IRON_SPIDER, EntityRadioactiveIronSpider.class, EntityRadioactiveIronSpider::new, 0x909000, 0x900000);
         entity.registerEntity(EntityIDL.RADIOACTIVE_IRON_ZOMBIE, EntityRadioactiveIronZombie.class, EntityRadioactiveIronZombie::new, 0xd0d000, 0xFFFF00);
         entity.registerEntity(EntityIDL.RUSTY_SKELETON, EntityRustySkeleton.class, EntityRustySkeleton::new, 0x783720, 0xa26a57);
+        entity.registerEntity(EntityIDL.SOFT_IRON_CREATURE, EntitySoftIronCreature.class, EntitySoftIronCreature::new, 0x000000, 0x000000);
+        entity.registerEntity(EntityIDL.MOLTEN_IRON_CREATURE, EntityMoltenIronCreature.class, EntityMoltenIronCreature::new, 0x00000, 0x000000);
     }
 
     public static class EntityRegistryHelper {
