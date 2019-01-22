@@ -24,9 +24,9 @@ public class ItemSuperIronArmor extends ItemArmor implements RegisterModelUtil {
     @Override
     public String getArmorTexture(ItemStack itemstack, Entity entity, EntityEquipmentSlot slot, String layer) {
         if (slot == EntityEquipmentSlot.LEGS) {
-            return IronDimension.ARMOR_DIR + "superiron_2.png";
+            return IronDimension.ARMOR_DIR + "super_iron_layer_2.png";
         } else {
-            return IronDimension.ARMOR_DIR + "superiron_1.png";
+            return IronDimension.ARMOR_DIR + "super_iron_layer_1.png";
         }
     }
 

@@ -32,7 +32,7 @@ public class ItemRadioactiveIronArmor extends ItemArmor implements RegisterModel
         if (slot == EntityEquipmentSlot.LEGS) {
             return IronDimension.ARMOR_DIR + "radioactive_iron_2.png";
         } else {
-            return IronDimension.ARMOR_DIR + "radioactive_iron_1.png";
+            return IronDimension.ARMOR_DIR + "radioactive_iron_layer_1.png";
         }
     }
 

@@ -1,7 +1,9 @@
 package com.crypticmushroom.irondimension.registry;
 
+import com.crypticmushroom.irondimension.items.ItemArmor;
 import com.crypticmushroom.irondimension.items.ItemIDLGeneric;
-import net.minecraft.item.ArmorMaterial;
+import com.crypticmushroom.irondimension.utils.materials.ArmorMaterial;
+import net.minecraft.entity.EquipmentSlot;
 import net.minecraft.item.ArmorMaterials;
 import net.minecraft.item.Item;
 
@@ -50,5 +52,14 @@ public class ItemsIDL {
         frozen_iron_ingot = new ItemIDLGeneric("frozen_iron_ingot");
         lumen_iron_nugget = new ItemIDLGeneric("lumen_iron_nugget");
         ultra_iron_ingot = new ItemIDLGeneric("ultra_iron_ingot");
+
+        super_iron_helmet = new ItemArmor("super_iron_helmet",ArmorMaterial.SUPER_IRON, EquipmentSlot.HEAD);
+        super_iron_chestplate = new ItemArmor("super_iron_chestplate",ArmorMaterial.SUPER_IRON, EquipmentSlot.CHEST);
+        super_iron_legs = new ItemArmor("super_iron_legs",ArmorMaterial.SUPER_IRON, EquipmentSlot.LEGS);
+        super_iron_boots = new ItemArmor("super_iron_boots",ArmorMaterial.SUPER_IRON, EquipmentSlot.FEET);
+        radioactive_iron_helmet = new ItemArmor("radioactive_iron_helmet",ArmorMaterial.RADIOACTIVE, EquipmentSlot.HEAD);
+        radioactive_iron_chestplate = new ItemArmor("radioactive_iron_chestplate",ArmorMaterial.RADIOACTIVE, EquipmentSlot.CHEST);
+        radioactive_iron_legs = new ItemArmor("radioactive_iron_legs",ArmorMaterial.RADIOACTIVE, EquipmentSlot.LEGS);
+        radioactive_iron_boots = new ItemArmor("radioactive_iron_boots",ArmorMaterial.RADIOACTIVE, EquipmentSlot.FEET);
     }
 }
