@@ -1,0 +1,17 @@
+{
+  "type": "forge:ore_shaped",
+  "pattern": [
+    "B  ",
+    "BB ",
+    "BBB"
+  ],
+  "key": {
+    "B": {
+      "item": "irondimension:iron_bricks"
+    }
+  },
+  "result": {
+    "item": "irondimension:iron_brick_stairs",
+    "count": 8
+  }
+}

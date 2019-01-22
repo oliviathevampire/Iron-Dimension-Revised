@@ -1,0 +1,6 @@
+{
+  "parent": "item/generated",
+  "textures": {
+    "layer0": "irondimension:item/armor/super_iron_pants"
+  }
+}

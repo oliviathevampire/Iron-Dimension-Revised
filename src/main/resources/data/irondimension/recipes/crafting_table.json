@@ -1,0 +1,15 @@
+{
+  "type": "forge:ore_shaped",
+  "pattern": [
+    "PP",
+    "PP"
+  ],
+  "key": {
+    "P": {
+      "item": "#IRONPLANKS"
+    }
+  },
+  "result": {
+    "item": "minecraft:crafting_table"
+  }
+}
