@@ -11,7 +11,7 @@ import javax.annotation.Nonnull;
 public class ItemRadioactiveAxe extends ItemAxe implements RegisterModelUtil {
 
     public ItemRadioactiveAxe(ToolMaterial material) {
-        super(material, 10.0F, -3.2F);
+        super(material, 10.0F, );
         setMaxStackSize(1);
         setCreativeTab(TabIDL.tabIDL);
     }
