@@ -2,6 +2,7 @@ package com.crypticmushroom.irondimension.registry;
 
 import com.crypticmushroom.irondimension.IronDimension;
 import com.crypticmushroom.irondimension.blocks.*;
+import com.crypticmushroom.irondimension.world.gen.saplinggenerator.HornbeamSaplingGenerator;
 import net.minecraft.block.Block;
 import net.minecraft.block.MaterialColor;
 import net.minecraft.item.Item;
@@ -43,6 +44,7 @@ public class BlocksIDL {
         hornbeam_log = register("hornbeam_log", new BlockIronLog(MaterialColor.BROWN));
         ironwood_leaves = register("ironwood_leaves", new BlockIronLeaves());
         hornbeam_leaves = register("hornbeam_leaves", new BlockIronLeaves());
+        hornbeam_sapling = register("hornbeam_sapling", new BlockSapling(new HornbeamSaplingGenerator()));
         ironstone = register("ironstone", new BlockIronStone());
         soft_iron = register("soft_iron", new BlockSoftIron());
         iron_bricks = register("iron_bricks", new BlockIronBrick());
