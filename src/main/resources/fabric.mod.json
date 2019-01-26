@@ -9,5 +9,8 @@
   ],
   "requires": {
     "fabric": "*"
+  },
+  "mixins": {
+    "common": "mixins.iron_dimension.json"
   }
 }
