@@ -5,6 +5,7 @@
   "target": "@env(DEFAULT)",
   "package": "com.crypticmushroom.irondimension.mixins",
   "mixins": [
-    "MixinChunkGeneratorType"
+    "MixinChunkGeneratorType",
+    "MixinDimensionType"
   ]
 }
