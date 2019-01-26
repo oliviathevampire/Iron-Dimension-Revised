@@ -36,6 +36,7 @@ public class BlocksIDL {
     public static Block liquid_iron_block = null;
 
     public static void init() {
+        iron_dim_portal = register("iron_dim_portal", new BlockIronPortal());
         iron_dirt = register("iron_dirt", new BlockIronDirt());
         iron_grass = register("iron_grass", new BlockIronGrass());
         ironwood_planks = register("ironwood_planks", new BlockIronPlanks());

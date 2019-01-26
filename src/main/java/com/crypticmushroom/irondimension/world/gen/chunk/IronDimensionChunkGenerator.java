@@ -34,14 +34,17 @@ public class IronDimensionChunkGenerator extends SurfaceChunkGenerator<IronDimen
         double double_2 = 684.4119873046875D;
         double double_3 = 8.555149841308594D;
         double double_4 = 4.277574920654297D;
-        int int_3 = 0;
-        int int_4 = 0;
+        int int_3 = 1;
+        int int_4 = 1;
         this.sampleNoiseColumn(doubles_1, int_1, int_2, 684.4119873046875D, 684.4119873046875D, 8.555149841308594D, 4.277574920654297D, 3, -10);
     }
 
     @Override
     protected double[] computeNoiseRange(int var1, int var2) {
-        return new double[0];
+        double[] doubles = new double[2];
+        doubles[0] = var1;
+        doubles[1] = var2;
+        return doubles;
     }
 
     protected double computeNoiseFalloff(double double_1, double double_2, int int_1) {
