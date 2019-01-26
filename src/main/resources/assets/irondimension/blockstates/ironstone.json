@@ -1,16 +1,7 @@
 {
-  "forge_marker": 1,
-  "defaults": {
-    "model": "cube_all",
-    "textures": { "all": "irondimension:block/iron/ironstone" }
-  },
   "variants": {
-    "normal": [
-      { "textures": { "all": "irondimension:block/iron/ironstone" } },
-      { "textures": { "all": "irondimension:block/iron/ironstone" }, "x": 90, "y": 90 },
-      { "textures": { "all": "irondimension:block/iron/ironstone" }, "x": 180, "y": 180 },
-      { "textures": { "all": "irondimension:block/iron/ironstone" }, "x": 270, "y": 270 }
-    ],
-    "inventory": [{}]
+    "": {
+      "model": "irondimension:block/ironstone"
+    }
   }
 }
