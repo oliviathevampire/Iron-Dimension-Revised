@@ -5,19 +5,19 @@ plugins {
 sourceCompatibility = 1.8
 targetCompatibility = 1.8
 
-archivesBaseName = "irondimension"
-version = "2.0.0"
+archivesBaseName = "irondimension-${minecraft_version}"
+version = "2.0.0-${System.getenv("TRAVIS_BUILD_NUMBER")}"
 
 minecraft {
 }
 
 dependencies {
-	minecraft "com.mojang:minecraft:19w04b"
-	mappings "net.fabricmc:yarn:19w04b.2"
-	modCompile "net.fabricmc:fabric-loader:0.3.3.101"
+	minecraft "com.mojang:minecraft:${minecraft_version}"
+	mappings "net.fabricmc:yarn:${minecraft_version}.2"
+	modCompile "net.fabricmc:fabric-loader:${fabric_loader_version}"
 
 	// Fabric API. This is technically optional, but you probably want it anyway.
-	modCompile "net.fabricmc:fabric:0.1.5.81"
+	modCompile "net.fabricmc:fabric:${fabric_version}"
 }
 
 // Loom will automatically attach sourcesJar to a RemapSourcesJar task and to the "build" task
