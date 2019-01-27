@@ -1,0 +1,32 @@
+language: java
+notifications:
+  email: false
+if: tag IS blank
+
+before_install: chmod +x gradlew
+install: "./gradlew"
+script: "./gradlew build"
+jdk:
+  - oraclejdk8
+before_cache:
+  - find $HOME/.gradle/ -name '*.lock' -print -exec rm -f {} \;
+cache:
+  directories:
+    - "$HOME/.gradle/caches/"
+    - "$HOME/.gradle/wrapper/"
+sudo: false
+
+before_deploy:
+  - export RELEASE_FILE_LIST=$(ls ./build/libs/* | tr '\n' ', ')
+  - echo "deploying $RELEASE_FILE_LIST to GitHub releases"
+deploy:
+  skip_cleanup: true
+  provider: releases
+  api_key:
+    secure: BFknlAYDY4+fipt9UF7/EZUYlnGUZ02e4WJ2vn4fNYqSq826v529q6ID9oJJndK2VmlVPqjZdVYJiyz14qJ3l3EVMNSP5zXcywOw+F2XF2gnEPbQ5K0fF2MoEiKq9aLk2e3UCgOdrygRg9omHZhdV3mLMETRXFWQRxRekg21wtGKq5qDR1j+ijW+wd/hm0XFCptgcLqig0GsCCkmi9hf2JNSMNhjyLB3CsFis6vVWn6hmwcXDC+Uwf2+F228bjJpOS1MJhivFI2Wbf2vfxZFGqAx15X78ZDbroqTfU93HBqRfbY0ziEH3ffOfl8Z9V8AcQ5nf+vlgEWxX7YFn3f3sUpqWZo3UuamS5SxJzw4s+HLH1hIWAiPPgJ3W9Qlg9JgL+lLCp4yD5keI58dy/Ic+bMYsOQisdmwfBV39ri4t3uTUHWa8pAEN7KOwQMD6iUhFXQomzsp8xE9M8A0Hw1YqC/+gIVf4AT0wjjn5j48EUMIqxub8pvMaCS8vfCOmdw7vWsz6awIPKtSZJ5XLU/1vt0fESYm5Si24zEBfR93acMU37dQL1J6eg0t/LFpEdXjaASFBEuR8Xt1QRYMguflkCMaTsq4TbY5FxvTKfD2FMsy7i8y6fnjkbGV2H0ZMszMSA2Kf6xA0KiBQ0t1SiWGe1ZV7s85WTOVNkvUDuU8obU=
+  file_glob: true
+  file: "{$RELEASE_FILE_LIST}"
+  on:
+    repo: Cryptic-Mushroom/Iron-Dimension-Legacy
+    branch: master
+    tags: false
