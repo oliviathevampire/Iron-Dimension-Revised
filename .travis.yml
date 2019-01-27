@@ -28,5 +28,5 @@ deploy:
   file: "{$RELEASE_FILE_LIST}"
   on:
     repo: Cryptic-Mushroom/Iron-Dimension-Legacy
-    branch: master
+    branch: fabric
     tags: false
