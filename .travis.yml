@@ -27,6 +27,6 @@ deploy:
   file_glob: true
   file: "{$RELEASE_FILE_LIST}"
   on:
-    repo: Cryptic-Mushroom/Iron-Dimension-Legacy
+    repo: Cryptic-Mushroom/Iron-Dimension-Revised
     branch: fabric
     tags: false
