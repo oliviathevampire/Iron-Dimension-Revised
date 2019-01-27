@@ -18,41 +18,63 @@ public class IronPlainsSurfaceBuilder extends SurfaceBuilder<TernarySurfaceConfi
     }
 
     @Override
-    public void generate(Random var1, Chunk var2, Biome var3, int var4, int var5, int var6, double var7, BlockState var9, BlockState var10, int var11, long var12, TernarySurfaceConfig var14) {
-        BlockState blockState_6 = BlocksIDL.iron_grass.getDefaultState();
-        BlockState blockState_7 = BlocksIDL.iron_dirt.getDefaultState();
+    public void generate(Random random_1, Chunk chunk_1, Biome biome_1, int int_1, int int_2, int int_3, double double_1, BlockState blockState_1, BlockState blockState_2, int int_4, long long_1, TernarySurfaceConfig ternarySurfaceConfig_1) {
+        this.generate(random_1, chunk_1, biome_1, int_1, int_2, int_3, double_1, blockState_1, blockState_2, ternarySurfaceConfig_1.getTopMaterial(), ternarySurfaceConfig_1.getUnderMaterial(), ternarySurfaceConfig_1.getUnderwaterMaterial(), int_4);
+    }
+
+    public void generate(Random random_1, Chunk chunk_1, Biome biome_1, int int_1, int int_2, int int_3, double double_1, BlockState blockState_1, BlockState blockState_2, BlockState blockState_3, BlockState blockState_4, BlockState blockState_5, int int_4) {
+//        BlockState blockState_6 = BlocksIDL.iron_grass.getDefaultState();
+//        BlockState blockState_7 = BlocksIDL.iron_dirt.getDefaultState();
+        BlockState blockState_6 = blockState_3;
+        BlockState blockState_7 = blockState_4;
         BlockPos.Mutable blockPos$Mutable_1 = new BlockPos.Mutable();
-
         int int_5 = -1;
-        int int_6 = (int) (3.0D + var1.nextDouble() * 0.25D);
-        int int_7 = var4;
-        int int_8 = var5;
+        int int_6 = (int)(double_1 / 3.0D + 3.0D + random_1.nextDouble() * 0.25D);
+        int int_7 = int_1 & 15;
+        int int_8 = int_2 & 15;
 
-        for (int int_9 = 128; int_9 >= 0; --int_9) {
+        for(int int_9 = int_3; int_9 >= 0; --int_9) {
             blockPos$Mutable_1.set(int_7, int_9, int_8);
-
-            BlockState blockState_8 = var2.getBlockState(blockPos$Mutable_1);
-
+            BlockState blockState_8 = chunk_1.getBlockState(blockPos$Mutable_1);
             if (blockState_8.isAir()) {
                 int_5 = -1;
-            } else if (blockState_8.getBlock() == var9.getBlock()) {
+            } else if (blockState_8.getBlock() == blockState_1.getBlock()) {
                 if (int_5 == -1) {
                     if (int_6 <= 0) {
                         blockState_6 = Blocks.AIR.getDefaultState();
-                        blockState_7 = var9;
+                        blockState_7 = blockState_1;
+                    } else if (int_9 >= int_4 - 4 && int_9 <= int_4 + 1) {
+                        blockState_6 = blockState_3;
+                        blockState_7 = blockState_4;
+                    }
+
+                    if (int_9 < int_4 && (blockState_6 == null || blockState_6.isAir())) {
+                        if (biome_1.getTemperature(blockPos$Mutable_1.set(int_1, int_9, int_2)) < 0.15F) {
+                            blockState_6 = Blocks.ICE.getDefaultState();
+                        } else {
+                            blockState_6 = blockState_2;
+                        }
+
+                        blockPos$Mutable_1.set(int_7, int_9, int_8);
                     }
 
                     int_5 = int_6;
-
-                    if (int_9 >= 0) {
-                        var2.setBlockState(blockPos$Mutable_1, blockState_6, false);
+                    if (int_9 >= int_4 - 1) {
+                        chunk_1.setBlockState(blockPos$Mutable_1, blockState_6, false);
+                    } else if (int_9 < int_4 - 7 - int_6) {
+                        blockState_6 = Blocks.AIR.getDefaultState();
+                        blockState_7 = blockState_1;
+                        chunk_1.setBlockState(blockPos$Mutable_1, blockState_5, false);
                     } else {
-                        var2.setBlockState(blockPos$Mutable_1, blockState_7, false);
+                        chunk_1.setBlockState(blockPos$Mutable_1, blockState_7, false);
                     }
                 } else if (int_5 > 0) {
                     --int_5;
-
-                    var2.setBlockState(blockPos$Mutable_1, blockState_7, false);
+                    chunk_1.setBlockState(blockPos$Mutable_1, blockState_7, false);
+                    if (int_5 == 0 && blockState_7.getBlock() == Blocks.SAND && int_6 > 1) {
+                        int_5 = random_1.nextInt(4) + Math.max(0, int_9 - 63);
+                        blockState_7 = blockState_7.getBlock() == Blocks.RED_SAND ? Blocks.RED_SANDSTONE.getDefaultState() : Blocks.SANDSTONE.getDefaultState();
+                    }
                 }
             }
         }
