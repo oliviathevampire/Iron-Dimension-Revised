@@ -6,6 +6,7 @@
   "package": "com.crypticmushroom.irondimension.mixins",
   "mixins": [
     "MixinChunkGeneratorType",
-    "MixinDimensionType"
+    "MixinDimensionType",
+    "MixinPlayerManager"
   ]
 }

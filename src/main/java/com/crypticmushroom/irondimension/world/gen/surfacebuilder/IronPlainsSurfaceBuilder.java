@@ -28,39 +28,28 @@ public class IronPlainsSurfaceBuilder extends SurfaceBuilder<TernarySurfaceConfi
         int int_7 = var4;
         int int_8 = var5;
 
-        for (int int_9 = 128; int_9 >= 0; --int_9)
-        {
+        for (int int_9 = 128; int_9 >= 0; --int_9) {
             blockPos$Mutable_1.set(int_7, int_9, int_8);
 
             BlockState blockState_8 = var2.getBlockState(blockPos$Mutable_1);
 
-            if (blockState_8.isAir())
-            {
+            if (blockState_8.isAir()) {
                 int_5 = -1;
-            }
-            else if (blockState_8.getBlock() == var9.getBlock())
-            {
-                if (int_5 == -1)
-                {
-                    if (int_6 <= 0)
-                    {
+            } else if (blockState_8.getBlock() == var9.getBlock()) {
+                if (int_5 == -1) {
+                    if (int_6 <= 0) {
                         blockState_6 = Blocks.AIR.getDefaultState();
                         blockState_7 = var9;
                     }
 
                     int_5 = int_6;
 
-                    if (int_9 >= 0)
-                    {
+                    if (int_9 >= 0) {
                         var2.setBlockState(blockPos$Mutable_1, blockState_6, false);
-                    }
-                    else
-                    {
+                    } else {
                         var2.setBlockState(blockPos$Mutable_1, blockState_7, false);
                     }
-                }
-                else if (int_5 > 0)
-                {
+                } else if (int_5 > 0) {
                     --int_5;
 
                     var2.setBlockState(blockPos$Mutable_1, blockState_7, false);
