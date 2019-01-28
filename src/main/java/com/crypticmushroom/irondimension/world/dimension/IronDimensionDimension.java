@@ -1,6 +1,7 @@
 package com.crypticmushroom.irondimension.world.dimension;
 
 import com.crypticmushroom.irondimension.world.WorldIronDimension;
+import com.crypticmushroom.irondimension.world.biomes.source.IronBiomeSourceConfig;
 import com.crypticmushroom.irondimension.world.gen.chunk.IronDimensionChunkGeneratorConfig;
 import net.fabricmc.api.EnvType;
 import net.fabricmc.api.Environment;
@@ -26,7 +27,10 @@ public class IronDimensionDimension extends Dimension {
 
     @Override
     public ChunkGenerator<?> createChunkGenerator() {
-        return WorldIronDimension.IRON_DIMENSION_CHUNK_GENERATOR.create(this.world, BiomeSourceType.FIXED.applyConfig(new FixedBiomeSourceConfig().method_8782(WorldIronDimension.IRON_PLAINS)), new IronDimensionChunkGeneratorConfig());
+        return WorldIronDimension.IRON_DIMENSION_CHUNK_GENERATOR.create(
+                this.world,
+                WorldIronDimension.IRON_BIOME_SOURCE.applyConfig(new IronBiomeSourceConfig()),
+                new IronDimensionChunkGeneratorConfig());
     }
 
     @Override

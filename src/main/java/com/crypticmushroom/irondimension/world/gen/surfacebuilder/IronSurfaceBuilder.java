@@ -12,8 +12,8 @@ import net.minecraft.world.gen.surfacebuilder.TernarySurfaceConfig;
 
 import java.util.Random;
 
-public class IronPlainsSurfaceBuilder extends SurfaceBuilder<TernarySurfaceConfig> {
-    public IronPlainsSurfaceBuilder() {
+public class IronSurfaceBuilder extends SurfaceBuilder<TernarySurfaceConfig> {
+    public IronSurfaceBuilder() {
         super(TernarySurfaceConfig::deserialize);
     }
 
@@ -23,8 +23,6 @@ public class IronPlainsSurfaceBuilder extends SurfaceBuilder<TernarySurfaceConfi
     }
 
     public void generate(Random random_1, Chunk chunk_1, Biome biome_1, int int_1, int int_2, int int_3, double double_1, BlockState blockState_1, BlockState blockState_2, BlockState blockState_3, BlockState blockState_4, BlockState blockState_5, int int_4) {
-//        BlockState blockState_6 = BlocksIDL.iron_grass.getDefaultState();
-//        BlockState blockState_7 = BlocksIDL.iron_dirt.getDefaultState();
         BlockState blockState_6 = blockState_3;
         BlockState blockState_7 = blockState_4;
         BlockPos.Mutable blockPos$Mutable_1 = new BlockPos.Mutable();
