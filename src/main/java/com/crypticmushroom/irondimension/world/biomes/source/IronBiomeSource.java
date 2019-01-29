@@ -1,6 +1,7 @@
 package com.crypticmushroom.irondimension.world.biomes.source;
 
 import com.crypticmushroom.irondimension.world.WorldIronDimension;
+import com.crypticmushroom.irondimension.world.biomes.layer.IronBiomeLayers;
 import com.crypticmushroom.irondimension.world.gen.chunk.IronDimensionChunkGeneratorConfig;
 import com.google.common.collect.Sets;
 import com.sun.istack.internal.Nullable;
@@ -30,7 +31,7 @@ public class IronBiomeSource extends BiomeSource {
         };
         LevelProperties levelProperties_1 = vanillaLayeredBiomeSourceConfig_1.getLevelProperties();
         IronDimensionChunkGeneratorConfig overworldChunkGeneratorConfig_1 = vanillaLayeredBiomeSourceConfig_1.getGeneratorSettings();
-        BiomeLayerSampler[] biomeLayerSamplers_1 = BiomeLayers.build(levelProperties_1.getSeed(), levelProperties_1.getGeneratorType(), overworldChunkGeneratorConfig_1);
+        BiomeLayerSampler[] biomeLayerSamplers_1 = IronBiomeLayers.build(levelProperties_1.getSeed(), levelProperties_1.getGeneratorType(), overworldChunkGeneratorConfig_1);
         this.noiseLayer = biomeLayerSamplers_1[0];
         this.biomeLayer = biomeLayerSamplers_1[1];
     }
