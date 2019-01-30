@@ -29,7 +29,7 @@ public class IronDimensionDimension extends Dimension {
     public ChunkGenerator<?> createChunkGenerator() {
         return WorldIronDimension.IRON_DIMENSION_CHUNK_GENERATOR.create(
                 this.world,
-                WorldIronDimension.IRON_BIOME_SOURCE.applyConfig(new IronBiomeSourceConfig()),
+                BiomeSourceType.FIXED.applyConfig(new FixedBiomeSourceConfig().method_8782(WorldIronDimension.IRON_PLAINS)),
                 new IronDimensionChunkGeneratorConfig());
     }
 

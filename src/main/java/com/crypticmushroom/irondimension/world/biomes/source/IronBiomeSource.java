@@ -4,7 +4,6 @@ import com.crypticmushroom.irondimension.world.WorldIronDimension;
 import com.crypticmushroom.irondimension.world.biomes.layer.IronBiomeLayers;
 import com.crypticmushroom.irondimension.world.gen.chunk.IronDimensionChunkGeneratorConfig;
 import com.google.common.collect.Sets;
-import com.sun.istack.internal.Nullable;
 import net.minecraft.block.BlockState;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.world.biome.Biome;
@@ -60,7 +59,7 @@ public class IronBiomeSource extends BiomeSource {
         return set_1;
     }
 
-    @Nullable
+//    @Nullable
     public BlockPos locateBiome(int int_1, int int_2, int int_3, List<Biome> list_1, Random random_1) {
         int int_4 = int_1 - int_3 >> 2;
         int int_5 = int_2 - int_3 >> 2;

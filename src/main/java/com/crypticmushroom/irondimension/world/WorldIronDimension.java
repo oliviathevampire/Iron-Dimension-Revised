@@ -9,6 +9,7 @@ import com.crypticmushroom.irondimension.world.biomes.source.IronBiomeSource;
 import com.crypticmushroom.irondimension.world.biomes.source.IronBiomeSourceConfig;
 import com.crypticmushroom.irondimension.world.gen.chunk.IronDimensionChunkGenerator;
 import com.crypticmushroom.irondimension.world.gen.chunk.IronDimensionChunkGeneratorConfig;
+import com.crypticmushroom.irondimension.world.gen.feature.IronFeatures;
 import net.minecraft.util.Identifier;
 import net.minecraft.util.registry.Registry;
 import net.minecraft.world.biome.Biome;
@@ -29,6 +30,7 @@ public class WorldIronDimension {
     public static TernarySurfaceConfig GRASS_CONFIG;
 
     public static void registerWorld() {
+        IronFeatures.init();
         GRASS_CONFIG = new TernarySurfaceConfig(BlocksIDL.iron_grass.getDefaultState(), BlocksIDL.iron_dirt.getDefaultState(), BlocksIDL.iron_dirt.getDefaultState());
         IRON_PLAINS = Registry.register(Registry.BIOME, new Identifier(IronDimension.MODID, "iron_plains"), new IronPlains());
         IRON_HIGHLANDS = Registry.register(Registry.BIOME, new Identifier(IronDimension.MODID, "iron_highlands"), new IronHighlands());

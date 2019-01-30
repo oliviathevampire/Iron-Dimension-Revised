@@ -4,9 +4,9 @@ import com.crypticmushroom.irondimension.registry.BlocksIDL;
 import com.mojang.datafixers.Dynamic;
 import net.minecraft.block.Block;
 import net.minecraft.block.BlockState;
-import net.minecraft.block.Blocks;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.world.ModifiableTestableWorld;
+import net.minecraft.world.TestableWorld;
 import net.minecraft.world.gen.feature.AbstractTreeFeature;
 import net.minecraft.world.gen.feature.DefaultFeatureConfig;
 
@@ -25,6 +25,7 @@ public class HornbeamTreeFeature extends AbstractTreeFeature<DefaultFeatureConfi
     @Override
     protected boolean generate(Set<BlockPos> set_1, ModifiableTestableWorld modifiableTestableWorld_1, Random random_1, BlockPos blockPos_1) {
         int int_1 = random_1.nextInt(3) + 5;
+
         boolean boolean_1 = true;
         if (blockPos_1.getY() >= 1 && blockPos_1.getY() + int_1 + 1 <= 256) {
             int int_6;
@@ -92,6 +93,14 @@ public class HornbeamTreeFeature extends AbstractTreeFeature<DefaultFeatureConfi
         } else {
             return false;
         }
+    }
+
+    protected static boolean canTreeReplace(TestableWorld testableWorld_1, BlockPos blockPos_1)
+    {
+        return testableWorld_1.test(blockPos_1, (blockState_1) -> {
+            Block block = blockState_1.getBlock();
+            return block == BlocksIDL.iron_grass || block == BlocksIDL.iron_dirt;
+        });
     }
 
     static {
