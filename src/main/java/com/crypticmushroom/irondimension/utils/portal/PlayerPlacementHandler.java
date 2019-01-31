@@ -11,7 +11,7 @@ public class PlayerPlacementHandler {
     public static boolean placeInPortal(Entity entity, ServerWorld previousWorld, ServerWorld newWorld) {
         if (previousWorld.dimension.getType() == WorldIronDimension.IRON_DIMENSION) {
             if (newWorld.dimension.getType() == DimensionType.OVERWORLD) {
-                BlockPos spawnLocation = newWorld.getSpawnPos();
+                BlockPos spawnLocation = new BlockPos(entity.getPos().getX(), newWorld.getSpawnPos().getY(), entity.getPos().getZ());
 
                 setEntityLocation(entity, spawnLocation);
                 return true;
@@ -19,7 +19,7 @@ public class PlayerPlacementHandler {
         }
 
         if (newWorld.dimension.getType() == WorldIronDimension.IRON_DIMENSION) {
-            BlockPos spawnPos = new BlockPos(0, 100, 0);
+            BlockPos spawnPos = new BlockPos(entity.getPos().getX(), newWorld.getSpawnPos().getY(), entity.getPos().getZ());
             entity.setPositionAndAngles(spawnPos.getX(), spawnPos.getY(), spawnPos.getZ(), 0, 0);
             return true;
         }
