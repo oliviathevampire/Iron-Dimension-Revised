@@ -1,7 +1,6 @@
 package com.crypticmushroom.irondimension.world.dimension;
 
 import com.crypticmushroom.irondimension.world.WorldIronDimension;
-import com.crypticmushroom.irondimension.world.biomes.source.IronBiomeSourceConfig;
 import com.crypticmushroom.irondimension.world.gen.chunk.IronDimensionChunkGeneratorConfig;
 import net.fabricmc.api.EnvType;
 import net.fabricmc.api.Environment;
