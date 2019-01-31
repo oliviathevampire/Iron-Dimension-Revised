@@ -4,6 +4,7 @@ import com.crypticmushroom.irondimension.world.WorldIronDimension;
 import com.crypticmushroom.irondimension.world.gen.surfacebuilder.IronSurfaceBuilder;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.world.biome.Biome;
+import net.minecraft.world.biome.DefaultBiomeFeatures;
 
 public class IronBiome extends Biome {
     public IronBiome(Settings settings) {
@@ -12,6 +13,7 @@ public class IronBiome extends Biome {
                 .waterColor(0xe0e0e0)
                 .waterFogColor(0xe0e0e0)
         );
+        DefaultBiomeFeatures.addLandCarvers(this);
     }
 
     @Override

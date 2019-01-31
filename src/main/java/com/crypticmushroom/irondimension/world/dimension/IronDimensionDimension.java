@@ -9,10 +9,8 @@ import net.minecraft.util.math.BlockPos;
 import net.minecraft.util.math.MathHelper;
 import net.minecraft.util.math.Vec3d;
 import net.minecraft.world.World;
-import net.minecraft.world.biome.source.BiomeSource;
-import net.minecraft.world.biome.source.BiomeSourceType;
-import net.minecraft.world.biome.source.FixedBiomeSourceConfig;
-import net.minecraft.world.biome.source.VanillaLayeredBiomeSourceConfig;
+import net.minecraft.world.biome.Biome;
+import net.minecraft.world.biome.source.*;
 import net.minecraft.world.chunk.ChunkPos;
 import net.minecraft.world.dimension.Dimension;
 import net.minecraft.world.dimension.DimensionType;
@@ -20,16 +18,22 @@ import net.minecraft.world.gen.chunk.ChunkGenerator;
 
 public class IronDimensionDimension extends Dimension {
     private final float[] sunriseSunsetColors = new float[4];
+    private static Biome[] biomes;
 
     public IronDimensionDimension(World world_1, DimensionType dimensionType_1) {
         super(world_1, dimensionType_1);
+        this.biomes = new Biome[] {
+                WorldIronDimension.IRON_PLAINS,
+                WorldIronDimension.IRON_HIGHLANDS,
+                WorldIronDimension.IRON_FOREST
+        };
     }
 
     @Override
     public ChunkGenerator<?> createChunkGenerator() {
         return WorldIronDimension.IRON_DIMENSION_CHUNK_GENERATOR.create(
                 this.world,
-                BiomeSourceType.FIXED.applyConfig(new FixedBiomeSourceConfig().method_8782(WorldIronDimension.IRON_PLAINS)),
+                BiomeSourceType.CHECKERBOARD.applyConfig(new CheckerboardBiomeSourceConfig().method_8777(this.biomes).method_8780(this.biomes.length)),
                 new IronDimensionChunkGeneratorConfig());
     }
 
