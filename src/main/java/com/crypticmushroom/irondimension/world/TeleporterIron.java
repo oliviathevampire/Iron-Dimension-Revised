@@ -389,4 +389,15 @@ public class TeleporterIron extends PortalForcer {
 
         return true;
     }
+
+    public class IronPortalPos extends BlockPos {
+        public long lastUpdateTime;
+
+        public IronPortalPos(BlockPos pos, long lastUpdateTime)
+        {
+            super(pos.getX(), pos.getY(), pos.getZ());
+
+            this.lastUpdateTime = lastUpdateTime;
+        }
+    }
 }

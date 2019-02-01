@@ -48,21 +48,21 @@ public class BlockIronPortal extends PortalBlock {
     @Override
     public boolean method_10352(IWorld worldIn, BlockPos pos)
     {
-        IronPortalSize aetherportal$size = new IronPortalSize(worldIn, pos, Direction.Axis.X);
+        IronPortalSize ironportal$size = new IronPortalSize(worldIn, pos, Direction.Axis.X);
 
-        if (aetherportal$size.isValid() && aetherportal$size.portalBlockCount == 0)
+        if (ironportal$size.isValid() && ironportal$size.portalBlockCount == 0)
         {
-            aetherportal$size.placePortalBlocks();
+            ironportal$size.placePortalBlocks();
 
             return true;
         }
         else
         {
-            IronPortalSize aetherportal$size1 = new IronPortalSize(worldIn, pos, Direction.Axis.Z);
+            IronPortalSize ironportal$size1 = new IronPortalSize(worldIn, pos, Direction.Axis.Z);
 
-            if (aetherportal$size1.isValid() && aetherportal$size1.portalBlockCount == 0)
+            if (ironportal$size1.isValid() && ironportal$size1.portalBlockCount == 0)
             {
-                aetherportal$size1.placePortalBlocks();
+                ironportal$size1.placePortalBlocks();
 
                 return true;
             }
