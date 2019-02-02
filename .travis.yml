@@ -5,7 +5,7 @@ if: tag IS blank
 
 before_install: chmod +x gradlew
 install: "./gradlew"
-script: "./gradlew build --stacktrace"
+script: "./gradlew build --stacktrace --info"
 jdk:
   - oraclejdk8
 before_cache:
