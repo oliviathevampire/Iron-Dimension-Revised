@@ -2,7 +2,7 @@
   "forge_marker": 1,
   "defaults": {
     "model": "cube_all",
-    "textures": { "all": "irondimension:block/iron/radioactive_iron_block" }
+    "textures": { "all": "irondimension:radioactive_iron_block" }
   },
   "variants": {
     "normal": [{}],

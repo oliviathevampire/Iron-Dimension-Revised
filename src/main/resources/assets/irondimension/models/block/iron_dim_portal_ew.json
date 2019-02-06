@@ -1,7 +1,7 @@
 {
   "textures": {
-    "particle": "irondimension:block/portal/iron_portal",
-    "portal": "irondimension:block/portal/iron_portal"
+    "particle": "irondimension:iron_portal",
+    "portal": "irondimension:iron_portal"
   },
   "elements": [
     {   "from": [ 6, 0, 0 ],

@@ -2,7 +2,7 @@
   "forge_marker": 1,
   "defaults": {
     "model": "cube_all",
-    "textures": { "all": "irondimension:block/iron/fervid_iron_ore" }
+    "textures": { "all": "irondimension:fervid_iron_ore" }
   },
   "variants": {
     "normal": [{}],

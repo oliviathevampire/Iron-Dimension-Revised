@@ -3,9 +3,9 @@
   "defaults": {
     "model": "stairs",
     "textures": {
-      "bottom": "irondimension:block/iron/iron_brick",
-      "top": "irondimension:block/iron/iron_brick",
-      "side": "irondimension:block/iron/iron_brick",
+      "bottom": "irondimension:iron_brick",
+      "top": "irondimension:iron_brick",
+      "side": "irondimension:iron_brick",
       "particle": "#side"
     },
     "uvlock": true

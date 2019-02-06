@@ -2,7 +2,7 @@
   "forge_marker": 1,
   "defaults": {
     "model": "cube_all",
-    "textures": { "all": "irondimension:block/iron/iron_brick" }
+    "textures": { "all": "irondimension:iron_brick" }
   },
   "variants": {
     "normal": [{}],
