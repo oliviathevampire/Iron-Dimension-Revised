@@ -1,10 +1,10 @@
 {
   "parent": "block/grass_block",
   "textures" : {
-    "particle": "irondimension:iron_dirt",
-    "bottom":   "irondimension:iron_dirt",
-    "side":     "irondimension:iron_grass_side",
-    "overlay":  "irondimension:iron_grass_side_overlay",
-    "top": "irondimension:iron_grass_top"
+    "particle": "irondimension:block/iron_dirt",
+    "bottom":   "irondimension:block/iron_dirt",
+    "side":     "irondimension:block/iron_grass_side",
+    "overlay":  "irondimension:block/iron_grass_side_overlay",
+    "top": "irondimension:block/iron_grass_top"
   }
 }

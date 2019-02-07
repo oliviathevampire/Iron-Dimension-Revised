@@ -1,6 +1,6 @@
 {
   "parent": "item/generated",
   "textures": {
-    "layer0": "irondimension:super_iron_pants"
+    "layer0": "irondimension:item/super_iron_pants"
   }
 }

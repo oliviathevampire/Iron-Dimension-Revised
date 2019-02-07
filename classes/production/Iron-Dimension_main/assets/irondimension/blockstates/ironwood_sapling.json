@@ -5,7 +5,7 @@
     "transform": "forge:default-item"
   },
   "variants": {
-    "normal":    [{ "model": "cross",             "textures": { "cross":  "irondimension:ironwood_sapling" }}],
-    "inventory": [{ "model": "builtin/generated", "textures": { "layer0": "irondimension:ironwood_sapling" }}]
+    "normal":    [{ "model": "cross",             "textures": { "cross":  "irondimension:block/ironwood_sapling" }}],
+    "inventory": [{ "model": "builtin/generated", "textures": { "layer0": "irondimension:block/ironwood_sapling" }}]
   }
 }

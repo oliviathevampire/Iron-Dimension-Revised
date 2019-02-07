@@ -1,6 +1,6 @@
 {
   "parent": "item/handheld",
   "textures": {
-    "layer0": "irondimension:item/tools/super_iron_shovel"
+    "layer0": "irondimension:item/super_iron_shovel"
   }
 }

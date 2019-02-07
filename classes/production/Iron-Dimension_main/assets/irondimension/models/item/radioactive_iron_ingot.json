@@ -1,6 +1,6 @@
 {
   "parent": "item/generated",
   "textures": {
-    "layer0": "irondimension:radioactive_iron_ingot"
+    "layer0": "irondimension:item/radioactive_iron_ingot"
   }
 }

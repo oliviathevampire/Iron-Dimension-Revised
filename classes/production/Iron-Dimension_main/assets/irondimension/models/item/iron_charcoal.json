@@ -1,6 +1,6 @@
 {
   "parent": "item/generated",
   "textures": {
-    "layer0": "irondimension:iron_charcoal"
+    "layer0": "irondimension:item/iron_charcoal"
   }
 }
