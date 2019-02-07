@@ -1,7 +1,7 @@
 package com.crypticmushroom.irondimension.world;
 
 import com.crypticmushroom.irondimension.blocks.BlockIronPortal;
-import com.crypticmushroom.irondimension.registry.BlocksIDL;
+import com.crypticmushroom.irondimension.registry.BlocksID;
 import it.unimi.dsi.fastutil.longs.Long2ObjectMap;
 import it.unimi.dsi.fastutil.longs.Long2ObjectOpenHashMap;
 import net.minecraft.block.BlockState;
@@ -95,9 +95,9 @@ public class TeleporterIron extends PortalForcer {
                     {
                         blockpos2 = blockpos1.down();
 
-                        if (this.worldServerInstance.getBlockState(blockpos1).getBlock() == BlocksIDL.iron_dim_portal)
+                        if (this.worldServerInstance.getBlockState(blockpos1).getBlock() == BlocksID.iron_dim_portal)
                         {
-                            for (blockpos2 = blockpos1.down(); this.worldServerInstance.getBlockState(blockpos2).getBlock() == BlocksIDL.iron_dim_portal; blockpos2 = blockpos2.down())
+                            for (blockpos2 = blockpos1.down(); this.worldServerInstance.getBlockState(blockpos2).getBlock() == BlocksID.iron_dim_portal; blockpos2 = blockpos2.down())
                             {
                                 blockpos1 = blockpos2;
                             }
@@ -125,7 +125,7 @@ public class TeleporterIron extends PortalForcer {
             double d5 = (double)blockpos.getX() + 0.5D;
             double d7 = (double)blockpos.getZ() + 0.5D;
 
-            BlockPattern.Result blockpattern$patternhelper = ((BlockIronPortal) BlocksIDL.iron_dim_portal).method_10350(this.worldServerInstance, blockpos);
+            BlockPattern.Result blockpattern$patternhelper = ((BlockIronPortal) BlocksID.iron_dim_portal).method_10350(this.worldServerInstance, blockpos);
             boolean flag1 = blockpattern$patternhelper.getForwards().rotateYClockwise().getDirection() == Direction.AxisDirection.NEGATIVE;
             double d2 = blockpattern$patternhelper.getForwards().getAxis() == Direction.Axis.X ? (double)blockpattern$patternhelper.getFrontTopLeft().getZ() : (double)blockpattern$patternhelper.getFrontTopLeft().getX();
 
@@ -370,7 +370,7 @@ public class TeleporterIron extends PortalForcer {
             }
         }
 
-        BlockState iblockstate = BlocksIDL.iron_dim_portal.getDefaultState().with(PortalBlock.AXIS, l6 == 0 ? Direction.Axis.Z : Direction.Axis.X);
+        BlockState iblockstate = BlocksID.iron_dim_portal.getDefaultState().with(PortalBlock.AXIS, l6 == 0 ? Direction.Axis.Z : Direction.Axis.X);
 
         for (int i8 = 0; i8 < 4; ++i8)
         {

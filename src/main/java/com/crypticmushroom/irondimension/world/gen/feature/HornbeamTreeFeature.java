@@ -1,6 +1,6 @@
 package com.crypticmushroom.irondimension.world.gen.feature;
 
-import com.crypticmushroom.irondimension.registry.BlocksIDL;
+import com.crypticmushroom.irondimension.registry.BlocksID;
 import com.mojang.datafixers.Dynamic;
 import net.minecraft.block.Block;
 import net.minecraft.block.BlockState;
@@ -99,12 +99,12 @@ public class HornbeamTreeFeature extends AbstractTreeFeature<DefaultFeatureConfi
     {
         return testableWorld_1.test(blockPos_1, (blockState_1) -> {
             Block block = blockState_1.getBlock();
-            return block == BlocksIDL.iron_grass || block == BlocksIDL.iron_dirt;
+            return block == BlocksID.iron_grass || block == BlocksID.iron_dirt;
         });
     }
 
     static {
-        LOG = BlocksIDL.hornbeam_log.getDefaultState();
-        LEAVES = BlocksIDL.hornbeam_leaves.getDefaultState();
+        LOG = BlocksID.hornbeam_log.getDefaultState();
+        LEAVES = BlocksID.hornbeam_leaves.getDefaultState();
     }
 }

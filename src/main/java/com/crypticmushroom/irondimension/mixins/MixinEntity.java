@@ -1,12 +1,11 @@
 package com.crypticmushroom.irondimension.mixins;
 
 import com.crypticmushroom.irondimension.blocks.BlockIronPortal;
-import com.crypticmushroom.irondimension.registry.BlocksIDL;
+import com.crypticmushroom.irondimension.registry.BlocksID;
 import net.minecraft.block.Blocks;
 import net.minecraft.block.PortalBlock;
 import net.minecraft.block.pattern.BlockPattern;
 import net.minecraft.entity.Entity;
-import net.minecraft.entity.EntityType;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.util.math.Direction;
 import net.minecraft.util.math.MathHelper;
@@ -15,7 +14,6 @@ import net.minecraft.world.World;
 import org.spongepowered.asm.mixin.Mixin;
 import org.spongepowered.asm.mixin.Overwrite;
 import org.spongepowered.asm.mixin.Shadow;
-import org.spongepowered.asm.mixin.gen.Accessor;
 
 @Mixin(Entity.class)
 public abstract class MixinEntity {
@@ -51,8 +49,8 @@ public abstract class MixinEntity {
             if (!this.world.isClient && !blockPos_1.equals(this.lastPortalPosition)) {
                 this.lastPortalPosition = new BlockPos(blockPos_1);
                 BlockPattern.Result blockPattern$Result_1;
-                if (this.world.getBlockState(this.lastPortalPosition).getBlock() == BlocksIDL.iron_dim_portal) {
-                    blockPattern$Result_1 = ((BlockIronPortal) BlocksIDL.iron_dim_portal).method_10350(this.world, this.lastPortalPosition);
+                if (this.world.getBlockState(this.lastPortalPosition).getBlock() == BlocksID.iron_dim_portal) {
+                    blockPattern$Result_1 = ((BlockIronPortal) BlocksID.iron_dim_portal).method_10350(this.world, this.lastPortalPosition);
                 } else {
                     blockPattern$Result_1 = ((PortalBlock) Blocks.NETHER_PORTAL).method_10350(this.world, this.lastPortalPosition);
                 }

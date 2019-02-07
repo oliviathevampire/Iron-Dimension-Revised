@@ -1,0 +1,16 @@
+{
+  "type": "forge:ore_shaped",
+  "pattern": [
+    "PPP",
+    "P P",
+    "PPP"
+  ],
+  "key": {
+    "P": {
+      "item": "#IRONPLANKS"
+    }
+  },
+  "result": {
+    "item": "minecraft:chest"
+  }
+}

@@ -1,0 +1,10 @@
+{
+  "variants": {
+    "axis=x": {
+      "model": "irondimension:block/iron_dim_portal_ns"
+    },
+    "axis=z": {
+      "model": "irondimension:block/iron_dim_portal_ew"
+    }
+  }
+}

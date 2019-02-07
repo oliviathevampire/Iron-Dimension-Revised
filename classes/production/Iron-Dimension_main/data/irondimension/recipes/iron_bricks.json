@@ -1,0 +1,16 @@
+{
+  "type": "forge:ore_shaped",
+  "pattern": [
+    "SS",
+    "SS"
+  ],
+  "key": {
+    "S": {
+      "item": "irondimension:ironstone"
+    }
+  },
+  "result": {
+    "item": "irondimension:iron_bricks",
+    "count": 4
+  }
+}

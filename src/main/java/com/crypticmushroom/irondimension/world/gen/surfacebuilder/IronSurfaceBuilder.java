@@ -1,7 +1,5 @@
 package com.crypticmushroom.irondimension.world.gen.surfacebuilder;
 
-import com.crypticmushroom.irondimension.registry.BlocksIDL;
-import com.mojang.datafixers.Dynamic;
 import net.minecraft.block.BlockState;
 import net.minecraft.block.Blocks;
 import net.minecraft.util.math.BlockPos;

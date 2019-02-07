@@ -1,9 +1,8 @@
 package com.crypticmushroom.irondimension.utils.materials;
 
 
-import com.crypticmushroom.irondimension.registry.ItemsIDL;
+import com.crypticmushroom.irondimension.registry.ItemsID;
 import net.minecraft.entity.EquipmentSlot;
-import net.minecraft.item.ArmorMaterials;
 import net.minecraft.recipe.Ingredient;
 import net.minecraft.sound.SoundEvent;
 import net.minecraft.sound.SoundEvents;
@@ -13,10 +12,10 @@ import java.util.function.Supplier;
 
 public enum ArmorMaterial implements net.minecraft.item.ArmorMaterial {
     SUPER_IRON("super_iron", 33, new int[]{3, 6, 8, 3}, 10, SoundEvents.ITEM_ARMOR_EQUIP_IRON, 2.0F, () -> {
-        return Ingredient.ofItems(ItemsIDL.super_iron_ingot);
+        return Ingredient.ofItems(ItemsID.super_iron_ingot);
     }),
     RADIOACTIVE("radioactive", 44, new int[]{4, 7, 9, 4}, 15, SoundEvents.ITEM_ARMOR_EQUIP_DIAMOND, 2.0F, () -> {
-        return Ingredient.ofItems(ItemsIDL.radioactive_iron_ingot);
+        return Ingredient.ofItems(ItemsID.radioactive_iron_ingot);
     });
     private static final int[] BASE_DURABILITY = new int[]{13, 15, 16, 11};
     private final String name;

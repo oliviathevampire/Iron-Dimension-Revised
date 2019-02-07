@@ -1,7 +1,7 @@
 package com.crypticmushroom.irondimension;
 
-import com.crypticmushroom.irondimension.registry.BlocksIDL;
-import com.crypticmushroom.irondimension.registry.ItemsIDL;
+import com.crypticmushroom.irondimension.registry.BlocksID;
+import com.crypticmushroom.irondimension.registry.ItemsID;
 import com.crypticmushroom.irondimension.world.WorldIronDimension;
 import net.fabricmc.api.ModInitializer;
 import net.fabricmc.fabric.api.client.itemgroup.FabricItemGroupBuilder;
@@ -18,8 +18,8 @@ public class IronDimension implements ModInitializer {
 
     @Override
     public void onInitialize() {
-        ItemsIDL.init();
-        BlocksIDL.init();
+        ItemsID.init();
+        BlocksID.init();
         WorldIronDimension.registerWorld();
     }
 }

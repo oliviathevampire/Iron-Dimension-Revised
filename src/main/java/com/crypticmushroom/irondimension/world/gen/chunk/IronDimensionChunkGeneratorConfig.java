@@ -1,6 +1,6 @@
 package com.crypticmushroom.irondimension.world.gen.chunk;
 
-import com.crypticmushroom.irondimension.registry.BlocksIDL;
+import com.crypticmushroom.irondimension.registry.BlocksID;
 import net.minecraft.world.gen.chunk.ChunkGeneratorConfig;
 
 public class IronDimensionChunkGeneratorConfig extends ChunkGeneratorConfig {
@@ -11,7 +11,7 @@ public class IronDimensionChunkGeneratorConfig extends ChunkGeneratorConfig {
     private final int field_13221 = 63;
 
     public IronDimensionChunkGeneratorConfig() {
-        this.defaultBlock = BlocksIDL.ironstone.getDefaultState();
+        this.defaultBlock = BlocksID.ironstone.getDefaultState();
     }
 
     public int method_12614() {

@@ -1,6 +1,6 @@
 package com.crypticmushroom.irondimension.blocks;
 
-import com.crypticmushroom.irondimension.registry.BlocksIDL;
+import com.crypticmushroom.irondimension.registry.BlocksID;
 import net.minecraft.block.Block;
 import net.minecraft.block.Blocks;
 import net.minecraft.block.Material;
@@ -103,7 +103,7 @@ public class IronPortalSize {
                     break label24;
                 }
 
-                if (block == BlocksIDL.iron_dim_portal)
+                if (block == BlocksID.iron_dim_portal)
                 {
                     ++this.portalBlockCount;
                 }
@@ -153,7 +153,7 @@ public class IronPortalSize {
 
     protected boolean isEmptyBlock(Block blockIn)
     {
-        return blockIn.getDefaultState().getMaterial() == Material.AIR || blockIn == Blocks.FIRE || blockIn == BlocksIDL.iron_dim_portal;
+        return blockIn.getDefaultState().getMaterial() == Material.AIR || blockIn == Blocks.FIRE || blockIn == BlocksID.iron_dim_portal;
     }
 
     public boolean isValid()
@@ -169,7 +169,7 @@ public class IronPortalSize {
 
             for (int j = 0; j < this.height; ++j)
             {
-                this.world.setBlockState(blockpos.up(j), BlocksIDL.iron_dim_portal.getDefaultState().with(BlockIronPortal.AXIS, this.axis), 2);
+                this.world.setBlockState(blockpos.up(j), BlocksID.iron_dim_portal.getDefaultState().with(BlockIronPortal.AXIS, this.axis), 2);
             }
         }
     }

@@ -1,0 +1,16 @@
+{
+  "id": "irondimension",
+  "name": "Iron Dimension Legacy Fabric Edition",
+  "description": "The port of the original Iron Dimension mod.",
+  "version": "2.0.0",
+  "side": "universal",
+  "initializers": [
+    "com.crypticmushroom.irondimension.IronDimension"
+  ],
+  "requires": {
+    "fabric": "*"
+  },
+  "mixins": {
+    "common": "mixins.iron_dimension.json"
+  }
+}
