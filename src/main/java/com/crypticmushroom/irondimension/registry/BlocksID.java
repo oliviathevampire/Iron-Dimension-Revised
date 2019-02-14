@@ -54,7 +54,7 @@ public class BlocksID {
         super_iron_block = register("super_iron_block", new BlockCompact());
         radioactive_iron_ore = register("radioactive_iron_ore", new BlockIDLOre());
         radioactive_iron_block = register("radioactive_iron_block", new BlockCompact());
-        fervid_iron_ore = register("fervid_iron_ore", new BlockIDLOre());
+        infernal_iron_ore = register("infernal_iron_ore", new BlockIDLOre());
     }
 
     private static Block register(String name, Block block) {
