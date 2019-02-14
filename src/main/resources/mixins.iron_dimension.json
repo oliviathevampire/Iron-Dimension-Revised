@@ -7,7 +7,6 @@
   "mixins": [
     "MixinChunkGeneratorType",
     "MixinDimensionType",
-    "MixinPlayerManager",
-    "MixinPlayerEntity"
+    "MixinPlayerManager"
   ]
 }
