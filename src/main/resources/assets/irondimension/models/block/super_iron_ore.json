@@ -1,0 +1,6 @@
+{
+  "parent": "block/cube_all",
+  "textures" : {
+    "all": "irondimension:block/super_iron_ore"
+  }
+}
