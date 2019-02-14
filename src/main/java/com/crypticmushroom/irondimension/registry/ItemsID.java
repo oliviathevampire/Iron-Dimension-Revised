@@ -32,14 +32,15 @@ public class ItemsID {
     public static Item radioactive_axe = null;
     public static Item radioactive_shovel = null;
     public static Item radioactive_hoe = null;
+    public static Item iron_flint_and_steel = null;
 
     public static Item super_iron_helmet = null;
     public static Item super_iron_chestplate = null;
-    public static Item super_iron_legs = null;
+    public static Item super_iron_leggings = null;
     public static Item super_iron_boots = null;
     public static Item radioactive_iron_helmet = null;
     public static Item radioactive_iron_chestplate = null;
-    public static Item radioactive_iron_legs = null;
+    public static Item radioactive_iron_leggings = null;
     public static Item radioactive_iron_boots = null;
 
     public static void init() {
@@ -66,11 +67,11 @@ public class ItemsID {
 
         super_iron_helmet = register("super_iron_helmet",new ItemArmor(ArmorMaterial.SUPER_IRON, EquipmentSlot.HEAD));
         super_iron_chestplate = register("super_iron_chestplate",new ItemArmor(ArmorMaterial.SUPER_IRON, EquipmentSlot.CHEST));
-        super_iron_legs = register("super_iron_legs",new ItemArmor(ArmorMaterial.SUPER_IRON, EquipmentSlot.LEGS));
+        super_iron_leggings = register("super_iron_leggings",new ItemArmor(ArmorMaterial.SUPER_IRON, EquipmentSlot.LEGS));
         super_iron_boots = register("super_iron_boots",new ItemArmor(ArmorMaterial.SUPER_IRON, EquipmentSlot.FEET));
         radioactive_iron_helmet = register("radioactive_iron_helmet",new ItemArmor(ArmorMaterial.RADIOACTIVE, EquipmentSlot.HEAD));
         radioactive_iron_chestplate = register("radioactive_iron_chestplate",new ItemArmor(ArmorMaterial.RADIOACTIVE, EquipmentSlot.CHEST));
-        radioactive_iron_legs = register("radioactive_iron_legs",new ItemArmor(ArmorMaterial.RADIOACTIVE, EquipmentSlot.LEGS));
+        radioactive_iron_leggings = register("radioactive_iron_leggings",new ItemArmor(ArmorMaterial.RADIOACTIVE, EquipmentSlot.LEGS));
         radioactive_iron_boots = register("radioactive_iron_boots",new ItemArmor(ArmorMaterial.RADIOACTIVE, EquipmentSlot.FEET));
     }
 
