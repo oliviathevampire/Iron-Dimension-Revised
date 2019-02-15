@@ -23,6 +23,8 @@ public class BlocksID {
     public static Block ironwood_sapling = null;
     public static Block hornbeam_sapling = null;
     public static Block ironstone = null;
+    public static Block chiselled_ironstone = null;
+    public static Block smooth_ironstone = null;
     public static Block soft_iron = null;
     public static Block iron_bricks = null;
     public static Block iron_brick_stairs = null;
@@ -30,7 +32,8 @@ public class BlocksID {
     public static Block super_iron_block = null;
     public static Block radioactive_iron_ore = null;
     public static Block radioactive_iron_block = null;
-    public static Block fervid_iron_ore = null;
+    public static Block infernal_iron_ore = null;
+    public static Block lumen_iron_ore = null;
 
     public static Block metallic_water_block = null;
     public static Block liquid_iron_block = null;
@@ -47,6 +50,8 @@ public class BlocksID {
         hornbeam_leaves = register("hornbeam_leaves", new BlockIronLeaves());
         hornbeam_sapling = register("hornbeam_sapling", new BlockSapling(new HornbeamSaplingGenerator()));
         ironstone = register("ironstone", new BlockIronStone());
+        chiselled_ironstone = register("chiselled_ironstone", new BlockIronStone());
+        smooth_ironstone = register("smooth_ironstone", new BlockIronStone());
         soft_iron = register("soft_iron", new BlockSoftIron());
         iron_bricks = register("iron_bricks", new BlockIronBrick());
         iron_brick_stairs = register("iron_brick_stairs", new BlockIronBrickStairs(iron_bricks.getDefaultState()));
@@ -54,7 +59,8 @@ public class BlocksID {
         super_iron_block = register("super_iron_block", new BlockCompact());
         radioactive_iron_ore = register("radioactive_iron_ore", new BlockIDLOre());
         radioactive_iron_block = register("radioactive_iron_block", new BlockCompact());
-        fervid_iron_ore = register("fervid_iron_ore", new BlockIDLOre());
+        infernal_iron_ore = register("infernal_iron_ore", new BlockIDLOre());
+        lumen_iron_ore = register("lumen_iron_ore", new BlockIDLOre());
     }
 
     private static Block register(String name, Block block) {
