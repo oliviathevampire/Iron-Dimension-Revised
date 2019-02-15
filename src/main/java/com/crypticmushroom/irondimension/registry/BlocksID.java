@@ -35,7 +35,7 @@ public class BlocksID {
     public static Block chiselled_ironstone = null;
     public static Block smooth_ironstone = null;
     public static Block soft_iron = null;
-    public static Block iron_bricks = null;
+    public static Block ironstone_bricks = null;
     public static Block iron_brick_stairs = null;
     public static Block super_iron_ore = null;
     public static Block super_iron_block = null;
@@ -72,7 +72,7 @@ public class BlocksID {
         chiselled_ironstone = register("chiselled_ironstone", new BlockIronStone());
         smooth_ironstone = register("smooth_ironstone", new BlockIronStone());
         soft_iron = register("soft_iron", new BlockSoftIron());
-        iron_bricks = register("iron_bricks", new BlockIronBrick());
+        ironstone_bricks = register("ironstone_bricks", new BlockIronBrick());
         iron_brick_stairs = register("iron_brick_stairs", new BlockIronBrickStairs(iron_bricks.getDefaultState()));
         super_iron_ore = register("super_iron_ore", new BlockIDLOre());
         super_iron_block = register("super_iron_block", new BlockCompact());
