@@ -1,7 +1,7 @@
 {
   "id": "irondimension",
-  "name": "Iron Dimension Legacy Fabric Edition",
-  "description": "The port of the original Iron Dimension mod.",
+  "name": "Iron Dimension: Revised Fabric Edition",
+  "description": "The revised port of the original Iron Dimension mod.",
   "version": "2.0.0",
   "side": "universal",
   "initializers": [
