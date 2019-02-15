@@ -73,7 +73,7 @@ public class BlocksID {
         smooth_ironstone = register("smooth_ironstone", new BlockIronStone());
         soft_iron = register("soft_iron", new BlockSoftIron());
         ironstone_bricks = register("ironstone_bricks", new BlockIronBrick());
-        iron_brick_stairs = register("iron_brick_stairs", new BlockIronBrickStairs(iron_bricks.getDefaultState()));
+        iron_brick_stairs = register("iron_brick_stairs", new BlockIronBrickStairs(ironstone_bricks.getDefaultState()));
         super_iron_ore = register("super_iron_ore", new BlockIDLOre());
         super_iron_block = register("super_iron_block", new BlockCompact());
         radioactive_iron_ore = register("radioactive_iron_ore", new BlockIDLOre());
