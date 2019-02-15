@@ -11,6 +11,9 @@ public enum ToolMaterials implements ToolMaterial {
     SUPER_IRON(3, 1561, 8.0F, 3.0F, 10, () -> {
         return Ingredient.ofItems(ItemsID.super_iron_ingot);
     }),
+    INFERNAL(1, 1, 1.0F, 1.0F, 1, () -> {
+        return Ingredient.ofItems(ItemsID.infernal_iron_ingot);
+    }),
     RADIOACTIVE(3, 2001, 8.5F, 4.0F, 15, () -> {
         return Ingredient.ofItems(ItemsID.radioactive_iron_ingot);
     });
