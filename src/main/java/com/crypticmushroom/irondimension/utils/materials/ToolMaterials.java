@@ -8,13 +8,13 @@ import net.minecraft.util.Lazy;
 import java.util.function.Supplier;
 
 public enum ToolMaterials implements ToolMaterial {
-    SUPER_IRON(3, 1561, 8.0F, 3.0F, 10, () -> {
+    SUPER_IRON(3, 1000, 8.0F, 2.5F, 10, () -> {
         return Ingredient.ofItems(ItemsID.super_iron_ingot);
     }),
-    INFERNAL(1, 1, 1.0F, 1.0F, 1, () -> {
+    INFERNAL(3, 350, 6.0F, 2.0F, 10, () -> {
         return Ingredient.ofItems(ItemsID.infernal_iron_ingot);
     }),
-    RADIOACTIVE(3, 2001, 8.5F, 4.0F, 15, () -> {
+    RADIOACTIVE(3, 1000, 8.0F, 3.0F, 10, () -> {
         return Ingredient.ofItems(ItemsID.radioactive_iron_ingot);
     });
 
