@@ -15,13 +15,14 @@ public class ItemsID {
     public static Item iron_stick = null;
     public static Item iron_charcoal = null;
     public static Item super_iron_ingot = null;
+    public static Item super_iron_nugget = null;
     public static Item radioactive_iron_ingot = null;
     public static Item radioactive_iron_nugget = null;
-    public static Item fervid_iron_ingot = null;
-    public static Item frozen_iron_ingot = null;
+    public static Item infernal_iron_ingot = null;
+    public static Item infernal_iron_nugget = null;
+    public static Item lumen_iron_ingot = null;
     public static Item lumen_iron_nugget = null;
-    public static Item ultra_iron_ingot = null;
-
+	
     public static Item super_iron_sword = null;
     public static Item super_iron_pickaxe = null;
     public static Item super_iron_axe = null;
@@ -47,12 +48,13 @@ public class ItemsID {
         iron_stick = register("iron_stick", new ItemIDLGeneric());
         iron_charcoal = register("iron_charcoal", new ItemIDLGeneric());
         super_iron_ingot = register("super_iron_ingot", new ItemIDLGeneric());
+        super_iron_ingot = register("super_iron_nugget", new ItemIDLGeneric());
         radioactive_iron_ingot = register("radioactive_iron_ingot", new ItemIDLGeneric());
         radioactive_iron_nugget = register("radioactive_iron_nugget",new ItemIDLGeneric());
-        fervid_iron_ingot = register("fervid_iron_ingot",new ItemIDLGeneric());
-        frozen_iron_ingot = register("frozen_iron_ingot",new ItemIDLGeneric());
+        infernal_iron_ingot = register("infernal_iron_ingot",new ItemIDLGeneric());
+        infernal_iron_nugget = register("infernal_iron_nugget",new ItemIDLGeneric());
+        lumen_iron_ingot = register("lumen_iron_ingot",new ItemIDLGeneric());
         lumen_iron_nugget = register("lumen_iron_nugget",new ItemIDLGeneric());
-        ultra_iron_ingot = register("ultra_iron_ingot",new ItemIDLGeneric());
 
         super_iron_sword = register("super_iron_sword", new ItemSword(ToolMaterials.SUPER_IRON));
         super_iron_pickaxe = register("super_iron_pickaxe", new ItemPickaxe(ToolMaterials.SUPER_IRON));
