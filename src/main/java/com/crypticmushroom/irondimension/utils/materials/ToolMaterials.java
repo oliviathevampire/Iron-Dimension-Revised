@@ -1,5 +1,6 @@
 package com.crypticmushroom.irondimension.utils.materials;
 
+import com.crypticmushroom.irondimension.registry.BlocksID;
 import com.crypticmushroom.irondimension.registry.ItemsID;
 import net.minecraft.item.ToolMaterial;
 import net.minecraft.recipe.Ingredient;
@@ -8,11 +9,17 @@ import net.minecraft.util.Lazy;
 import java.util.function.Supplier;
 
 public enum ToolMaterials implements ToolMaterial {
-    SUPER_IRON(3, 1000, 8.0F, 2.5F, 10, () -> {
-        return Ingredient.ofItems(ItemsID.super_iron_ingot);
+    IRONWOOD(1, 80, 3.0F, 0.5F, 15, () -> {
+        return Ingredient.ofItems(BlocksID.ironwood_planks);
+    }),
+    IRONSTONE(2, 200, 5.0F, 1.5F, 8, () -> {
+        return Ingredient.ofItems(BlocksID.ironwood_planks);
     }),
     INFERNAL(3, 350, 6.0F, 2.0F, 10, () -> {
         return Ingredient.ofItems(ItemsID.infernal_iron_ingot);
+    }),
+    SUPER_IRON(3, 1000, 8.0F, 2.5F, 10, () -> {
+        return Ingredient.ofItems(ItemsID.super_iron_ingot);
     }),
     RADIOACTIVE(3, 1000, 8.0F, 3.0F, 10, () -> {
         return Ingredient.ofItems(ItemsID.radioactive_iron_ingot);
