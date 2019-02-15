@@ -1,7 +1,7 @@
 {
   "variants": {
     "": {
-      "model": "irondimension:block/radioactive_iron_ore"
+      "model": "irondimension:block/lumen_iron_ore"
     }
   }
 }

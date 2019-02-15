@@ -33,7 +33,9 @@ public class BlocksID {
     public static Block radioactive_iron_ore = null;
     public static Block radioactive_iron_block = null;
     public static Block infernal_iron_ore = null;
+    public static Block infernal_iron_block = null;
     public static Block lumen_iron_ore = null;
+    public static Block lumen_iron_block = null;
 
     public static Block metallic_water_block = null;
     public static Block liquid_iron_block = null;
@@ -60,7 +62,9 @@ public class BlocksID {
         radioactive_iron_ore = register("radioactive_iron_ore", new BlockIDLOre());
         radioactive_iron_block = register("radioactive_iron_block", new BlockCompact());
         infernal_iron_ore = register("infernal_iron_ore", new BlockIDLOre());
+        infernal_iron_block = register("infernal_iron_block", new BlockCompact());
         lumen_iron_ore = register("lumen_iron_ore", new BlockIDLOre());
+        lumen_iron_block = register("lumen_iron_block", new BlockCompact());
     }
 
     private static Block register(String name, Block block) {
