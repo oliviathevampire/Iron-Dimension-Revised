@@ -5,13 +5,13 @@ import net.fabricmc.fabric.tags.FabricItemTags;
 import net.minecraft.block.*;
 import net.minecraft.sound.BlockSoundGroup;
 
-public class BlockIronBrickStairs extends StairsBlock {
-    public BlockIronBrickStairs(BlockState blockState) {
+public class BlockIronstoneStairs extends StairsBlock {
+    public BlockIronstoneStairs(BlockState blockState) {
         super(blockState, FabricBlockSettings
                 .of(Material.STONE, MaterialColor.LIGHT_GRAY)
-                .breakByTool(FabricItemTags.PICKAXES, 2)
-                .sounds(BlockSoundGroup.METAL)
-                .hardness(5.0F)
+                .breakByTool(FabricItemTags.PICKAXES, 1)
+                .sounds(BlockSoundGroup.STONE)
+                .hardness(1.5F)
                 .resistance(10.0F)
                 .build());
     }

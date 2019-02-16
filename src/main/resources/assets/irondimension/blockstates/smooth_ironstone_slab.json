@@ -1,0 +1,7 @@
+{
+    "variants": {
+        "type=bottom": { "model": "irondimension:block/smooth_ironstone" },
+        "type=top": { "model": "irondimension:block/smooth_ironstone" },
+        "type=double": { "model": "irondimension:block/smooth_ironstone" }
+    }
+}
