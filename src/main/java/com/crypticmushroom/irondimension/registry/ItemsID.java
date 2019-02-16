@@ -100,10 +100,10 @@ public class ItemsID {
         radioactive_iron_chestplate = register("radioactive_iron_chestplate",new ItemArmor(ArmorMaterial.RADIOACTIVE, EquipmentSlot.CHEST));
         radioactive_iron_leggings = register("radioactive_iron_leggings",new ItemArmor(ArmorMaterial.RADIOACTIVE, EquipmentSlot.LEGS));
         radioactive_iron_boots = register("radioactive_iron_boots",new ItemArmor(ArmorMaterial.RADIOACTIVE, EquipmentSlot.FEET));
-        infernal_iron_helmet = register("infernal_iron_helmet",new ItemArmor(ArmorMaterial.INFERNAl, EquipmentSlot.HEAD));
-        infernal_iron_chestplate = register("infernal_iron_chestplate",new ItemArmor(ArmorMaterial.INFERNAl, EquipmentSlot.CHEST));
-        infernal_iron_leggings = register("infernal_iron_leggings",new ItemArmor(ArmorMaterial.INFERNAl, EquipmentSlot.LEGS));
-        infernal_iron_boots = register("infernal_iron_boots",new ItemArmor(ArmorMaterial.INFERNAl, EquipmentSlot.FEET));
+        infernal_iron_helmet = register("infernal_iron_helmet",new ItemArmor(ArmorMaterial.INFERNAL, EquipmentSlot.HEAD));
+        infernal_iron_chestplate = register("infernal_iron_chestplate",new ItemArmor(ArmorMaterial.INFERNAL, EquipmentSlot.CHEST));
+        infernal_iron_leggings = register("infernal_iron_leggings",new ItemArmor(ArmorMaterial.INFERNAL, EquipmentSlot.LEGS));
+        infernal_iron_boots = register("infernal_iron_boots",new ItemArmor(ArmorMaterial.INFERNAL, EquipmentSlot.FEET));
     }
 
     private static Item register(String name, Item item) {
