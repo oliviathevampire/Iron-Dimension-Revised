@@ -36,7 +36,7 @@ public class BlocksID {
     public static Block smooth_ironstone = null;
     public static Block soft_iron = null;
     public static Block ironstone_bricks = null;
-    public static Block iron_brick_stairs = null;
+    public static Block ironstone_brick_stairs = null;
     public static Block super_iron_ore = null;
     public static Block super_iron_block = null;
     public static Block radioactive_iron_ore = null;
