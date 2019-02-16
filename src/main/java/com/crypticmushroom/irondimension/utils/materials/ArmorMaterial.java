@@ -14,6 +14,9 @@ public enum ArmorMaterial implements net.minecraft.item.ArmorMaterial {
     SUPER_IRON("super_iron", 33, new int[]{3, 6, 8, 3}, 10, SoundEvents.ITEM_ARMOR_EQUIP_IRON, 2.0F, () -> {
         return Ingredient.ofItems(ItemsID.super_iron_ingot);
     }),
+    INFERNAL("infernal", 1, new int[]{1, 1, 1, 1}, 1, SoundEvents.ITEM_ARMOR_EQUIP_IRON, 1.0F, () -> {
+        return Ingredient.ofItems(ItemsID.infernal_iron_ingot);
+    }),
     RADIOACTIVE("radioactive", 44, new int[]{4, 7, 9, 4}, 15, SoundEvents.ITEM_ARMOR_EQUIP_DIAMOND, 2.0F, () -> {
         return Ingredient.ofItems(ItemsID.radioactive_iron_ingot);
     });

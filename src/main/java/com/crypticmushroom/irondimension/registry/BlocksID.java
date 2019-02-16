@@ -45,6 +45,8 @@ public class BlocksID {
     public static Block infernal_iron_block = null;
     public static Block lumen_iron_ore = null;
     public static Block lumen_iron_block = null;
+    public static Block iron_thatch = null;
+    public static Block rusty_iron_thatch = null;
 
     public static Block metallic_water_block = null;
     public static Block liquid_iron_block = null;
@@ -82,6 +84,8 @@ public class BlocksID {
         infernal_iron_block = register("infernal_iron_block", new BlockCompact());
         lumen_iron_ore = register("lumen_iron_ore", new BlockIDLOre());
         lumen_iron_block = register("lumen_iron_block", new BlockCompact());
+        iron_thatch = register("iron_thatch", new BlockIronThatch());
+        rusty_iron_thatch = register("rusty_iron_thatch", new BlockIronThatch());
     }
 
     private static Block register(String name, Block block) {

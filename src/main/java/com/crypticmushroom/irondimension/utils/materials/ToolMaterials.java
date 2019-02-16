@@ -13,7 +13,7 @@ public enum ToolMaterials implements ToolMaterial {
         return Ingredient.ofItems(BlocksID.ironwood_planks);
     }),
     IRONSTONE(2, 200, 5.0F, 1.5F, 8, () -> {
-        return Ingredient.ofItems(BlocksID.ironwood_planks);
+        return Ingredient.ofItems(BlocksID.ironstone);
     }),
     INFERNAL(3, 350, 6.0F, 2.0F, 10, () -> {
         return Ingredient.ofItems(ItemsID.infernal_iron_ingot);
