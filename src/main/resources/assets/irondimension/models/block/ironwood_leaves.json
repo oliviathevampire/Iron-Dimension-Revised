@@ -1,0 +1,6 @@
+{
+  "parent": "block/leaves",
+  "textures" : {
+    "all": "irondimension:block/ironwood_leaves"
+  }
+}
