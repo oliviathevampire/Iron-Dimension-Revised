@@ -52,7 +52,14 @@ public class BlocksID {
     public static Block lumen_iron_block = null;
     public static Block iron_thatch = null;
     public static Block rusty_iron_thatch = null;
+    public static Block acidrose_bush = null;
     public static Block aerialweed = null;
+    public static Block coilfern = null;
+    public static Block corroshroom = null;
+    public static Block ferric_flower = null;
+    public static Block firepod = null;
+    public static Block molten_daisy = null;
+    public static Block steel_orchid = null;
 
     public static Block metallic_water_block = null;
     public static Block liquid_iron_block = null;
@@ -97,7 +104,14 @@ public class BlocksID {
         lumen_iron_block = register("lumen_iron_block", new BlockCompact());
         iron_thatch = register("iron_thatch", new BlockIronThatch());
         rusty_iron_thatch = register("rusty_iron_thatch", new BlockIronThatch());
+        acidrose_bush = register("acidrose_bush", new BlockIronThatch());
         aerialweed = register("aerialweed", new BlockIronThatch());
+        coilfern = register("coilfern", new BlockIronThatch());
+        corroshroom = register("corroshroom", new BlockIronThatch());
+        ferric_flower = register("ferric_flower", new BlockIronThatch());
+        firepod	= register("firepod", new BlockIronThatch());
+	    molten_daisy = register("molten_daisy", new BlockIronThatch());
+        steel_orchid = register("steel_orchid", new BlockIronThatch());
     }
 
     private static Block register(String name, Block block) {
