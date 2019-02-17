@@ -5,7 +5,7 @@ import net.fabricmc.fabric.tags.FabricItemTags;
 import net.minecraft.block.*;
 import net.minecraft.sound.BlockSoundGroup;
 
-public class BlockIronstoneStairs extends SlabBlock {
+public class BlockIronstoneSlab extends SlabBlock {
     public BlockIronstoneSlab(BlockState blockState) {
         super(blockState, FabricBlockSettings
                 .of(Material.STONE, MaterialColor.LIGHT_GRAY)
