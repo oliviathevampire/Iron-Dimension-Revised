@@ -78,14 +78,14 @@ public class BlocksID {
         ironstone = register("ironstone", new BlockIronStone());
         chiselled_ironstone = register("chiselled_ironstone", new BlockIronStone());
         chiselled_ironstone_stairs = register("chiselled_ironstone_stairs", new BlockIronstoneStairs(chiselled_ironstone.getDefaultState()));
-        chiselled_ironstone_slab = register("chiselled_ironstone_slab", new BlockIronstone(chiselled_ironstone.getDefaultState()));
+        chiselled_ironstone_slab = register("chiselled_ironstone_slab", new BlockIronstone());
         smooth_ironstone = register("smooth_ironstone", new BlockIronStone());
         smooth_ironstone_stairs = register("smooth_ironstone_stairs", new BlockIronstoneStairs(smooth_ironstone.getDefaultState()));
-        smooth_ironstone_slab = register("smooth_ironstone_slab", new BlockIronstone(smooth_ironstone.getDefaultState()));
+        smooth_ironstone_slab = register("smooth_ironstone_slab", new BlockIronstone());
         soft_iron = register("soft_iron", new BlockSoftIron());
         ironstone_bricks = register("ironstone_bricks", new BlockIronStone());
         ironstone_brick_stairs = register("ironstone_brick_stairs", new BlockIronstoneStairs(ironstone_bricks.getDefaultState()));
-        ironstone_brick_slab = register("ironstone_brick_slab", new BlockIronstone(ironstone_bricks.getDefaultState()));
+        ironstone_brick_slab = register("ironstone_brick_slab", new BlockIronstone());
         super_iron_ore = register("super_iron_ore", new BlockIDLOre());
         super_iron_block = register("super_iron_block", new BlockCompact());
         radioactive_iron_ore = register("radioactive_iron_ore", new BlockIDLOre());
