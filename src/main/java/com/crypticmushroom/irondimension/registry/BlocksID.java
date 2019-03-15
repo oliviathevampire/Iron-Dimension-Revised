@@ -115,8 +115,8 @@ public class BlocksID {
     }
 
     private static Block register(String name, Block block) {
-        Registry.BLOCK.register(new Identifier(IronDimension.MODID, name), block);
-        Registry.ITEM.register(new Identifier(IronDimension.MODID, name), new BlockItem(block, new Item.Settings().itemGroup(IronDimension.IDL_ITEM_GROUP)));
+        Registry.register(Registry.BLOCK,new Identifier(IronDimension.MODID, name), block);
+        Registry.register(Registry.ITEM,new Identifier(IronDimension.MODID, name), new BlockItem(block, new Item.Settings().itemGroup(IronDimension.IDL_ITEM_GROUP)));
         return block;
     }
 }

@@ -97,7 +97,7 @@ public class HornbeamTreeFeature extends AbstractTreeFeature<DefaultFeatureConfi
 
     protected static boolean canTreeReplace(TestableWorld testableWorld_1, BlockPos blockPos_1)
     {
-        return testableWorld_1.test(blockPos_1, (blockState_1) -> {
+        return testableWorld_1.testBlockState(blockPos_1, (blockState_1) -> {
             Block block = blockState_1.getBlock();
             return block == BlocksID.iron_grass || block == BlocksID.iron_dirt;
         });

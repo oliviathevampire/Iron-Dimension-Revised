@@ -1,7 +1,7 @@
 package com.crypticmushroom.irondimension.blocks;
 
-import net.fabricmc.fabric.block.FabricBlockSettings;
-import net.fabricmc.fabric.tags.FabricItemTags;
+import net.fabricmc.fabric.api.block.FabricBlockSettings;
+import net.fabricmc.fabric.api.tag.FabricItemTags;
 import net.minecraft.block.LogBlock;
 import net.minecraft.block.Material;
 import net.minecraft.block.MaterialColor;

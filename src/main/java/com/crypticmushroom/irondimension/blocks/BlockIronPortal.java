@@ -1,11 +1,10 @@
 package com.crypticmushroom.irondimension.blocks;
 
 import com.crypticmushroom.irondimension.world.WorldIronDimension;
-import net.fabricmc.fabric.block.FabricBlockSettings;
+import net.fabricmc.fabric.api.block.FabricBlockSettings;
+import net.minecraft.block.Block;
 import net.minecraft.block.BlockState;
 import net.minecraft.block.Blocks;
-import net.minecraft.block.PortalBlock;
-import net.minecraft.entity.Entity;
 import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.util.Hand;
 import net.minecraft.util.hit.BlockHitResult;
@@ -13,7 +12,7 @@ import net.minecraft.util.math.BlockPos;
 import net.minecraft.world.World;
 import net.minecraft.world.dimension.DimensionType;
 
-public class BlockIronPortal extends PortalBlock {
+public class BlockIronPortal extends Block {
     public BlockIronPortal() {
         super(FabricBlockSettings.copy(Blocks.NETHER_PORTAL).build());
     }

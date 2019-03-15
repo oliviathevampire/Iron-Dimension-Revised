@@ -1,8 +1,8 @@
 package com.crypticmushroom.irondimension.blocks;
 
 import com.crypticmushroom.irondimension.registry.BlocksID;
-import net.fabricmc.fabric.block.FabricBlockSettings;
-import net.fabricmc.fabric.tags.FabricItemTags;
+import net.fabricmc.fabric.api.block.FabricBlockSettings;
+import net.fabricmc.fabric.api.tag.FabricItemTags;
 import net.minecraft.block.Block;
 import net.minecraft.block.BlockState;
 import net.minecraft.block.Material;
@@ -28,15 +28,15 @@ public class BlockIronGrass extends Block {
     @Override
     public void randomDisplayTick(BlockState blockState_1, World world, BlockPos pos, Random rand) {
         if (!world.isClient)
-            if (world.getLightLevel(LightType.BLOCK_LIGHT,pos.up()) < 4 && world.getBlockState(pos.up()).getBlock().getLightSubtracted(world.getBlockState(pos.up()), world, pos.up()) > 2)
+            if (world.getLightLevel(LightType.BLOCK,pos.up()) < 4 && world.getBlockState(pos.up()).getBlock().getLightSubtracted(world.getBlockState(pos.up()), world, pos.up()) > 2)
                 world.setBlockState(pos, BlocksID.iron_dirt.getDefaultState());
-            else if (world.getLightLevel(LightType.BLOCK_LIGHT,pos.up()) >= 9)
+            else if (world.getLightLevel(LightType.BLOCK,pos.up()) >= 9)
                 for (int i = 0; i < 4; ++i) {
                     BlockPos blockpos = pos.add(rand.nextInt(3) - 1, rand.nextInt(5) - 3, rand.nextInt(3) - 1);
                     Block block = world.getBlockState(blockpos.up()).getBlock();
                     BlockState iblockstate = world.getBlockState(blockpos);
 
-                    if (iblockstate.getBlock() == BlocksID.iron_dirt && world.getLightLevel(LightType.BLOCK_LIGHT,blockpos.up()) >= 4 && block.getLightSubtracted(world.getBlockState(blockpos.up()), world, blockpos.up()) <= 2)
+                    if (iblockstate.getBlock() == BlocksID.iron_dirt && world.getLightLevel(LightType.BLOCK,blockpos.up()) >= 4 && block.getLightSubtracted(world.getBlockState(blockpos.up()), world, blockpos.up()) <= 2)
                         world.setBlockState(blockpos, BlocksID.iron_grass.getDefaultState());
                 }
     }

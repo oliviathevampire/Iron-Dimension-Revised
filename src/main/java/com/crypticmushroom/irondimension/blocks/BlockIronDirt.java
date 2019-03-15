@@ -1,11 +1,9 @@
 package com.crypticmushroom.irondimension.blocks;
 
-import net.fabricmc.fabric.block.FabricBlockSettings;
-import net.fabricmc.fabric.tags.FabricItemTags;
+import net.fabricmc.fabric.api.block.FabricBlockSettings;
+import net.fabricmc.fabric.api.tag.FabricItemTags;
 import net.minecraft.block.*;
 import net.minecraft.sound.BlockSoundGroup;
-import net.minecraft.util.math.BlockPos;
-import net.minecraft.world.BlockView;
 
 public class BlockIronDirt extends Block {
     public BlockIronDirt() {

@@ -37,18 +37,18 @@ public class IronDimensionDimension extends Dimension {
     }
 
     @Override
-    public BlockPos method_12452(ChunkPos var1, boolean var2) {
+    public BlockPos getSpawningBlockInChunk(ChunkPos var1, boolean var2) {
         return null;
     }
 
     @Override
-    public BlockPos method_12444(int var1, int var2, boolean var3) {
+    public BlockPos getTopSpawningBlockPosition(int var1, int var2, boolean var3) {
         return null;
     }
 
     @Override
     public float getSkyAngle(long var1, float var3) {
-        return 0;
+        return 8.0F;
     }
 
     @Override
@@ -57,8 +57,7 @@ public class IronDimensionDimension extends Dimension {
     }
 
     @Override
-    public Vec3d method_12445(float var1, float var2)
-    {
+    public Vec3d getFogColor(float var1, float var2) {
         int i = 0x8080a0;
 
         float f2 = MathHelper.cos(var1 * 3.141593F * 2.0F) * 2.0F + 0.5F;
@@ -74,6 +73,16 @@ public class IronDimensionDimension extends Dimension {
         f5 *= f2 * 0.91F + 0.09F;
 
         return new Vec3d(f3, f4, f5);
+    }
+
+    @Override
+    public boolean canPlayersSleep() {
+        return true;
+    }
+
+    @Override
+    public boolean shouldRenderFog(int var1, int var2) {
+        return false;
     }
 
     @Environment(EnvType.CLIENT)
@@ -97,25 +106,6 @@ public class IronDimensionDimension extends Dimension {
         }
 
         return null;
-    }
-
-    @Override
-    @Environment(EnvType.CLIENT)
-    public float method_12455()
-    {
-        return 8.0F;
-    }
-
-    @Override
-    public boolean method_12448()
-    {
-        return true;
-    }
-
-    @Override
-    public boolean method_12453(int var1, int var2)
-    {
-        return false;
     }
 
     @Override

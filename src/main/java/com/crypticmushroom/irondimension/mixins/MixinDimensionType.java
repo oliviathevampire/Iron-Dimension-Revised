@@ -9,5 +9,5 @@ import org.spongepowered.asm.mixin.Mixin;
 public class MixinDimensionType {
 
     @SuppressWarnings("unused")
-    private static final DimensionType IRON_DIMENSION = Registry.set(Registry.DIMENSION,5, "iron_dimension", new IronDimensionDimensionType());
+    private static final DimensionType IRON_DIMENSION = Registry.register(Registry.DIMENSION,5, "iron_dimension", new IronDimensionDimensionType());
 }
