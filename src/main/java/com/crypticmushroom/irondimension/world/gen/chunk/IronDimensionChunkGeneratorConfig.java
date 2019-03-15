@@ -12,6 +12,7 @@ public class IronDimensionChunkGeneratorConfig extends ChunkGeneratorConfig {
 
     public IronDimensionChunkGeneratorConfig() {
         this.defaultBlock = BlocksID.ironstone.getDefaultState();
+        this.defaultFluid = BlocksID.iron_water_block.getDefaultState();
     }
 
     public int method_12614() {

@@ -2,6 +2,8 @@ package com.crypticmushroom.irondimension.world.biomes;
 
 import com.crypticmushroom.irondimension.world.WorldIronDimension;
 import com.crypticmushroom.irondimension.world.gen.surfacebuilder.IronSurfaceBuilder;
+import net.minecraft.entity.EntityCategory;
+import net.minecraft.entity.EntityType;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.world.biome.Biome;
 import net.minecraft.world.biome.DefaultBiomeFeatures;

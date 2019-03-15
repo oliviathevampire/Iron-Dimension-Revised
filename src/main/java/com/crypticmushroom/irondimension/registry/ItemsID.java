@@ -7,7 +7,9 @@ import com.crypticmushroom.irondimension.utils.materials.ToolMaterials;
 import net.minecraft.block.Block;
 import net.minecraft.entity.EquipmentSlot;
 import net.minecraft.item.ArmorMaterials;
+import net.minecraft.item.BucketItem;
 import net.minecraft.item.Item;
+import net.minecraft.item.Items;
 import net.minecraft.util.registry.Registry;
 
 public class ItemsID {
@@ -58,6 +60,8 @@ public class ItemsID {
     public static Item infernal_iron_leggings = null;
     public static Item infernal_iron_boots = null;
 
+    public static Item iron_water_bucket;
+
     public static void init() {
         iron_stick = register("iron_stick", new ItemIDLGeneric());
         bison_dung = register("bison_dung", new ItemIDLGeneric());
@@ -104,6 +108,8 @@ public class ItemsID {
         infernal_iron_chestplate = register("infernal_iron_chestplate",new ItemArmor(ArmorMaterial.INFERNAL, EquipmentSlot.CHEST));
         infernal_iron_leggings = register("infernal_iron_leggings",new ItemArmor(ArmorMaterial.INFERNAL, EquipmentSlot.LEGS));
         infernal_iron_boots = register("infernal_iron_boots",new ItemArmor(ArmorMaterial.INFERNAL, EquipmentSlot.FEET));
+
+        iron_water_bucket = register("iron_water_bucket", new BucketItem(FluidsID.IRON_WATER, new Item.Settings().recipeRemainder(Items.BUCKET).stackSize(1).itemGroup(IronDimension.IDL_ITEM_GROUP)));
     }
 
     private static Item register(String name, Item item) {

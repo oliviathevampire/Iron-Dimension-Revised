@@ -1,6 +1,7 @@
 package com.crypticmushroom.irondimension;
 
 import com.crypticmushroom.irondimension.registry.BlocksID;
+import com.crypticmushroom.irondimension.registry.FluidsID;
 import com.crypticmushroom.irondimension.registry.ItemsID;
 import com.crypticmushroom.irondimension.world.WorldIronDimension;
 import net.fabricmc.api.ModInitializer;
@@ -20,6 +21,7 @@ public class IronDimension implements ModInitializer {
     public void onInitialize() {
         ItemsID.init();
         BlocksID.init();
+        FluidsID.init();
         WorldIronDimension.registerWorld();
     }
 }
