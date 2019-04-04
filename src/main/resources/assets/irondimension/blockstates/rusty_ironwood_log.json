@@ -1,0 +1,7 @@
+{
+  "variants": {
+    "axis=y":  { "model": "irondimension:block/rusty_ironwood_log" },
+    "axis=z":   { "model": "irondimension:block/rusty_ironwood_log", "x": 90 },
+    "axis=x":   { "model": "irondimension:block/rusty_ironwood_log", "x": 90, "y": 90 }
+  }
+}

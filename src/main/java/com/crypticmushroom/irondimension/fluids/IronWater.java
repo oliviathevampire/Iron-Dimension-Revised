@@ -80,7 +80,7 @@ public abstract class IronWater extends BaseFluid {
 
     @Override
     protected BlockState toBlockState(FluidState var1) {
-        return BlocksID.iron_water_block.getDefaultState().with(FluidBlock.field_11278, method_15741(var1));
+        return BlocksID.iron_water_block.getDefaultState().with(FluidBlock.LEVEL, method_15741(var1));
     }
 
     public static class Flowing extends IronWater {

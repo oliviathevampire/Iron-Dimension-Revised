@@ -19,8 +19,8 @@ public class IronDimension implements ModInitializer {
 
     @Override
     public void onInitialize() {
-        ItemsID.init();
         BlocksID.init();
+        ItemsID.init();
         FluidsID.init();
         WorldIronDimension.registerWorld();
     }

@@ -59,6 +59,9 @@ public class ItemsID {
     public static Item infernal_iron_chestplate = null;
     public static Item infernal_iron_leggings = null;
     public static Item infernal_iron_boots = null;
+    public static Item ironwood_sign = null;
+    public static Item rusty_ironwood_sign = null;
+    public static Item hornbeam_sign = null;
 
     public static Item iron_water_bucket;
 
@@ -108,6 +111,9 @@ public class ItemsID {
         infernal_iron_chestplate = register("infernal_iron_chestplate",new ItemArmor(ArmorMaterial.INFERNAL, EquipmentSlot.CHEST));
         infernal_iron_leggings = register("infernal_iron_leggings",new ItemArmor(ArmorMaterial.INFERNAL, EquipmentSlot.LEGS));
         infernal_iron_boots = register("infernal_iron_boots",new ItemArmor(ArmorMaterial.INFERNAL, EquipmentSlot.FEET));
+        ironwood_sign = register("ironwood_sign", new IronSignItem(BlocksID.ironwood_sign, BlocksID.ironwood_wall_sign));
+        rusty_ironwood_sign = register("rusty_ironwood_sign", new IronSignItem(BlocksID.rusty_ironwood_sign, BlocksID.rusty_ironwood_wall_sign));
+        hornbeam_sign = register("hornbeam_sign", new IronSignItem(BlocksID.hornbeam_sign, BlocksID.hornbeam_wall_sign));
 
         iron_water_bucket = register("iron_water_bucket", new BucketItem(FluidsID.IRON_WATER, new Item.Settings().recipeRemainder(Items.BUCKET).stackSize(1).itemGroup(IronDimension.IDL_ITEM_GROUP)));
     }

@@ -5,7 +5,7 @@ about: Create a report to help us improve
 ---
 
 **Versions**
-Forge: 
+Forge/Fabric: 
 Iron Dimension: Legacy: 
 <!---Please specify the versions you were using at the point of the bug. No versions supplied may be treated as invalid issues. You may delete this comment.--->
 

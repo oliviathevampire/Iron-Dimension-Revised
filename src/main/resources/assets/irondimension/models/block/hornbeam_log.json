@@ -1,0 +1,7 @@
+{
+    "parent": "block/cube_column",
+    "textures": {
+        "end": "irondimension:block/hornbeam_log_top",
+        "side": "irondimension:block/hornbeam_log_side"
+    }
+}

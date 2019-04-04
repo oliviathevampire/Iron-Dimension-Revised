@@ -1,22 +1,7 @@
 {
-  "defaults": {
-    "model": "cube_column",
-    "textures": {
-      "end": "midnight:blocks/hornbeam_log_top",
-      "side": "midnight:blocks/hornbeam_log_side"
-    }
-  },
   "variants": {
-    "normal": [{}],
-    "inventory": [{}],
-    "axis": {
-      "x": {"x": 90, "y": 90},
-      "y": {},
-      "z": {"x": 90},
-      "none": {
-        "model": "cube_all",
-        "textures": {"all": "midnight:blocks/hornbeam_log"}
-      }
-    }
+    "axis=y":  { "model": "irondimension:block/hornbeam_log" },
+    "axis=z":   { "model": "irondimension:block/hornbeam_log", "x": 90 },
+    "axis=x":   { "model": "irondimension:block/hornbeam_log", "x": 90, "y": 90 }
   }
 }

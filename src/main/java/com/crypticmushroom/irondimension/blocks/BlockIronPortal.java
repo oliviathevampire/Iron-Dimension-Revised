@@ -28,4 +28,9 @@ public class BlockIronPortal extends Block {
         }
         return true;
     }
+
+    public enum State {
+        ENABLE,
+        DISABLE;
+    }
 }

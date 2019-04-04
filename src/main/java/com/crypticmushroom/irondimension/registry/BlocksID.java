@@ -62,6 +62,12 @@ public class BlocksID {
     public static Block firepod = null;
     public static Block molten_daisy = null;
     public static Block steel_orchid = null;
+    public static Block ironwood_sign = null;
+    public static Block rusty_ironwood_sign = null;
+    public static Block hornbeam_sign = null;
+    public static Block ironwood_wall_sign = null;
+    public static Block rusty_ironwood_wall_sign = null;
+    public static Block hornbeam_wall_sign = null;
 
     public static Block metallic_water_block = null;
     public static Block iron_water_block = null;
@@ -106,20 +112,33 @@ public class BlocksID {
         lumen_iron_block = register("lumen_iron_block", new BlockCompact());
         iron_thatch = register("iron_thatch", new BlockIronThatch());
         rusty_iron_thatch = register("rusty_iron_thatch", new BlockIronThatch());
-        acidrose_bush = register("acidrose_bush", new BlockIronThatch());
-        aerialweed = register("aerialweed", new BlockIronThatch());
-        coilfern = register("coilfern", new BlockIronThatch());
-        corroshroom = register("corroshroom", new BlockIronThatch());
-        ferric_flower = register("ferric_flower", new BlockIronThatch());
-        firepod	= register("firepod", new BlockIronThatch());
-	    molten_daisy = register("molten_daisy", new BlockIronThatch());
-        steel_orchid = register("steel_orchid", new BlockIronThatch());
+        acidrose_bush = register("acidrose_bush", new IronPlant());
+        aerialweed = register("aerialweed", new IronPlant());
+        coilfern = register("coilfern", new IronPlant());
+        corroshroom = register("corroshroom", new IronPlant());
+        ferric_flower = register("ferric_flower", new IronPlant());
+        firepod	= register("firepod", new IronPlant());
+	    molten_daisy = register("molten_daisy", new IronPlant());
+        steel_orchid = register("steel_orchid", new IronPlant());
+        ironwood_sign = registerBlock("ironwood_sign", new IronSignBlock(ironwood_planks));
+        rusty_ironwood_sign = registerBlock("rusty_ironwood_sign", new IronSignBlock(rusty_ironwood_planks));
+        hornbeam_sign = registerBlock("hornbeam_sign", new IronSignBlock(hornbeam_planks));
+        ironwood_wall_sign = registerBlock("ironwood_wall_sign", new IronWallSignBlock(ironwood_sign));
+        rusty_ironwood_wall_sign = registerBlock("rusty_ironwood_wall_sign", new IronWallSignBlock(rusty_ironwood_sign));
+        hornbeam_wall_sign = registerBlock("hornbeam_wall_sign", new IronWallSignBlock(hornbeam_sign));
+
+
         iron_water_block = register("iron_water_block", new BlockFluid(FluidsID.IRON_WATER, Block.Settings.copy(Blocks.WATER)));
     }
 
     private static Block register(String name, Block block) {
         Registry.register(Registry.BLOCK,new Identifier(IronDimension.MODID, name), block);
         Registry.register(Registry.ITEM,new Identifier(IronDimension.MODID, name), new BlockItem(block, new Item.Settings().itemGroup(IronDimension.IDL_ITEM_GROUP)));
+        return block;
+    }
+
+    private static Block registerBlock(String name, Block block) {
+        Registry.register(Registry.BLOCK,new Identifier(IronDimension.MODID, name), block);
         return block;
     }
 }

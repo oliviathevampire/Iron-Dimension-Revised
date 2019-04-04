@@ -2,6 +2,7 @@ package com.crypticmushroom.irondimension.utils.portal;
 
 import com.crypticmushroom.irondimension.world.WorldIronDimension;
 import net.minecraft.entity.Entity;
+import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.server.network.ServerPlayerEntity;
 import net.minecraft.server.world.ServerWorld;
 import net.minecraft.util.math.BlockPos;
@@ -29,7 +30,7 @@ public class PlayerPlacementHandler {
 
     public static void setEntityLocation(Entity entity, BlockPos pos) {
         if (entity instanceof ServerPlayerEntity) {
-            ((ServerPlayerEntity) entity).networkHandler.teleportRequest(pos.getX(), pos.getY(), pos.getZ(), 0, 0);
+            ((ServerPlayerEntity) entity).networkHandler.teleportRequest(pos.getX(), pos.getY(), pos.getZ(), 0, 0, null);
             ((ServerPlayerEntity) entity).networkHandler.syncWithPlayerPosition();
         } else {
             entity.setPositionAndAngles(pos.getX(), pos.getY(), pos.getZ(), 0, 0);

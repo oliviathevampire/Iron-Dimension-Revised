@@ -2,18 +2,14 @@ package com.crypticmushroom.irondimension.blocks;
 
 import com.crypticmushroom.irondimension.registry.BlocksID;
 import net.fabricmc.fabric.api.block.FabricBlockSettings;
-import net.minecraft.block.Block;
-import net.minecraft.block.BlockState;
-import net.minecraft.block.Material;
-import net.minecraft.block.SaplingBlock;
-import net.minecraft.block.sapling.SaplingGenerator;
+import net.minecraft.block.*;
 import net.minecraft.sound.BlockSoundGroup;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.world.BlockView;
 
-public class BlockSapling extends SaplingBlock {
-    public BlockSapling(SaplingGenerator saplingGenerator_1) {
-        super(saplingGenerator_1, FabricBlockSettings.of(Material.PLANT).sounds(BlockSoundGroup.GRASS).build());
+public class IronPlant extends FlowerBlock {
+    public IronPlant() {
+        super(null, 0, FabricBlockSettings.of(Material.PLANT).sounds(BlockSoundGroup.GRASS).build());
     }
 
     @Override

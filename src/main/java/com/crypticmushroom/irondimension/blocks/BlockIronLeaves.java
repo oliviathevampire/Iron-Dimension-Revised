@@ -33,15 +33,6 @@ public class BlockIronLeaves extends LeavesBlock {
     }
 
     @Override
-    public void onRandomTick(BlockState blockState_1, World world_1, BlockPos blockPos_1, Random random_1) {
-        if (!(Boolean)blockState_1.get(PERSISTENT) && (Integer)blockState_1.get(DISTANCE) == 7) {
-            dropStacks(blockState_1, world_1, blockPos_1);
-            world_1.clearBlockState(blockPos_1);
-        }
-
-    }
-
-    @Override
     public void onScheduledTick(BlockState blockState_1, World world_1, BlockPos blockPos_1, Random random_1) {
         world_1.setBlockState(blockPos_1, updateDistamceFromLogs(blockState_1, world_1, blockPos_1), 3);
     }
@@ -105,19 +96,6 @@ public class BlockIronLeaves extends LeavesBlock {
         } else {
             return blockState_1.getBlock() instanceof LeavesBlock ? (Integer)blockState_1.get(DISTANCE) : 7;
         }
-    }
-
-    @Override
-    @Environment(EnvType.CLIENT)
-    public void randomDisplayTick(BlockState blockState_1, World world_1, BlockPos blockPos_1, Random random_1) {
-        BlockPos blockPos_2 = blockPos_1.down();
-        if (world_1.hasRain(blockPos_1.up()) && !world_1.getBlockState(blockPos_2).hasSolidTopSurface(world_1, blockPos_2) && random_1.nextInt(15) == 1) {
-            double double_1 = (double)((float)blockPos_1.getX() + random_1.nextFloat());
-            double double_2 = (double)blockPos_1.getY() - 0.05D;
-            double double_3 = (double)((float)blockPos_1.getZ() + random_1.nextFloat());
-            world_1.addParticle(ParticleTypes.DRIPPING_WATER, double_1, double_2, double_3, 0.0D, 0.0D, 0.0D);
-        }
-
     }
 
 
