@@ -3,13 +3,14 @@ package com.crypticmushroom.irondimension.blocks;
 import com.crypticmushroom.irondimension.registry.BlocksID;
 import net.fabricmc.fabric.api.block.FabricBlockSettings;
 import net.minecraft.block.*;
+import net.minecraft.entity.effect.StatusEffects;
 import net.minecraft.sound.BlockSoundGroup;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.world.BlockView;
 
 public class IronPlant extends FlowerBlock {
     public IronPlant() {
-        super(null, 0, FabricBlockSettings.of(Material.PLANT).sounds(BlockSoundGroup.GRASS).build());
+        super(StatusEffects.LUCK, 0, FabricBlockSettings.of(Material.PLANT).sounds(BlockSoundGroup.GRASS).build());
     }
 
     @Override

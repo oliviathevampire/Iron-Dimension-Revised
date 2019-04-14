@@ -1,16 +1,21 @@
 {
+  "schemaVersion": 1,
   "id": "irondimension",
   "name": "Iron Dimension: Revised Fabric Edition",
   "description": "The revised port of the original Iron Dimension mod.",
   "version": "2.0.0",
-  "side": "universal",
-  "initializers": [
-    "com.crypticmushroom.irondimension.IronDimension"
-  ],
-  "requires": {
+  "environment": "*",
+  "license": "GNU General Public License",
+  "entrypoints":{
+    "main": [
+      "com.crypticmushroom.irondimension.IronDimension"
+    ]
+  },
+  "depends": {
+    "fabricloader": ">=0.4.0",
     "fabric": "*"
   },
-  "mixins": {
-    "common": "mixins.iron_dimension.json"
-  }
+  "mixins": [
+    "iron_dimension.mixins.json"
+  ]
 }
