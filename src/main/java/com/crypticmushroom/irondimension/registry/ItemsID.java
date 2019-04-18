@@ -63,8 +63,6 @@ public class ItemsID {
     public static Item rusty_ironwood_sign = null;
     public static Item hornbeam_sign = null;
 
-    public static Item iron_water_bucket;
-
     public static void init() {
         iron_stick = register("iron_stick", new ItemIDLGeneric());
         bison_dung = register("bison_dung", new ItemIDLGeneric());
@@ -114,8 +112,6 @@ public class ItemsID {
         ironwood_sign = register("ironwood_sign", new IronSignItem(BlocksID.ironwood_sign, BlocksID.ironwood_wall_sign));
         rusty_ironwood_sign = register("rusty_ironwood_sign", new IronSignItem(BlocksID.rusty_ironwood_sign, BlocksID.rusty_ironwood_wall_sign));
         hornbeam_sign = register("hornbeam_sign", new IronSignItem(BlocksID.hornbeam_sign, BlocksID.hornbeam_wall_sign));
-
-        iron_water_bucket = register("iron_water_bucket", new BucketItem(FluidsID.IRON_WATER, new Item.Settings().recipeRemainder(Items.BUCKET).stackSize(1).itemGroup(IronDimension.IDL_ITEM_GROUP)));
     }
 
     private static Item register(String name, Item item) {

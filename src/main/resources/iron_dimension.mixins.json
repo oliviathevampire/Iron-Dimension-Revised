@@ -8,6 +8,9 @@
     "MixinDimensionType",
     "MixinPlayerManager"
   ],
+  "client": [
+    "SignBlockEntityRendererMixin"
+  ],
   "injectors": {
     "defaultRequire": 1
   }

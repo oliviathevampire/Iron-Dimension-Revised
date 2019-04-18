@@ -5,10 +5,9 @@ import com.crypticmushroom.irondimension.blocks.*;
 import com.crypticmushroom.irondimension.world.gen.saplinggenerator.HornbeamSaplingGenerator;
 import net.minecraft.block.Block;
 import net.minecraft.block.Blocks;
-import net.minecraft.block.FluidBlock;
 import net.minecraft.block.MaterialColor;
+import net.minecraft.item.BlockItem;
 import net.minecraft.item.Item;
-import net.minecraft.item.block.BlockItem;
 import net.minecraft.util.Identifier;
 import net.minecraft.util.registry.Registry;
 
@@ -92,9 +91,9 @@ public class BlocksID {
         hornbeam_leaves = register("hornbeam_leaves", new BlockIronLeaves());
         hornbeam_sapling = register("hornbeam_sapling", new BlockSapling(new HornbeamSaplingGenerator()));
         ironstone = register("ironstone", new BlockIronStone());
-        chiselled_ironstone = register("chiselled_ironstone", new BlockIronStone());
-        chiselled_ironstone_stairs = register("chiselled_ironstone_stairs", new BlockIronstoneStairs(chiselled_ironstone.getDefaultState()));
-        chiselled_ironstone_slab = register("chiselled_ironstone_slab", new BlockIronSlab(chiselled_ironstone));
+        chiselled_ironstone = register("chiseled_ironstone", new BlockIronStone());
+        chiselled_ironstone_stairs = register("chiseled_ironstone_stairs", new BlockIronstoneStairs(chiselled_ironstone.getDefaultState()));
+        chiselled_ironstone_slab = register("chiseled_ironstone_slab", new BlockIronSlab(chiselled_ironstone));
         smooth_ironstone = register("smooth_ironstone", new BlockIronStone());
         smooth_ironstone_stairs = register("smooth_ironstone_stairs", new BlockIronstoneStairs(smooth_ironstone.getDefaultState()));
         smooth_ironstone_slab = register("smooth_ironstone_slab", new BlockIronSlab(smooth_ironstone));
@@ -127,8 +126,7 @@ public class BlocksID {
         rusty_ironwood_wall_sign = registerBlock("rusty_ironwood_wall_sign", new IronWallSignBlock(rusty_ironwood_sign));
         hornbeam_wall_sign = registerBlock("hornbeam_wall_sign", new IronWallSignBlock(hornbeam_sign));
 
-
-        iron_water_block = register("iron_water_block", new BlockFluid(FluidsID.IRON_WATER, Block.Settings.copy(Blocks.WATER)));
+        iron_water_block = registerBlock("iron_water_block", new BlockFluid(FluidsID.IRON_WATER, Block.Settings.copy(Blocks.WATER)));
     }
 
     private static Block register(String name, Block block) {

@@ -3,8 +3,7 @@ package com.crypticmushroom.irondimension.items;
 import com.crypticmushroom.irondimension.IronDimension;
 import net.minecraft.block.Block;
 import net.minecraft.item.Item;
-import net.minecraft.item.ItemGroup;
-import net.minecraft.item.block.SignItem;
+import net.minecraft.item.SignItem;
 
 public class IronSignItem extends SignItem {
     public IronSignItem(Block block_1, Block block_2) {

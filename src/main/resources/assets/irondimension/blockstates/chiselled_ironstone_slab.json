@@ -1,7 +1,0 @@
-{
-    "variants": {
-        "type=bottom": { "model": "irondimension:block/chiselled_ironstone_slab" },
-        "type=top": { "model": "irondimension:block/chiselled_ironstone_slab" },
-        "type=double": { "model": "irondimension:block/chiselled_ironstone_slab" }
-    }
-}
