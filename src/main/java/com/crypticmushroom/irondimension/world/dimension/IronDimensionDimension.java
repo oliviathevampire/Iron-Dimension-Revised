@@ -31,8 +31,8 @@ public class IronDimensionDimension extends Dimension {
     @Override
     public ChunkGenerator<?> createChunkGenerator() {
         return WorldIronDimension.IRON_DIMENSION_CHUNK_GENERATOR.create(
-                this.world,
-                BiomeSourceType.CHECKERBOARD.applyConfig(new CheckerboardBiomeSourceConfig().method_8777(biomes).method_8780(biomes.length)),
+                this.world, BiomeSourceType.FIXED.applyConfig(new FixedBiomeSourceConfig().setBiome(WorldIronDimension.IRON_PLAINS)),
+//                BiomeSourceType.CHECKERBOARD.applyConfig(new CheckerboardBiomeSourceConfig().method_8777(biomes).method_8780(biomes.length)),
                 new IronDimensionChunkGeneratorConfig());
     }
 
