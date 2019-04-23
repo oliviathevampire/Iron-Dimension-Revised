@@ -1,5 +1,6 @@
 package com.crypticmushroom.irondimension;
 
+import com.crypticmushroom.irondimension.blocks.BlockIronPortal;
 import com.crypticmushroom.irondimension.registry.BlocksID;
 import com.crypticmushroom.irondimension.registry.FluidsID;
 import com.crypticmushroom.irondimension.registry.ItemsID;
@@ -9,9 +10,11 @@ import net.fabricmc.fabric.api.client.itemgroup.FabricItemGroupBuilder;
 import net.minecraft.item.ItemGroup;
 import net.minecraft.item.ItemStack;
 import net.minecraft.item.Items;
+import net.minecraft.state.property.EnumProperty;
 import net.minecraft.util.Identifier;
 
 public class IronDimension implements ModInitializer {
+    public static EnumProperty<BlockIronPortal.State> TYPE;
 
     public static final String MODID = "irondimension";
 
@@ -19,6 +22,7 @@ public class IronDimension implements ModInitializer {
 
     @Override
     public void onInitialize() {
+        TYPE = EnumProperty.create("state", BlockIronPortal.State.class);
         BlocksID.init();
         ItemsID.init();
         FluidsID.init();
