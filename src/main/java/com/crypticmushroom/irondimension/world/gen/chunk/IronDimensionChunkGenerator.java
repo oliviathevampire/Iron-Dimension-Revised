@@ -1,13 +1,13 @@
 package com.crypticmushroom.irondimension.world.gen.chunk;
 
 import net.minecraft.entity.EntityCategory;
-import net.minecraft.sortme.SpawnHelper;
 import net.minecraft.util.SystemUtil;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.util.math.MathHelper;
 import net.minecraft.util.math.noise.OctavePerlinNoiseSampler;
 import net.minecraft.world.ChunkRegion;
 import net.minecraft.world.IWorld;
+import net.minecraft.world.SpawnHelper;
 import net.minecraft.world.World;
 import net.minecraft.world.biome.Biome;
 import net.minecraft.world.biome.source.BiomeSource;
@@ -19,7 +19,7 @@ import net.minecraft.world.level.LevelGeneratorType;
 import java.util.List;
 
 public class IronDimensionChunkGenerator extends SurfaceChunkGenerator<IronDimensionChunkGeneratorConfig> {
-    private static final float[] BIOME_WEIGHT_TABLE = (float[]) SystemUtil.consume(new float[25], (floats_1) -> {
+    private static final float[] BIOME_WEIGHT_TABLE = SystemUtil.consume(new float[25], (floats_1) -> {
         for(int int_1 = -2; int_1 <= 2; ++int_1) {
             for(int int_2 = -2; int_2 <= 2; ++int_2) {
                 float float_1 = 10.0F / MathHelper.sqrt((float)(int_1 * int_1 + int_2 * int_2) + 0.2F);

@@ -1,0 +1,8 @@
+{
+    "parent": "block/slab",
+    "textures": {
+        "bottom": "irondimension:block/chiseled_ironstone",
+        "top": "irondimension:block/chiseled_ironstone",
+        "side": "irondimension:block/chiseled_ironstone"
+    }
+}

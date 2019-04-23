@@ -1,8 +1,0 @@
-{
-    "parent": "block/stairs",
-    "textures": {
-        "bottom": "irondimension:block/chiselled_ironstone",
-        "top": "irondimension:block/chiselled_ironstone",
-        "side": "irondimension:block/chiselled_ironstone"
-    }
-}

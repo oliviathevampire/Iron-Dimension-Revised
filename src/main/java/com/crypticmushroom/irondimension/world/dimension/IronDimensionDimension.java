@@ -21,7 +21,7 @@ public class IronDimensionDimension extends Dimension {
 
     public IronDimensionDimension(World world_1, DimensionType dimensionType_1) {
         super(world_1, dimensionType_1);
-        this.biomes = new Biome[] {
+        biomes = new Biome[] {
                 WorldIronDimension.IRON_PLAINS,
                 WorldIronDimension.IRON_HIGHLANDS,
                 WorldIronDimension.IRON_FOREST
@@ -31,8 +31,8 @@ public class IronDimensionDimension extends Dimension {
     @Override
     public ChunkGenerator<?> createChunkGenerator() {
         return WorldIronDimension.IRON_DIMENSION_CHUNK_GENERATOR.create(
-                this.world,
-                BiomeSourceType.CHECKERBOARD.applyConfig(new CheckerboardBiomeSourceConfig().method_8777(this.biomes).method_8780(this.biomes.length)),
+                this.world, BiomeSourceType.FIXED.applyConfig(new FixedBiomeSourceConfig().setBiome(WorldIronDimension.IRON_PLAINS)),
+//                BiomeSourceType.CHECKERBOARD.applyConfig(new CheckerboardBiomeSourceConfig().method_8777(biomes).method_8780(biomes.length)),
                 new IronDimensionChunkGeneratorConfig());
     }
 

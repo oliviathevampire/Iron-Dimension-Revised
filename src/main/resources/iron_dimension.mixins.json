@@ -6,7 +6,10 @@
   "mixins": [
     "MixinChunkGeneratorType",
     "MixinDimensionType",
-    "MixinPlayerManager"
+    "MixinPortalForcer"
+  ],
+  "client": [
+    "SignBlockEntityRendererMixin"
   ],
   "injectors": {
     "defaultRequire": 1

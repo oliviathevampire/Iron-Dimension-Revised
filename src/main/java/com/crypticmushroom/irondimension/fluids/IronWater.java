@@ -2,7 +2,6 @@ package com.crypticmushroom.irondimension.fluids;
 
 import com.crypticmushroom.irondimension.registry.BlocksID;
 import com.crypticmushroom.irondimension.registry.FluidsID;
-import com.crypticmushroom.irondimension.registry.ItemsID;
 import net.minecraft.block.BlockRenderLayer;
 import net.minecraft.block.BlockState;
 import net.minecraft.block.FluidBlock;
@@ -29,12 +28,12 @@ public abstract class IronWater extends BaseFluid {
     }
 
     @Override
-    protected boolean method_15737() {
+    protected boolean isInfinite() {
         return true;
     }
 
     @Override
-    protected void method_15730(IWorld var1, BlockPos var2, BlockState var3) {
+    protected void beforeBreakingBlock(IWorld var1, BlockPos var2, BlockState var3) {
 
     }
 
@@ -44,7 +43,7 @@ public abstract class IronWater extends BaseFluid {
     }
 
     @Override
-    protected int method_15739(ViewableWorld var1) {
+    protected int getLevelDecreasePerBlock(ViewableWorld var1) {
         return 1;
     }
 
@@ -55,7 +54,7 @@ public abstract class IronWater extends BaseFluid {
 
     @Override
     public Item getBucketItem() {
-        return ItemsID.iron_water_bucket;
+        return null;
     }
 
     @Override
