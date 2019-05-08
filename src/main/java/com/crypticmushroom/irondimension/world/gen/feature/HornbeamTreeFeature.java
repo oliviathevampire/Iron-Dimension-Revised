@@ -4,8 +4,10 @@ import com.crypticmushroom.irondimension.registry.BlocksID;
 import com.mojang.datafixers.Dynamic;
 import net.minecraft.block.Block;
 import net.minecraft.block.BlockState;
+import net.minecraft.block.Blocks;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.world.ModifiableTestableWorld;
+import net.minecraft.world.ModifiableWorld;
 import net.minecraft.world.TestableWorld;
 import net.minecraft.world.gen.feature.AbstractTreeFeature;
 import net.minecraft.world.gen.feature.DefaultFeatureConfig;
@@ -101,6 +103,13 @@ public class HornbeamTreeFeature extends AbstractTreeFeature<DefaultFeatureConfi
             Block block = blockState_1.getBlock();
             return block == BlocksID.iron_grass || block == BlocksID.iron_dirt;
         });
+    }
+
+    @Override
+    protected void setToDirt(ModifiableTestableWorld modifiableTestableWorld_1, BlockPos blockPos_1) {
+        if (!isNaturalDirt(modifiableTestableWorld_1, blockPos_1)) {
+            this.setBlockState(modifiableTestableWorld_1, blockPos_1, BlocksID.iron_dirt.getDefaultState());
+        }
     }
 
     static {

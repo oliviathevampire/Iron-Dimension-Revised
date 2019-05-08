@@ -5,12 +5,12 @@ import com.crypticmushroom.irondimension.world.gen.chunk.IronDimensionChunkGener
 import net.fabricmc.api.EnvType;
 import net.fabricmc.api.Environment;
 import net.minecraft.util.math.BlockPos;
+import net.minecraft.util.math.ChunkPos;
 import net.minecraft.util.math.MathHelper;
 import net.minecraft.util.math.Vec3d;
 import net.minecraft.world.World;
 import net.minecraft.world.biome.Biome;
 import net.minecraft.world.biome.source.*;
-import net.minecraft.world.chunk.ChunkPos;
 import net.minecraft.world.dimension.Dimension;
 import net.minecraft.world.dimension.DimensionType;
 import net.minecraft.world.gen.chunk.ChunkGenerator;
@@ -31,8 +31,7 @@ public class IronDimensionDimension extends Dimension {
     @Override
     public ChunkGenerator<?> createChunkGenerator() {
         return WorldIronDimension.IRON_DIMENSION_CHUNK_GENERATOR.create(
-                this.world, BiomeSourceType.FIXED.applyConfig(new FixedBiomeSourceConfig().setBiome(WorldIronDimension.IRON_PLAINS)),
-//                BiomeSourceType.CHECKERBOARD.applyConfig(new CheckerboardBiomeSourceConfig().method_8777(biomes).method_8780(biomes.length)),
+                this.world, BiomeSourceType.CHECKERBOARD.applyConfig(new CheckerboardBiomeSourceConfig().method_8777(biomes).method_8780(biomes.length)),
                 new IronDimensionChunkGeneratorConfig());
     }
 

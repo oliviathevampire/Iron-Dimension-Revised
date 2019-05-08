@@ -12,12 +12,12 @@ import net.minecraftforge.fml.common.eventhandler.SubscribeEvent;
 public class FluidsIDL {
 
     public static final Fluid metallicWater = new Fluid("metallic_water",
-            new ResourceLocation(IronDimension.MODID, "block/iron/liquid/metallic_water_still"),
-            new ResourceLocation(IronDimension.MODID, "block/iron/liquid/metallic_water_flow"))
+            new ResourceLocation(IronDimension.MODID, "blocks/iron/liquid/metallic_water_still"),
+            new ResourceLocation(IronDimension.MODID, "blocks/iron/liquid/metallic_water_flow"))
             .setDensity(1000).setViscosity(1500).setColor(0xCEC0C0C0);
     public static final Fluid liquidIron = new Fluid("liquid_iron",
-            new ResourceLocation(IronDimension.MODID, "block/iron/liquid/metallic_water_still"),
-            new ResourceLocation(IronDimension.MODID, "block/iron/liquid/metallic_water_flow"))
+            new ResourceLocation(IronDimension.MODID, "blocks/iron/liquid/metallic_water_still"),
+            new ResourceLocation(IronDimension.MODID, "blocks/iron/liquid/metallic_water_flow"))
             .setLuminosity(15).setDensity(3000).setViscosity(6000).setTemperature(1300);
 
     @SubscribeEvent

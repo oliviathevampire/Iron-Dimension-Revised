@@ -1,13 +1,9 @@
 package com.crypticmushroom.irondimension.blocks;
 
-import net.fabricmc.api.EnvType;
-import net.fabricmc.api.Environment;
 import net.fabricmc.fabric.api.block.FabricBlockSettings;
 import net.minecraft.block.*;
 import net.minecraft.item.ItemPlacementContext;
-import net.minecraft.particle.ParticleTypes;
 import net.minecraft.sound.BlockSoundGroup;
-import net.minecraft.state.StateFactory;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.util.math.Direction;
 import net.minecraft.util.math.Vec3i;
@@ -96,32 +92,6 @@ public class BlockIronLeaves extends LeavesBlock {
         } else {
             return blockState_1.getBlock() instanceof LeavesBlock ? (Integer)blockState_1.get(DISTANCE) : 7;
         }
-    }
-
-
-    @Environment(EnvType.CLIENT)
-    public static void setRenderingMode(boolean boolean_1) {
-        translucentLeaves = boolean_1;
-    }
-
-    @Override
-    public boolean isFullBoundsCubeForCulling(BlockState blockState_1) {
-        return false;
-    }
-
-    @Override
-    public BlockRenderLayer getRenderLayer() {
-        return translucentLeaves ? BlockRenderLayer.MIPPED_CUTOUT : BlockRenderLayer.SOLID;
-    }
-
-    @Override
-    public boolean canSuffocate(BlockState blockState_1, BlockView blockView_1, BlockPos blockPos_1) {
-        return false;
-    }
-
-    @Override
-    protected void appendProperties(StateFactory.Builder<Block, BlockState> stateFactory$Builder_1) {
-        stateFactory$Builder_1.with(DISTANCE, PERSISTENT);
     }
 
     @Override
