@@ -8,6 +8,7 @@ import net.minecraft.world.gen.feature.Feature;
 
 public class IronFeatures {
     public static Feature<DefaultFeatureConfig> IRON_TREE;
+
     public static void init() {
         IRON_TREE = Registry.register(Registry.FEATURE, new Identifier(IronDimension.MODID,"fancy_tree"), new HornbeamTreeFeature(DefaultFeatureConfig::deserialize, true));
     }

@@ -32,17 +32,15 @@ public class ItemAxe extends AxeItem {
         World world_1 = itemUsageContext_1.getWorld();
         BlockPos blockPos_1 = itemUsageContext_1.getBlockPos();
         BlockState blockState_1 = world_1.getBlockState(blockPos_1);
-        Block block_1 = (Block) BLOCK_TRANSFORMATIONS_MAP.get(blockState_1.getBlock());
+        Block block_1 = BLOCK_TRANSFORMATIONS_MAP.get(blockState_1.getBlock());
         if (block_1 != null) {
             PlayerEntity playerEntity_1 = itemUsageContext_1.getPlayer();
             world_1.playSound(playerEntity_1, blockPos_1, SoundEvents.ITEM_AXE_STRIP, SoundCategory.BLOCKS, 1.0F, 1.0F);
             if (!world_1.isClient) {
-                world_1.setBlockState(blockPos_1, (BlockState) block_1.getDefaultState().with(PillarBlock.AXIS, blockState_1.get(PillarBlock.AXIS)), 11);
+                world_1.setBlockState(blockPos_1, block_1.getDefaultState().with(PillarBlock.AXIS, blockState_1.get(PillarBlock.AXIS)), 11);
                 if (playerEntity_1 != null) {
-                    itemUsageContext_1.getItemStack().applyDamage(1, (LivingEntity) playerEntity_1, (Consumer) ((playerEntity_1x) -> {
-                        LivingEntity playerEntity_2 = (LivingEntity) playerEntity_1x;
-                        playerEntity_2.sendToolBreakStatus(itemUsageContext_1.getHand());
-                    }));
+                    itemUsageContext_1.getItemStack().applyDamage(1, playerEntity_1, (Consumer<LivingEntity>)
+                            ((playerEntity_1x) -> playerEntity_1x.sendToolBreakStatus(itemUsageContext_1.getHand())));
                 }
             }
 
