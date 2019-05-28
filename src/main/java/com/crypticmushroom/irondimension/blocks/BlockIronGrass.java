@@ -3,6 +3,7 @@ package com.crypticmushroom.irondimension.blocks;
 import com.crypticmushroom.irondimension.registry.BlocksID;
 import net.fabricmc.fabric.api.block.FabricBlockSettings;
 import net.fabricmc.fabric.api.tag.FabricItemTags;
+import net.fabricmc.fabric.api.tools.FabricToolTags;
 import net.minecraft.block.Block;
 import net.minecraft.block.BlockState;
 import net.minecraft.block.Material;
@@ -18,7 +19,7 @@ public class BlockIronGrass extends Block {
     public BlockIronGrass() {
         super(FabricBlockSettings
                 .of(Material.PLANT, MaterialColor.LIGHT_GRAY)
-                .breakByTool(FabricItemTags.SHOVELS, 2)
+                .breakByTool(FabricToolTags.SHOVELS, 2)
                 .sounds(BlockSoundGroup.GRASS)
                 .hardness(0.5F)
                 .ticksRandomly()

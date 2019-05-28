@@ -6,6 +6,7 @@ import net.minecraft.block.Block;
 import net.minecraft.block.BlockState;
 import net.minecraft.block.Blocks;
 import net.minecraft.util.math.BlockPos;
+import net.minecraft.util.math.MutableIntBoundingBox;
 import net.minecraft.world.ModifiableTestableWorld;
 import net.minecraft.world.ModifiableWorld;
 import net.minecraft.world.TestableWorld;
@@ -24,8 +25,23 @@ public class HornbeamTreeFeature extends AbstractTreeFeature<DefaultFeatureConfi
         super(function_1, boolean_1);
     }
 
+    protected static boolean canTreeReplace(TestableWorld testableWorld_1, BlockPos blockPos_1)
+    {
+        return testableWorld_1.testBlockState(blockPos_1, (blockState_1) -> {
+            Block block = blockState_1.getBlock();
+            return block == BlocksID.iron_grass || block == BlocksID.iron_dirt;
+        });
+    }
+
     @Override
-    protected boolean generate(Set<BlockPos> set_1, ModifiableTestableWorld modifiableTestableWorld_1, Random random_1, BlockPos blockPos_1) {
+    protected void setToDirt(ModifiableTestableWorld modifiableTestableWorld_1, BlockPos blockPos_1) {
+        if (!isNaturalDirt(modifiableTestableWorld_1, blockPos_1)) {
+            this.setBlockState(modifiableTestableWorld_1, blockPos_1, BlocksID.iron_dirt.getDefaultState());
+        }
+    }
+
+    @Override
+    protected boolean generate(Set<BlockPos> set_1, ModifiableTestableWorld modifiableTestableWorld_1, Random random_1, BlockPos blockPos_1, MutableIntBoundingBox var5) {
         int int_1 = random_1.nextInt(3) + 5;
 
         boolean boolean_1 = true;
@@ -84,7 +100,7 @@ public class HornbeamTreeFeature extends AbstractTreeFeature<DefaultFeatureConfi
 
                 for(int_6 = 0; int_6 < int_1; ++int_6) {
                     if (isAirOrLeaves(modifiableTestableWorld_1, blockPos_1.up(int_6))) {
-                        this.setBlockState(set_1, modifiableTestableWorld_1, blockPos_1.up(int_6), LOG);
+                        this.setBlockState(set_1, modifiableTestableWorld_1, blockPos_1.up(int_6), LOG, var5);
                     }
                 }
 
@@ -94,21 +110,6 @@ public class HornbeamTreeFeature extends AbstractTreeFeature<DefaultFeatureConfi
             }
         } else {
             return false;
-        }
-    }
-
-    protected static boolean canTreeReplace(TestableWorld testableWorld_1, BlockPos blockPos_1)
-    {
-        return testableWorld_1.testBlockState(blockPos_1, (blockState_1) -> {
-            Block block = blockState_1.getBlock();
-            return block == BlocksID.iron_grass || block == BlocksID.iron_dirt;
-        });
-    }
-
-    @Override
-    protected void setToDirt(ModifiableTestableWorld modifiableTestableWorld_1, BlockPos blockPos_1) {
-        if (!isNaturalDirt(modifiableTestableWorld_1, blockPos_1)) {
-            this.setBlockState(modifiableTestableWorld_1, blockPos_1, BlocksID.iron_dirt.getDefaultState());
         }
     }
 

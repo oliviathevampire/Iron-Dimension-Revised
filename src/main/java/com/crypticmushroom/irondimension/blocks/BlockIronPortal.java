@@ -14,7 +14,7 @@ import net.minecraft.sound.BlockSoundGroup;
 import net.minecraft.state.StateFactory;
 import net.minecraft.state.property.EnumProperty;
 import net.minecraft.util.Hand;
-import net.minecraft.util.SnakeCaseIdentifiable;
+import net.minecraft.util.StringIdentifiable;
 import net.minecraft.util.hit.BlockHitResult;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.util.shape.VoxelShape;
@@ -63,12 +63,12 @@ public class BlockIronPortal extends Block {
         stateFactory$Builder_1.add(TYPE);
     }
 
-    public enum State implements SnakeCaseIdentifiable {
+    public enum State implements StringIdentifiable {
         ENABLE,
         DISABLE;
 
         @Override
-        public String toSnakeCase() {
+        public String asString() {
             return this.toString().toLowerCase();
         }
     }
