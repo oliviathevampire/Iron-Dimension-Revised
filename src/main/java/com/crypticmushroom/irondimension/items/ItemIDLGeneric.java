@@ -6,6 +6,6 @@ import net.minecraft.util.registry.Registry;
 
 public class ItemIDLGeneric extends Item {
     public ItemIDLGeneric() {
-        super(new Item.Settings().itemGroup(IronDimension.IDL_ITEM_GROUP));
+        super(new Item.Settings().group(IronDimension.IDL_ITEM_GROUP));
     }
 }

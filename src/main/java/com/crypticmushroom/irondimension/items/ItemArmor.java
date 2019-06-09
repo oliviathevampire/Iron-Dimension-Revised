@@ -8,6 +8,6 @@ import net.minecraft.item.Item;
 
 public class ItemArmor extends ArmorItem {
     public ItemArmor(ArmorMaterial armorMaterial_1, EquipmentSlot equipmentSlot_1) {
-        super(armorMaterial_1, equipmentSlot_1, new Item.Settings().itemGroup(IronDimension.IDL_ITEM_GROUP).stackSize(1));
+        super(armorMaterial_1, equipmentSlot_1, new Item.Settings().group(IronDimension.IDL_ITEM_GROUP).maxCount(1));
     }
 }

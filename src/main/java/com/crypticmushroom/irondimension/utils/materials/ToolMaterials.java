@@ -9,19 +9,19 @@ import net.minecraft.util.Lazy;
 import java.util.function.Supplier;
 
 public enum ToolMaterials implements ToolMaterial {
-    IRONWOOD(1, 80, 3.0F, 0.5F, 15, () -> {
+    IRONWOOD(2, 80, 3.0F, 0.5F, 15, () -> {
         return Ingredient.ofItems(BlocksID.ironwood_planks);
     }),
     IRONSTONE(2, 200, 5.0F, 1.5F, 8, () -> {
         return Ingredient.ofItems(BlocksID.ironstone);
     }),
-    INFERNAL(3, 350, 6.0F, 2.0F, 10, () -> {
+    INFERNAL(2, 350, 6.0F, 2.0F, 10, () -> {
         return Ingredient.ofItems(ItemsID.infernal_iron_ingot);
     }),
-    SUPER_IRON(3, 1000, 8.0F, 2.5F, 10, () -> {
+    SUPER_IRON(2, 1000, 8.0F, 2.5F, 10, () -> {
         return Ingredient.ofItems(ItemsID.super_iron_ingot);
     }),
-    RADIOACTIVE(3, 1000, 8.0F, 3.0F, 10, () -> {
+    RADIOACTIVE(2, 2000, 10.0F, 3.0F, 10, () -> {
         return Ingredient.ofItems(ItemsID.radioactive_iron_ingot);
     });
 
@@ -45,7 +45,8 @@ public enum ToolMaterials implements ToolMaterial {
         return this.durability;
     }
 
-    public float getBlockBreakingSpeed() {
+    @Override
+    public float getMiningSpeed() {
         return this.blockBreakSpeed;
     }
 

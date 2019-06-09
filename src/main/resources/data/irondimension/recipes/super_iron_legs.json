@@ -1,5 +1,5 @@
 {
-  "type": "forge:ore_shaped",
+  "type": "minecraft:crafting_shaped",
   "pattern": [
     "III",
     "I I",
@@ -11,6 +11,6 @@
     }
   },
   "result": {
-    "item": "irondimension:super_iron_legs"
+    "item": "irondimension:super_iron_leggings"
   }
 }

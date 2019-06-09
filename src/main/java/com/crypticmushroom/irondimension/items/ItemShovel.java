@@ -7,6 +7,6 @@ import net.minecraft.item.ToolMaterial;
 
 public class ItemShovel extends ShovelItem {
     public ItemShovel(ToolMaterial toolMaterial_1) {
-        super(toolMaterial_1, 1.5F, -3.0F, new Item.Settings().itemGroup(IronDimension.IDL_ITEM_GROUP).stackSize(1));
+        super(toolMaterial_1, 1.5F, -3.0F, new Item.Settings().group(IronDimension.IDL_ITEM_GROUP).maxCount(1));
     }
 }

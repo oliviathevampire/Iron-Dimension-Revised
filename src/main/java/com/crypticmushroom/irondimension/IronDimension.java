@@ -22,7 +22,7 @@ public class IronDimension implements ModInitializer {
 
     @Override
     public void onInitialize() {
-        TYPE = EnumProperty.create("state", BlockIronPortal.State.class);
+        TYPE = EnumProperty.of("state", BlockIronPortal.State.class);
         BlocksID.init();
         ItemsID.init();
         FluidsID.init();

@@ -24,7 +24,7 @@ import java.util.function.Consumer;
 public class ItemAxe extends AxeItem {
     protected static final Map<Block, Block> BLOCK_TRANSFORMATIONS_MAP;
     public ItemAxe(ToolMaterial toolMaterial_1, float float_1) {
-        super(toolMaterial_1, float_1, -3.2F, new Item.Settings().itemGroup(IronDimension.IDL_ITEM_GROUP).stackSize(1));
+        super(toolMaterial_1, float_1, -3.2F, new Item.Settings().group(IronDimension.IDL_ITEM_GROUP).maxCount(1));
     }
 
     @Override
@@ -39,7 +39,7 @@ public class ItemAxe extends AxeItem {
             if (!world_1.isClient) {
                 world_1.setBlockState(blockPos_1, block_1.getDefaultState().with(PillarBlock.AXIS, blockState_1.get(PillarBlock.AXIS)), 11);
                 if (playerEntity_1 != null) {
-                    itemUsageContext_1.getItemStack().applyDamage(1, playerEntity_1, (Consumer<LivingEntity>)
+                    itemUsageContext_1.getStack().damage(1, playerEntity_1, (Consumer<LivingEntity>)
                             ((playerEntity_1x) -> playerEntity_1x.sendToolBreakStatus(itemUsageContext_1.getHand())));
                 }
             }

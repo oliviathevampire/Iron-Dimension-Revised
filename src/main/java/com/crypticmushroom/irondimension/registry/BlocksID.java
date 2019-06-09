@@ -3,8 +3,11 @@ package com.crypticmushroom.irondimension.registry;
 import com.crypticmushroom.irondimension.IronDimension;
 import com.crypticmushroom.irondimension.blocks.*;
 import com.crypticmushroom.irondimension.world.gen.saplinggenerator.HornbeamSaplingGenerator;
+import net.fabricmc.fabric.api.block.FabricBlockSettings;
+import net.fabricmc.fabric.api.tag.FabricItemTags;
 import net.minecraft.block.Block;
 import net.minecraft.block.Blocks;
+import net.minecraft.block.Material;
 import net.minecraft.block.MaterialColor;
 import net.minecraft.item.BlockItem;
 import net.minecraft.item.Item;
@@ -102,13 +105,13 @@ public class BlocksID {
         ironstone_brick_stairs = register("ironstone_brick_stairs", new BlockIronstoneStairs(ironstone_bricks.getDefaultState()));
         ironstone_brick_slab = register("ironstone_brick_slab", new BlockIronSlab(ironstone_bricks));
         super_iron_ore = register("super_iron_ore", new BlockIDLOre());
-        super_iron_block = register("super_iron_block", new BlockCompact());
+        super_iron_block = register("super_iron_block", new BlockCompact(FabricBlockSettings.of(Material.METAL).breakByTool(FabricItemTags.PICKAXES, 2)));
         radioactive_iron_ore = register("radioactive_iron_ore", new BlockIDLOre());
-        radioactive_iron_block = register("radioactive_iron_block", new BlockCompact());
+        radioactive_iron_block = register("radioactive_iron_block", new BlockCompact(FabricBlockSettings.of(Material.METAL).breakByTool(FabricItemTags.PICKAXES, 2)));
         infernal_iron_ore = register("infernal_iron_ore", new BlockIDLOre());
-        infernal_iron_block = register("infernal_iron_block", new BlockCompact());
+        infernal_iron_block = register("infernal_iron_block", new BlockCompact(FabricBlockSettings.of(Material.METAL).breakByTool(FabricItemTags.PICKAXES, 2)));
         lumen_iron_ore = register("lumen_iron_ore", new BlockIDLOre());
-        lumen_iron_block = register("lumen_iron_block", new BlockCompact());
+        lumen_iron_block = register("lumen_iron_block", new BlockCompact(FabricBlockSettings.of(Material.METAL).breakByTool(FabricItemTags.PICKAXES, 2)));
         iron_thatch = register("iron_thatch", new BlockIronThatch());
         rusty_iron_thatch = register("rusty_iron_thatch", new BlockIronThatch());
         acidrose_bush = register("acidrose_bush", new IronPlant());
@@ -131,7 +134,7 @@ public class BlocksID {
 
     private static Block register(String name, Block block) {
         Registry.register(Registry.BLOCK,new Identifier(IronDimension.MODID, name), block);
-        Registry.register(Registry.ITEM,new Identifier(IronDimension.MODID, name), new BlockItem(block, new Item.Settings().itemGroup(IronDimension.IDL_ITEM_GROUP)));
+        Registry.register(Registry.ITEM,new Identifier(IronDimension.MODID, name), new BlockItem(block, new Item.Settings().group(IronDimension.IDL_ITEM_GROUP)));
         return block;
     }
 

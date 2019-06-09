@@ -7,6 +7,6 @@ import net.minecraft.item.ToolMaterial;
 
 public class ItemPickaxe extends PickaxeItem {
     public ItemPickaxe(ToolMaterial toolMaterial_1) {
-        super(toolMaterial_1, 1, -2.8F, new Item.Settings().stackSize(1).itemGroup(IronDimension.IDL_ITEM_GROUP));
+        super(toolMaterial_1, 1, -2.8F, new Item.Settings().maxCount(1).group(IronDimension.IDL_ITEM_GROUP));
     }
 }
