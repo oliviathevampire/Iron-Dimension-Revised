@@ -17,5 +17,11 @@ public class IronHighlands extends IronBiome {
                 .scale(0.3F)
                 .downfall(0.6F)
         );
+        this.addFeature(GenerationStep.Feature.VEGETAL_DECORATION, configureFeature(IronFeatures.HORNBEAM_TREE, FeatureConfig.DEFAULT,
+                Decorator.COUNT_EXTRA_HEIGHTMAP, new CountExtraChanceDecoratorConfig(1, 0.05F, 1)));
+        this.addFeature(GenerationStep.Feature.VEGETAL_DECORATION, configureFeature(IronFeatures.IRONWOOD_TREE, FeatureConfig.DEFAULT,
+                Decorator.COUNT_EXTRA_HEIGHTMAP, new CountExtraChanceDecoratorConfig(1, 0.05F, 1)));
+        this.addFeature(GenerationStep.Feature.VEGETAL_DECORATION, configureFeature(IronFeatures.RUSTY_IRONWOOD_TREE, FeatureConfig.DEFAULT,
+                Decorator.COUNT_EXTRA_HEIGHTMAP, new CountExtraChanceDecoratorConfig(1, 0.05F, 1)));
     }
 }

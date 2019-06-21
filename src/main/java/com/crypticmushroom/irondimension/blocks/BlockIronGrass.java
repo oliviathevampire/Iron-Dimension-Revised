@@ -46,7 +46,6 @@ public class BlockIronGrass extends GrassBlock {
     @Override
     public void grow(World world_1, Random random_1, BlockPos blockPos_1, BlockState blockState_1) {
         BlockPos blockPos_2 = blockPos_1.up();
-        BlockState blockState_2 = BlocksID.iron_grass.getDefaultState();
 
         label48:
         for(int int_1 = 0; int_1 < 128; ++int_1) {
@@ -60,9 +59,6 @@ public class BlockIronGrass extends GrassBlock {
             }
 
             BlockState blockState_3 = world_1.getBlockState(blockPos_3);
-            if (blockState_3.getBlock() == blockState_2.getBlock() && random_1.nextInt(10) == 0) {
-                ((Fertilizable)blockState_2.getBlock()).grow(world_1, random_1, blockPos_3, blockState_3);
-            }
 
             if (blockState_3.isAir()) {
                 BlockState blockState_5;
@@ -74,7 +70,7 @@ public class BlockIronGrass extends GrassBlock {
 
                     blockState_5 = ((FlowerFeature)((DecoratedFeatureConfig)((ConfiguredFeature)list_1.get(0)).config).feature.feature).getFlowerToPlace(random_1, blockPos_3);
                 } else {
-                    blockState_5 = blockState_2;
+                    continue;
                 }
 
                 if (blockState_5.canPlaceAt(world_1, blockPos_3)) {
