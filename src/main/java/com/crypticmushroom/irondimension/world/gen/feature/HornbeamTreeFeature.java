@@ -26,13 +26,6 @@ public class HornbeamTreeFeature extends IronDimensionTreeFeature<DefaultFeature
     }
 
     @Override
-    protected void setToDirt(ModifiableTestableWorld modifiableTestableWorld_1, BlockPos blockPos_1) {
-        if (!isNaturalDirt(modifiableTestableWorld_1, blockPos_1)) {
-            this.setBlockState(modifiableTestableWorld_1, blockPos_1, BlocksID.iron_dirt.getDefaultState());
-        }
-    }
-
-    @Override
     protected boolean generate(Set<BlockPos> set_1, ModifiableTestableWorld modifiableTestableWorld_1, Random random_1, BlockPos blockPos_1, MutableIntBoundingBox var5) {
         int int_1 = random_1.nextInt(3) + 5;
 

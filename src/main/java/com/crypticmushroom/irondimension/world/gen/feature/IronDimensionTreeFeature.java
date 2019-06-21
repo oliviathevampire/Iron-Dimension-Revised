@@ -84,6 +84,13 @@ public abstract class IronDimensionTreeFeature<T extends FeatureConfig> extends 
 
     }
 
+    @Override
+    protected void setToDirt(ModifiableTestableWorld modifiableTestableWorld_1, BlockPos blockPos_1) {
+        if (!isNaturalDirt(modifiableTestableWorld_1, blockPos_1)) {
+            this.setBlockState(modifiableTestableWorld_1, blockPos_1, BlocksID.iron_dirt.getDefaultState());
+        }
+    }
+
     public final boolean ironDimensionGenerate(IWorld iWorld_1, ChunkGenerator<? extends ChunkGeneratorConfig> chunkGenerator_1, Random random_1, BlockPos blockPos_1, T featureConfig_1) {
         Set<BlockPos> set_1 = Sets.newHashSet();
         MutableIntBoundingBox mutableIntBoundingBox_1 = MutableIntBoundingBox.empty();
