@@ -39,7 +39,9 @@ public abstract class IronDimensionTreeFeature<T extends FeatureConfig> extends 
             Block block_1 = blockState_1.getBlock();
             return blockState_1.isAir() || block_1 == BlocksID.iron_dirt ||
                     block_1 == BlocksID.iron_grass || block_1 == BlocksID.hornbeam_log ||
-                    block_1 == BlocksID.hornbeam_leaves || block_1 == BlocksID.hornbeam_sapling;
+                    block_1 == BlocksID.hornbeam_leaves || block_1 == BlocksID.ironwood_leaves ||
+                    block_1 == BlocksID.rusty_ironwood_leaves || block_1 == BlocksID.ironwood_log ||
+                    block_1 == BlocksID.rusty_ironwood_log;
         });
     }
 
@@ -51,13 +53,13 @@ public abstract class IronDimensionTreeFeature<T extends FeatureConfig> extends 
 
     protected static boolean isLeaves(TestableWorld testableWorld_1, BlockPos blockPos_1) {
         return testableWorld_1.testBlockState(blockPos_1, (blockState_1) -> {
-            return blockState_1.getBlock() == BlocksID.hornbeam_leaves;
+            return blockState_1.getBlock() == BlocksID.hornbeam_leaves || blockState_1.getBlock() == BlocksID.ironwood_leaves || blockState_1.getBlock() == BlocksID.rusty_ironwood_leaves;
         });
     }
 
     protected static boolean isAirOrLeaves(TestableWorld testableWorld_1, BlockPos blockPos_1) {
         return testableWorld_1.testBlockState(blockPos_1, (blockState_1) -> {
-            return blockState_1.isAir() || blockState_1.getBlock() == BlocksID.hornbeam_leaves;
+            return blockState_1.isAir() || blockState_1.getBlock() == BlocksID.hornbeam_leaves || blockState_1.getBlock() == BlocksID.ironwood_leaves || blockState_1.getBlock() == BlocksID.rusty_ironwood_leaves;
         });
     }
 

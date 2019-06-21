@@ -4,6 +4,8 @@ import com.crypticmushroom.irondimension.IronDimension;
 import com.crypticmushroom.irondimension.blocks.*;
 import com.crypticmushroom.irondimension.world.gen.saplinggenerator.HornbeamSaplingGenerator;
 import com.crypticmushroom.irondimension.world.gen.saplinggenerator.IronDimensionSaplingGenerator;
+import com.crypticmushroom.irondimension.world.gen.saplinggenerator.IronwoodSaplingGenerator;
+import com.crypticmushroom.irondimension.world.gen.saplinggenerator.RustyIronwoodSaplingGenerator;
 import net.fabricmc.fabric.api.block.FabricBlockSettings;
 import net.fabricmc.fabric.api.tag.FabricItemTags;
 import net.minecraft.block.Block;
@@ -93,6 +95,8 @@ public class BlocksID {
         ironwood_leaves = register("ironwood_leaves", new BlockIronLeaves());
         rusty_ironwood_leaves = register("rusty_ironwood_leaves", new BlockIronLeaves());
         hornbeam_leaves = register("hornbeam_leaves", new BlockIronLeaves());
+        ironwood_sapling = register("ironwood_sapling", new BlockSapling(new IronwoodSaplingGenerator()));
+        rusty_ironwood_sapling = register("rusty_ironwood_sapling", new BlockSapling(new RustyIronwoodSaplingGenerator()));
         hornbeam_sapling = register("hornbeam_sapling", new BlockSapling(new HornbeamSaplingGenerator()));
         ironstone = register("ironstone", new BlockIronStone());
         chiselled_ironstone = register("chiseled_ironstone", new BlockIronStone());

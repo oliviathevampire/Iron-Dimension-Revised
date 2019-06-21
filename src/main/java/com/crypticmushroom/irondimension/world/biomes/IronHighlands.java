@@ -17,7 +17,5 @@ public class IronHighlands extends IronBiome {
                 .scale(0.3F)
                 .downfall(0.6F)
         );
-        DefaultBiomeFeatures.addLandCarvers(this);
-        this.addFeature(GenerationStep.Feature.VEGETAL_DECORATION, configureFeature(IronFeatures.IRON_TREE, FeatureConfig.DEFAULT, Decorator.COUNT_EXTRA_HEIGHTMAP, new CountExtraChanceDecoratorConfig(0, 0.1F, 1)));
     }
 }

@@ -24,7 +24,12 @@ public class IronBiome extends Biome {
                 .waterColor(0xe0e0e0)
                 .waterFogColor(0xe0e0e0)
         );
-        this.addFeature(GenerationStep.Feature.VEGETAL_DECORATION, configureFeature(IronFeatures.IRON_TREE, FeatureConfig.DEFAULT, Decorator.COUNT_EXTRA_HEIGHTMAP, new CountExtraChanceDecoratorConfig(10, 0.1F, 1)));
+        this.addFeature(GenerationStep.Feature.VEGETAL_DECORATION, configureFeature(IronFeatures.HORNBEAM_TREE, FeatureConfig.DEFAULT,
+                Decorator.COUNT_EXTRA_HEIGHTMAP, new CountExtraChanceDecoratorConfig(10, 0.1F, 1)));
+        this.addFeature(GenerationStep.Feature.VEGETAL_DECORATION, configureFeature(IronFeatures.IRONWOOD_TREE, FeatureConfig.DEFAULT,
+                Decorator.COUNT_EXTRA_HEIGHTMAP, new CountExtraChanceDecoratorConfig(10, 0.1F, 1)));
+        this.addFeature(GenerationStep.Feature.VEGETAL_DECORATION, configureFeature(IronFeatures.RUSTY_IRONWOOD_TREE, FeatureConfig.DEFAULT,
+                Decorator.COUNT_EXTRA_HEIGHTMAP, new CountExtraChanceDecoratorConfig(10, 0.1F, 1)));
         this.addCarver(GenerationStep.Carver.AIR, Biome.configureCarver(IronCarvers.ID_CARVER, new ProbabilityConfig(0.14285715F)));
         this.addFeature(GenerationStep.Feature.UNDERGROUND_DECORATION, configureFeature(IronFeatures.IRON_ORE,
                 new IronOreFeatureConfig(IronOreFeatureConfig.Target.IRON, null, BlocksID.super_iron_ore.getDefaultState(), 14),

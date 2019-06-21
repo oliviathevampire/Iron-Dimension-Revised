@@ -14,7 +14,7 @@ public class IronForest extends IronBiome {
                 .precipitation(Precipitation.NONE)
                 .temperature(0.60F)
                 .scale(0.2F)
-                .downfall(0.8F));
-        this.addFeature(GenerationStep.Feature.VEGETAL_DECORATION, configureFeature(IronFeatures.IRON_TREE, FeatureConfig.DEFAULT, Decorator.COUNT_EXTRA_HEIGHTMAP, new CountExtraChanceDecoratorConfig(0, 0.1F, 1)));
+                .downfall(0.8F)
+        );
     }
 }
