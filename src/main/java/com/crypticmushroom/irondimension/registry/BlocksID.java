@@ -3,6 +3,7 @@ package com.crypticmushroom.irondimension.registry;
 import com.crypticmushroom.irondimension.IronDimension;
 import com.crypticmushroom.irondimension.blocks.*;
 import com.crypticmushroom.irondimension.world.gen.saplinggenerator.HornbeamSaplingGenerator;
+import com.crypticmushroom.irondimension.world.gen.saplinggenerator.IronDimensionSaplingGenerator;
 import net.fabricmc.fabric.api.block.FabricBlockSettings;
 import net.fabricmc.fabric.api.tag.FabricItemTags;
 import net.minecraft.block.Block;

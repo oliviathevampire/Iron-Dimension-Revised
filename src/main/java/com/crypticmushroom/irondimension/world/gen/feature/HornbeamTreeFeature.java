@@ -17,20 +17,12 @@ import java.util.Random;
 import java.util.Set;
 import java.util.function.Function;
 
-public class HornbeamTreeFeature extends AbstractTreeFeature<DefaultFeatureConfig> {
+public class HornbeamTreeFeature extends IronDimensionTreeFeature<DefaultFeatureConfig> {
     private static final BlockState LOG;
     private static final BlockState LEAVES;
 
     public HornbeamTreeFeature(Function<Dynamic<?>, ? extends DefaultFeatureConfig> function_1, boolean boolean_1) {
         super(function_1, boolean_1);
-    }
-
-    protected static boolean canTreeReplace(TestableWorld testableWorld_1, BlockPos blockPos_1)
-    {
-        return testableWorld_1.testBlockState(blockPos_1, (blockState_1) -> {
-            Block block = blockState_1.getBlock();
-            return block == BlocksID.iron_grass || block == BlocksID.iron_dirt;
-        });
     }
 
     @Override

@@ -10,9 +10,12 @@ import net.minecraft.util.math.BlockPos;
 import net.minecraft.world.biome.Biome;
 import net.minecraft.world.gen.GenerationStep;
 import net.minecraft.world.gen.ProbabilityConfig;
+import net.minecraft.world.gen.decorator.CountExtraChanceDecoratorConfig;
 import net.minecraft.world.gen.decorator.Decorator;
 import net.minecraft.world.gen.decorator.RangeDecoratorConfig;
+import net.minecraft.world.gen.feature.DefaultFeatureConfig;
 import net.minecraft.world.gen.feature.Feature;
+import net.minecraft.world.gen.feature.FeatureConfig;
 
 public class IronBiome extends Biome {
     public IronBiome(Settings settings) {
@@ -21,6 +24,7 @@ public class IronBiome extends Biome {
                 .waterColor(0xe0e0e0)
                 .waterFogColor(0xe0e0e0)
         );
+        this.addFeature(GenerationStep.Feature.VEGETAL_DECORATION, configureFeature(IronFeatures.IRON_TREE, FeatureConfig.DEFAULT, Decorator.COUNT_EXTRA_HEIGHTMAP, new CountExtraChanceDecoratorConfig(10, 0.1F, 1)));
         this.addCarver(GenerationStep.Carver.AIR, Biome.configureCarver(IronCarvers.ID_CARVER, new ProbabilityConfig(0.14285715F)));
         this.addFeature(GenerationStep.Feature.UNDERGROUND_DECORATION, configureFeature(IronFeatures.IRON_ORE,
                 new IronOreFeatureConfig(IronOreFeatureConfig.Target.IRON, null, BlocksID.super_iron_ore.getDefaultState(), 14),
