@@ -11,7 +11,6 @@ import net.minecraft.world.World;
 import net.minecraft.world.gen.feature.ConfiguredFeature;
 import net.minecraft.world.gen.feature.DecoratedFeatureConfig;
 import net.minecraft.world.gen.feature.FlowerFeature;
-import org.spongepowered.asm.mixin.Overwrite;
 
 import java.util.List;
 import java.util.Random;
@@ -26,12 +25,12 @@ public class BlockIronDirt extends Block implements Fertilizable {
                 .build());
     }
 
-    @Overwrite
+    @Override
     public boolean isFertilizable(BlockView blockView_1, BlockPos blockPos_1, BlockState blockState_1, boolean boolean_1) {
         return blockView_1.getBlockState(blockPos_1.up()).isAir();
     }
 
-    @Overwrite
+    @Override
     public boolean canGrow(World world_1, Random random_1, BlockPos blockPos_1, BlockState blockState_1) {
         return true;
     }
