@@ -2,14 +2,11 @@ package com.crypticmushroom.irondimension.utils.portal;
 
 import com.crypticmushroom.irondimension.blocks.BlockIronPortal;
 import com.crypticmushroom.irondimension.registry.BlocksID;
-import com.crypticmushroom.irondimension.world.WorldIronDimension;
 import net.minecraft.block.AirBlock;
 import net.minecraft.entity.Entity;
-import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.server.network.ServerPlayerEntity;
 import net.minecraft.server.world.ServerWorld;
 import net.minecraft.util.math.BlockPos;
-import net.minecraft.world.dimension.DimensionType;
 
 import java.util.HashSet;
 

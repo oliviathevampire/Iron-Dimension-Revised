@@ -1,6 +1,5 @@
 package com.crypticmushroom.irondimension.world.gen.saplinggenerator;
 
-import com.crypticmushroom.irondimension.world.gen.feature.HornbeamTreeFeature;
 import com.crypticmushroom.irondimension.world.gen.feature.IronwoodTreeFeature;
 import net.minecraft.world.gen.feature.AbstractTreeFeature;
 import net.minecraft.world.gen.feature.DefaultFeatureConfig;

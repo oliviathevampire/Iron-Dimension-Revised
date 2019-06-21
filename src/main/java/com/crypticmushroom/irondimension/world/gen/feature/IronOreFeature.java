@@ -8,7 +8,6 @@ import net.minecraft.world.IWorld;
 import net.minecraft.world.gen.chunk.ChunkGenerator;
 import net.minecraft.world.gen.chunk.ChunkGeneratorConfig;
 import net.minecraft.world.gen.feature.Feature;
-import org.spongepowered.asm.mixin.Overwrite;
 
 import java.util.BitSet;
 import java.util.Random;

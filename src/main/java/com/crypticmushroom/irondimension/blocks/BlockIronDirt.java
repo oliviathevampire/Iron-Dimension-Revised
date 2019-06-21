@@ -2,7 +2,7 @@ package com.crypticmushroom.irondimension.blocks;
 
 import com.crypticmushroom.irondimension.registry.BlocksID;
 import net.fabricmc.fabric.api.block.FabricBlockSettings;
-import net.fabricmc.fabric.api.tag.FabricItemTags;
+import net.fabricmc.fabric.api.tools.FabricToolTags;
 import net.minecraft.block.*;
 import net.minecraft.sound.BlockSoundGroup;
 import net.minecraft.util.math.BlockPos;
@@ -19,7 +19,7 @@ public class BlockIronDirt extends Block implements Fertilizable {
     public BlockIronDirt() {
         super(FabricBlockSettings
                 .of(Material.EARTH, MaterialColor.LIGHT_GRAY)
-                .breakByTool(FabricItemTags.SHOVELS, 2)
+                .breakByTool(FabricToolTags.SHOVELS, 2)
                 .sounds(BlockSoundGroup.GRASS)
                 .hardness(0.5F)
                 .build());

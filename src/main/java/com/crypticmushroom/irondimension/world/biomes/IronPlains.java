@@ -1,7 +1,9 @@
 package com.crypticmushroom.irondimension.world.biomes;
 
+import com.crypticmushroom.irondimension.registry.EntitiesID;
 import com.crypticmushroom.irondimension.world.gen.feature.IronFeatures;
-import net.minecraft.world.biome.DefaultBiomeFeatures;
+import net.minecraft.entity.EntityCategory;
+import net.minecraft.world.biome.Biome;
 import net.minecraft.world.gen.GenerationStep;
 import net.minecraft.world.gen.decorator.CountDecoratorConfig;
 import net.minecraft.world.gen.decorator.CountExtraChanceDecoratorConfig;
@@ -26,5 +28,6 @@ public class IronPlains extends IronBiome {
                 Decorator.COUNT_EXTRA_HEIGHTMAP, new CountExtraChanceDecoratorConfig(0, 0.05F, 1)));
         this.addFeature(GenerationStep.Feature.VEGETAL_DECORATION, configureFeature(IronFeatures.FLOWER, FeatureConfig.DEFAULT,
                 Decorator.COUNT_HEIGHTMAP_32, new CountDecoratorConfig(70)));
+        this.addSpawn(EntityCategory.CREATURE, new Biome.SpawnEntry(EntitiesID.IRONBISON, 8, 4, 4));
     }
 }

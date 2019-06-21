@@ -2,7 +2,6 @@ package com.crypticmushroom.irondimension.registry;
 
 import com.crypticmushroom.irondimension.IronDimension;
 import com.crypticmushroom.irondimension.fluids.IronWater;
-import net.minecraft.fluid.Fluid;
 import net.minecraft.util.Identifier;
 import net.minecraft.util.registry.Registry;
 

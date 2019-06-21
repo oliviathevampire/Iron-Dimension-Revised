@@ -2,15 +2,10 @@ package com.crypticmushroom.irondimension.world.gen.feature;
 
 import com.crypticmushroom.irondimension.registry.BlocksID;
 import com.mojang.datafixers.Dynamic;
-import net.minecraft.block.Block;
 import net.minecraft.block.BlockState;
-import net.minecraft.block.Blocks;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.util.math.MutableIntBoundingBox;
 import net.minecraft.world.ModifiableTestableWorld;
-import net.minecraft.world.ModifiableWorld;
-import net.minecraft.world.TestableWorld;
-import net.minecraft.world.gen.feature.AbstractTreeFeature;
 import net.minecraft.world.gen.feature.DefaultFeatureConfig;
 
 import java.util.Random;

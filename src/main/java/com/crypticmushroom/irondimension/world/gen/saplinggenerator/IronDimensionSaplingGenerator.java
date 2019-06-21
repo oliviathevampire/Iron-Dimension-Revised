@@ -1,6 +1,5 @@
 package com.crypticmushroom.irondimension.world.gen.saplinggenerator;
 
-import com.crypticmushroom.irondimension.world.gen.feature.HornbeamTreeFeature;
 import com.crypticmushroom.irondimension.world.gen.feature.IronDimensionTreeFeature;
 import net.minecraft.block.BlockState;
 import net.minecraft.block.Blocks;
@@ -8,7 +7,6 @@ import net.minecraft.block.sapling.SaplingGenerator;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.world.IWorld;
 import net.minecraft.world.gen.chunk.ChunkGenerator;
-import net.minecraft.world.gen.feature.AbstractTreeFeature;
 import net.minecraft.world.gen.feature.DefaultFeatureConfig;
 import net.minecraft.world.gen.feature.FeatureConfig;
 

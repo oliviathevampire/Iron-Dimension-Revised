@@ -1,7 +1,6 @@
 package com.crypticmushroom.irondimension.world.biomes;
 
 import com.crypticmushroom.irondimension.world.gen.feature.IronFeatures;
-import net.minecraft.world.biome.DefaultBiomeFeatures;
 import net.minecraft.world.gen.GenerationStep;
 import net.minecraft.world.gen.decorator.CountDecoratorConfig;
 import net.minecraft.world.gen.decorator.CountExtraChanceDecoratorConfig;

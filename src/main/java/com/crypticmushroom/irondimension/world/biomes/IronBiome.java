@@ -7,20 +7,11 @@ import com.crypticmushroom.irondimension.world.gen.feature.IronFeatures;
 import com.crypticmushroom.irondimension.world.gen.feature.IronOreFeatureConfig;
 import com.crypticmushroom.irondimension.world.gen.surfacebuilder.IronSurfaceBuilder;
 import net.minecraft.util.math.BlockPos;
-import net.minecraft.world.IWorld;
 import net.minecraft.world.biome.Biome;
-import net.minecraft.world.gen.ChunkRandom;
 import net.minecraft.world.gen.GenerationStep;
 import net.minecraft.world.gen.ProbabilityConfig;
-import net.minecraft.world.gen.chunk.ChunkGenerator;
-import net.minecraft.world.gen.chunk.ChunkGeneratorConfig;
-import net.minecraft.world.gen.decorator.CountDecoratorConfig;
-import net.minecraft.world.gen.decorator.CountExtraChanceDecoratorConfig;
 import net.minecraft.world.gen.decorator.Decorator;
 import net.minecraft.world.gen.decorator.RangeDecoratorConfig;
-import net.minecraft.world.gen.feature.DefaultFeatureConfig;
-import net.minecraft.world.gen.feature.Feature;
-import net.minecraft.world.gen.feature.FeatureConfig;
 
 public class IronBiome extends Biome {
     public IronBiome(Settings settings) {

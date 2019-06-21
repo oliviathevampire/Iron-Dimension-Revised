@@ -2,7 +2,6 @@ package com.crypticmushroom.irondimension.blocks;
 
 import com.crypticmushroom.irondimension.registry.BlocksID;
 import net.fabricmc.fabric.api.block.FabricBlockSettings;
-import net.fabricmc.fabric.api.tag.FabricItemTags;
 import net.fabricmc.fabric.api.tools.FabricToolTags;
 import net.minecraft.block.*;
 import net.minecraft.sound.BlockSoundGroup;

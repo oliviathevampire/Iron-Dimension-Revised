@@ -1,9 +1,8 @@
 package com.crypticmushroom.irondimension.world.dimension;
 
 import com.crypticmushroom.irondimension.world.WorldIronDimension;
+import com.crypticmushroom.irondimension.world.biomes.IronBiomeSourceConfig;
 import com.crypticmushroom.irondimension.world.gen.chunk.IronDimensionChunkGeneratorConfig;
-import net.fabricmc.api.EnvType;
-import net.fabricmc.api.Environment;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.util.math.ChunkPos;
 import net.minecraft.util.math.MathHelper;
@@ -30,7 +29,7 @@ public class IronDimensionDimension extends Dimension {
     @Override
     public ChunkGenerator<?> createChunkGenerator() {
         return WorldIronDimension.IRON_DIMENSION_CHUNK_GENERATOR.create(
-                this.world, BiomeSourceType.CHECKERBOARD.applyConfig(new CheckerboardBiomeSourceConfig().method_8777(biomes).method_8780(biomes.length - 1)),
+                this.world, WorldIronDimension.IRON_BIOME_SOURCE_BIOME_SOURCE_TYPE.applyConfig(new IronBiomeSourceConfig().method_8777(biomes).method_8780(biomes.length - 1)),
                 new IronDimensionChunkGeneratorConfig());
     }
 
