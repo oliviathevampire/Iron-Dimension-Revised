@@ -24,7 +24,7 @@ public class IronFlowerFeature extends FlowerFeature {
 
     @Override
     public boolean generate(IWorld var1, ChunkGenerator<? extends ChunkGeneratorConfig> var2, Random var3, BlockPos var4, DefaultFeatureConfig var5) {
-        return true;
+        return method_13176(var1, var2, var3, var4, var5);
     }
 
     @Override

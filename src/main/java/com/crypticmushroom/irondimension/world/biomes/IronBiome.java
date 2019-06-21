@@ -7,9 +7,13 @@ import com.crypticmushroom.irondimension.world.gen.feature.IronFeatures;
 import com.crypticmushroom.irondimension.world.gen.feature.IronOreFeatureConfig;
 import com.crypticmushroom.irondimension.world.gen.surfacebuilder.IronSurfaceBuilder;
 import net.minecraft.util.math.BlockPos;
+import net.minecraft.world.IWorld;
 import net.minecraft.world.biome.Biome;
+import net.minecraft.world.gen.ChunkRandom;
 import net.minecraft.world.gen.GenerationStep;
 import net.minecraft.world.gen.ProbabilityConfig;
+import net.minecraft.world.gen.chunk.ChunkGenerator;
+import net.minecraft.world.gen.chunk.ChunkGeneratorConfig;
 import net.minecraft.world.gen.decorator.CountDecoratorConfig;
 import net.minecraft.world.gen.decorator.CountExtraChanceDecoratorConfig;
 import net.minecraft.world.gen.decorator.Decorator;
@@ -38,7 +42,6 @@ public class IronBiome extends Biome {
         this.addFeature(GenerationStep.Feature.UNDERGROUND_DECORATION, configureFeature(IronFeatures.IRON_ORE,
                 new IronOreFeatureConfig(IronOreFeatureConfig.Target.IRON, null, BlocksID.radioactive_iron_ore.getDefaultState(), 14),
                 Decorator.COUNT_RANGE, new RangeDecoratorConfig(16, 10, 20, 128)));
-        this.addFeature(GenerationStep.Feature.VEGETAL_DECORATION, configureFeature(IronFeatures.FLOWER, FeatureConfig.DEFAULT, Decorator.COUNT_HEIGHTMAP_32, new CountDecoratorConfig(100)));
     }
 
     @Override
