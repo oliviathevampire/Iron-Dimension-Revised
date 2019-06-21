@@ -2,6 +2,7 @@ package com.crypticmushroom.irondimension;
 
 import com.crypticmushroom.irondimension.blocks.BlockIronPortal;
 import com.crypticmushroom.irondimension.registry.BlocksID;
+import com.crypticmushroom.irondimension.registry.EntitiesID;
 import com.crypticmushroom.irondimension.registry.FluidsID;
 import com.crypticmushroom.irondimension.registry.ItemsID;
 import com.crypticmushroom.irondimension.world.WorldIronDimension;
@@ -26,6 +27,7 @@ public class IronDimension implements ModInitializer {
         BlocksID.init();
         ItemsID.init();
         FluidsID.init();
+        EntitiesID.init();
         WorldIronDimension.registerWorld();
     }
 }

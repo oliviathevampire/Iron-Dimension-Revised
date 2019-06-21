@@ -8,7 +8,9 @@
     "MixinDimensionType",
     "MixinPortalForcer",
     "MixinConfiguredFeature",
-    "MixinRandomFeatureEntry"
+    "MixinRandomFeatureEntry",
+    "MixinSpawnRestriction",
+    "MixinBiomeSourceType"
   ],
   "client": [
     "SignBlockEntityRendererMixin"
