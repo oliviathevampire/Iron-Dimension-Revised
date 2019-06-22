@@ -2,8 +2,6 @@ package com.crypticmushroom.irondimension.blocks;
 
 import net.fabricmc.fabric.api.block.FabricBlockSettings;
 import net.minecraft.block.Block;
-import net.minecraft.block.Material;
-import net.minecraft.block.MaterialColor;
 import net.minecraft.block.SignBlock;
 import net.minecraft.sound.BlockSoundGroup;
 

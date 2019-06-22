@@ -1,7 +1,10 @@
 {
   "variants": {
-    "": {
-      "model": "irondimension:block/iron_grass"
-    }
+    "": [
+      {"model": "irondimension:block/iron_grass"},
+      { "model": "irondimension:block/iron_grass", "y": 90 },
+      { "model": "irondimension:block/iron_grass", "y": 180 },
+      { "model": "irondimension:block/iron_grass", "y": 270 }
+    ]
   }
 }

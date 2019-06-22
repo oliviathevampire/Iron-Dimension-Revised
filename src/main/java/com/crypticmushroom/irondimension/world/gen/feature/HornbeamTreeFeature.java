@@ -2,19 +2,17 @@ package com.crypticmushroom.irondimension.world.gen.feature;
 
 import com.crypticmushroom.irondimension.registry.BlocksID;
 import com.mojang.datafixers.Dynamic;
-import net.minecraft.block.Block;
 import net.minecraft.block.BlockState;
 import net.minecraft.util.math.BlockPos;
+import net.minecraft.util.math.MutableIntBoundingBox;
 import net.minecraft.world.ModifiableTestableWorld;
-import net.minecraft.world.TestableWorld;
-import net.minecraft.world.gen.feature.AbstractTreeFeature;
 import net.minecraft.world.gen.feature.DefaultFeatureConfig;
 
 import java.util.Random;
 import java.util.Set;
 import java.util.function.Function;
 
-public class HornbeamTreeFeature extends AbstractTreeFeature<DefaultFeatureConfig> {
+public class HornbeamTreeFeature extends IronDimensionTreeFeature<DefaultFeatureConfig> {
     private static final BlockState LOG;
     private static final BlockState LEAVES;
 
@@ -23,7 +21,7 @@ public class HornbeamTreeFeature extends AbstractTreeFeature<DefaultFeatureConfi
     }
 
     @Override
-    protected boolean generate(Set<BlockPos> set_1, ModifiableTestableWorld modifiableTestableWorld_1, Random random_1, BlockPos blockPos_1) {
+    protected boolean generate(Set<BlockPos> set_1, ModifiableTestableWorld modifiableTestableWorld_1, Random random_1, BlockPos blockPos_1, MutableIntBoundingBox var5) {
         int int_1 = random_1.nextInt(3) + 5;
 
         boolean boolean_1 = true;
@@ -82,7 +80,7 @@ public class HornbeamTreeFeature extends AbstractTreeFeature<DefaultFeatureConfi
 
                 for(int_6 = 0; int_6 < int_1; ++int_6) {
                     if (isAirOrLeaves(modifiableTestableWorld_1, blockPos_1.up(int_6))) {
-                        this.setBlockState(set_1, modifiableTestableWorld_1, blockPos_1.up(int_6), LOG);
+                        this.setBlockState(set_1, modifiableTestableWorld_1, blockPos_1.up(int_6), LOG, var5);
                     }
                 }
 
@@ -93,14 +91,6 @@ public class HornbeamTreeFeature extends AbstractTreeFeature<DefaultFeatureConfi
         } else {
             return false;
         }
-    }
-
-    protected static boolean canTreeReplace(TestableWorld testableWorld_1, BlockPos blockPos_1)
-    {
-        return testableWorld_1.testBlockState(blockPos_1, (blockState_1) -> {
-            Block block = blockState_1.getBlock();
-            return block == BlocksID.iron_grass || block == BlocksID.iron_dirt;
-        });
     }
 
     static {

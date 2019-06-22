@@ -5,25 +5,20 @@ import net.minecraft.world.gen.chunk.ChunkGeneratorConfig;
 
 public class IronDimensionChunkGeneratorConfig extends ChunkGeneratorConfig {
 
-    private final int field_13224 = 4;
-    private final int field_13223 = 4;
-    private final int field_13222 = -1;
-    private final int field_13221 = 63;
-
     public IronDimensionChunkGeneratorConfig() {
         this.defaultBlock = BlocksID.ironstone.getDefaultState();
         this.defaultFluid = BlocksID.iron_water_block.getDefaultState();
     }
 
-    public int method_12614() {
+    public int getBiomeSize() {
         return 4;
     }
 
-    public int method_12616() {
+    public int getRiverSize() {
         return 4;
     }
 
-    public int method_12615() {
+    public int getForcedBiome() {
         return -1;
     }
 

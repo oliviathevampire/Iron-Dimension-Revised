@@ -6,7 +6,11 @@
   "mixins": [
     "MixinChunkGeneratorType",
     "MixinDimensionType",
-    "MixinPortalForcer"
+    "MixinPortalForcer",
+    "MixinConfiguredFeature",
+    "MixinRandomFeatureEntry",
+    "MixinSpawnRestriction",
+    "MixinBiomeSourceType"
   ],
   "client": [
     "SignBlockEntityRendererMixin"

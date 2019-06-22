@@ -7,6 +7,6 @@ import net.minecraft.item.ToolMaterial;
 
 public class ItemSword extends SwordItem {
     public ItemSword(ToolMaterial toolMaterial_1) {
-        super(toolMaterial_1, 3, -2.4F, new Item.Settings().itemGroup(IronDimension.IDL_ITEM_GROUP));
+        super(toolMaterial_1, 3, -2.4F, new Item.Settings().group(IronDimension.IDL_ITEM_GROUP));
     }
 }

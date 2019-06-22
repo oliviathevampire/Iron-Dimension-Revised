@@ -4,12 +4,9 @@ import com.crypticmushroom.irondimension.IronDimension;
 import com.crypticmushroom.irondimension.items.*;
 import com.crypticmushroom.irondimension.utils.materials.ArmorMaterial;
 import com.crypticmushroom.irondimension.utils.materials.ToolMaterials;
-import net.minecraft.block.Block;
 import net.minecraft.entity.EquipmentSlot;
-import net.minecraft.item.ArmorMaterials;
-import net.minecraft.item.BucketItem;
 import net.minecraft.item.Item;
-import net.minecraft.item.Items;
+import net.minecraft.item.SpawnEggItem;
 import net.minecraft.util.registry.Registry;
 
 public class ItemsID {
@@ -62,6 +59,8 @@ public class ItemsID {
     public static Item ironwood_sign = null;
     public static Item rusty_ironwood_sign = null;
     public static Item hornbeam_sign = null;
+
+    public static Item iron_bison_spawn_egg = null;
 
     public static void init() {
         iron_stick = register("iron_stick", new ItemIDLGeneric());

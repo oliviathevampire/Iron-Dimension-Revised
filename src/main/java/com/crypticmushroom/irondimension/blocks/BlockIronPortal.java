@@ -7,22 +7,17 @@ import net.fabricmc.fabric.api.tag.FabricItemTags;
 import net.minecraft.block.Block;
 import net.minecraft.block.BlockState;
 import net.minecraft.block.Blocks;
-import net.minecraft.block.Material;
-import net.minecraft.entity.VerticalEntityPosition;
 import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.item.FlintAndSteelItem;
 import net.minecraft.item.Items;
 import net.minecraft.sound.BlockSoundGroup;
 import net.minecraft.state.StateFactory;
 import net.minecraft.state.property.EnumProperty;
-import net.minecraft.util.BooleanBiFunction;
 import net.minecraft.util.Hand;
-import net.minecraft.util.StringRepresentable;
+import net.minecraft.util.StringIdentifiable;
 import net.minecraft.util.hit.BlockHitResult;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.util.shape.VoxelShape;
-import net.minecraft.util.shape.VoxelShapes;
-import net.minecraft.world.BlockView;
 import net.minecraft.world.World;
 import net.minecraft.world.dimension.DimensionType;
 
@@ -34,7 +29,7 @@ public class BlockIronPortal extends Block {
         this.setDefaultState((BlockState)this.getDefaultState().with(TYPE, State.DISABLE));
     }
 
-    public VoxelShape getOutlineShape(BlockState blockState_1, BlockView blockView_1, BlockPos blockPos_1, VerticalEntityPosition verticalEntityPosition_1) {
+    public static VoxelShape getOutlineShape() {
         return OUTLINE_SHAPE;
     }
 
@@ -65,10 +60,10 @@ public class BlockIronPortal extends Block {
     }
 
     protected void appendProperties(StateFactory.Builder<Block, BlockState> stateFactory$Builder_1) {
-        stateFactory$Builder_1.with(TYPE);
+        stateFactory$Builder_1.add(TYPE);
     }
 
-    public enum State implements StringRepresentable {
+    public enum State implements StringIdentifiable {
         ENABLE,
         DISABLE;
 

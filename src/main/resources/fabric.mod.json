@@ -9,6 +9,9 @@
   "entrypoints":{
     "main": [
       "com.crypticmushroom.irondimension.IronDimension"
+    ],
+    "client": [
+      "com.crypticmushroom.irondimension.IronDimensionClient"
     ]
   },
   "depends": {

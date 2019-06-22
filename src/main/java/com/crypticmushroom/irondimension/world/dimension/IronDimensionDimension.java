@@ -1,38 +1,30 @@
 package com.crypticmushroom.irondimension.world.dimension;
 
 import com.crypticmushroom.irondimension.world.WorldIronDimension;
+import com.crypticmushroom.irondimension.world.biomes.IronBiomeSourceConfig;
 import com.crypticmushroom.irondimension.world.gen.chunk.IronDimensionChunkGeneratorConfig;
-import net.fabricmc.api.EnvType;
-import net.fabricmc.api.Environment;
 import net.minecraft.util.math.BlockPos;
+import net.minecraft.util.math.ChunkPos;
 import net.minecraft.util.math.MathHelper;
 import net.minecraft.util.math.Vec3d;
 import net.minecraft.world.World;
 import net.minecraft.world.biome.Biome;
 import net.minecraft.world.biome.source.*;
-import net.minecraft.world.chunk.ChunkPos;
 import net.minecraft.world.dimension.Dimension;
 import net.minecraft.world.dimension.DimensionType;
 import net.minecraft.world.gen.chunk.ChunkGenerator;
 
 public class IronDimensionDimension extends Dimension {
-    private final float[] sunriseSunsetColors = new float[4];
-    private static Biome[] biomes;
 
     public IronDimensionDimension(World world_1, DimensionType dimensionType_1) {
         super(world_1, dimensionType_1);
-        biomes = new Biome[] {
-                WorldIronDimension.IRON_PLAINS,
-                WorldIronDimension.IRON_HIGHLANDS,
-                WorldIronDimension.IRON_FOREST
-        };
     }
 
     @Override
     public ChunkGenerator<?> createChunkGenerator() {
         return WorldIronDimension.IRON_DIMENSION_CHUNK_GENERATOR.create(
-                this.world, BiomeSourceType.FIXED.applyConfig(new FixedBiomeSourceConfig().setBiome(WorldIronDimension.IRON_PLAINS)),
-//                BiomeSourceType.CHECKERBOARD.applyConfig(new CheckerboardBiomeSourceConfig().method_8777(biomes).method_8780(biomes.length)),
+                this.world, WorldIronDimension.IRON_BIOME_SOURCE_BIOME_SOURCE_TYPE.applyConfig(new IronBiomeSourceConfig()
+                        .setLevelProperties(this.world.getLevelProperties()).setGeneratorSettings(WorldIronDimension.IRON_DIMENSION_CHUNK_GENERATOR.createSettings())),
                 new IronDimensionChunkGeneratorConfig());
     }
 
@@ -48,7 +40,9 @@ public class IronDimensionDimension extends Dimension {
 
     @Override
     public float getSkyAngle(long var1, float var3) {
-        return 8.0F;
+        double double_1 = MathHelper.fractionalPart((double)var1 / 24000.0D - 0.25D);
+        double double_2 = 0.5D - Math.cos(double_1 * 3.141592653589793D) / 2.0D;
+        return (float)(double_1 * 2.0D + double_2) / 3.0F;
     }
 
     @Override
@@ -83,29 +77,6 @@ public class IronDimensionDimension extends Dimension {
     @Override
     public boolean shouldRenderFog(int var1, int var2) {
         return false;
-    }
-
-    @Environment(EnvType.CLIENT)
-    public float[] method_12446(float var1, float var2)
-    {
-        float f2 = 0.4F;
-        float f3 = MathHelper.cos(var1 * 3.141593F * 2.0F) - 0.0F;
-        float f4 = -0F;
-
-        if (f3 >= f4 - f2 && f3 <= f4 + f2)
-        {
-            float f5 = (f3 - f4) / f2 * 0.5F + 0.5F;
-            float f6 = 1.0F - (1.0F - MathHelper.sin(f5 * 3.141593F)) * 0.99F;
-            f6 *= f6;
-            this.sunriseSunsetColors[0] = f5 * 0.3F + 0.1F;
-            this.sunriseSunsetColors[1] = f5 * f5 * 0.7F + 0.2F;
-            this.sunriseSunsetColors[2] = f5 * f5 * 0.7F + 0.2F;
-            this.sunriseSunsetColors[3] = f6;
-
-            return this.sunriseSunsetColors;
-        }
-
-        return null;
     }
 
     @Override
