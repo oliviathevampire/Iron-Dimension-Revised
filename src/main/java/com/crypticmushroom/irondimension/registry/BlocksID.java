@@ -133,7 +133,7 @@ public class BlocksID {
         rusty_ironwood_wall_sign = registerBlock("rusty_ironwood_wall_sign", new IronWallSignBlock(rusty_ironwood_sign));
         hornbeam_wall_sign = registerBlock("hornbeam_wall_sign", new IronWallSignBlock(hornbeam_sign));
 
-        iron_water_block = registerBlock("iron_water_block", new BlockFluid(FluidsID.IRON_WATER, Block.Settings.copy(Blocks.WATER)));
+        iron_water_block = registerBlock("iron_water_block", new BlockFluid(FluidsID.IRON_WATER, FabricBlockSettings.of(Material.WATER).noCollision().resistance(100.0F).dropsNothing().build()));
     }
 
     private static Block register(String name, Block block) {

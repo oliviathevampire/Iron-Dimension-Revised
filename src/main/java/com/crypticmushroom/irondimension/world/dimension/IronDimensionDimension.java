@@ -15,21 +15,16 @@ import net.minecraft.world.dimension.DimensionType;
 import net.minecraft.world.gen.chunk.ChunkGenerator;
 
 public class IronDimensionDimension extends Dimension {
-    private static Biome[] biomes;
 
     public IronDimensionDimension(World world_1, DimensionType dimensionType_1) {
         super(world_1, dimensionType_1);
-        biomes = new Biome[] {
-                WorldIronDimension.IRON_PLAINS,
-                WorldIronDimension.IRON_HIGHLANDS,
-                WorldIronDimension.IRON_FOREST
-        };
     }
 
     @Override
     public ChunkGenerator<?> createChunkGenerator() {
         return WorldIronDimension.IRON_DIMENSION_CHUNK_GENERATOR.create(
-                this.world, WorldIronDimension.IRON_BIOME_SOURCE_BIOME_SOURCE_TYPE.applyConfig(new IronBiomeSourceConfig().method_8777(biomes).method_8780(biomes.length - 1)),
+                this.world, WorldIronDimension.IRON_BIOME_SOURCE_BIOME_SOURCE_TYPE.applyConfig(new IronBiomeSourceConfig()
+                        .setLevelProperties(this.world.getLevelProperties()).setGeneratorSettings(WorldIronDimension.IRON_DIMENSION_CHUNK_GENERATOR.createSettings())),
                 new IronDimensionChunkGeneratorConfig());
     }
 

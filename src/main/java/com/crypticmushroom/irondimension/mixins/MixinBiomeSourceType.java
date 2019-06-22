@@ -3,6 +3,7 @@ package com.crypticmushroom.irondimension.mixins;
 import com.crypticmushroom.irondimension.IronDimension;
 import com.crypticmushroom.irondimension.world.biomes.IronBiomeSource;
 import com.crypticmushroom.irondimension.world.biomes.IronBiomeSourceConfig;
+import net.minecraft.util.Identifier;
 import net.minecraft.util.registry.Registry;
 import net.minecraft.world.biome.source.BiomeSource;
 import net.minecraft.world.biome.source.BiomeSourceConfig;
@@ -18,7 +19,7 @@ import java.util.function.Supplier;
 public class MixinBiomeSourceType {
 
     private static final BiomeSourceType<IronBiomeSourceConfig, IronBiomeSource> IRON_BIOME_SOURCE_BIOME_SOURCE_TYPE =
-            Registry.register(Registry.BIOME_SOURCE_TYPE,IronDimension.MODID + ":iron_biome_source_type",
+            Registry.register(Registry.BIOME_SOURCE_TYPE,new Identifier(IronDimension.MODID ,"iron_biome_source_type"),
                     new BiomeSourceType<>((Function<IronBiomeSourceConfig, IronBiomeSource>) IronBiomeSource::new,
                             (Supplier<IronBiomeSourceConfig>)IronBiomeSourceConfig::new));
 }

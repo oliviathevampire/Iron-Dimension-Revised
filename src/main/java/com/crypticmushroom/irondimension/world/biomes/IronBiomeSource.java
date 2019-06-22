@@ -1,48 +1,89 @@
 package com.crypticmushroom.irondimension.world.biomes;
 
+import com.crypticmushroom.irondimension.world.WorldIronDimension;
+import com.crypticmushroom.irondimension.world.biomes.layers.BiomeLayers;
+import com.crypticmushroom.irondimension.world.gen.chunk.IronDimensionChunkGeneratorConfig;
 import com.google.common.collect.Sets;
 import net.minecraft.block.BlockState;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.world.biome.Biome;
+import net.minecraft.world.biome.layer.BiomeLayerSampler;
 import net.minecraft.world.biome.source.BiomeSource;
-import net.minecraft.world.biome.source.CheckerboardBiomeSourceConfig;
 import net.minecraft.world.gen.feature.StructureFeature;
+import net.minecraft.world.level.LevelProperties;
 
+import java.util.Collections;
 import java.util.List;
 import java.util.Random;
 import java.util.Set;
 
 public class IronBiomeSource extends BiomeSource {
     private final Biome[] biomes;
-    private final int gridSize;
+    private final BiomeLayerSampler noiseLayer;
+    private final BiomeLayerSampler biomeLayer;
 
     public IronBiomeSource(IronBiomeSourceConfig ironBiomeSourceConfig) {
-        this.biomes = ironBiomeSourceConfig.getBiomes();
-        this.gridSize = ironBiomeSourceConfig.getSize() + 4;
+        this.biomes = new Biome[] {
+                WorldIronDimension.IRON_PLAINS,
+                WorldIronDimension.IRON_HIGHLANDS,
+                WorldIronDimension.IRON_FOREST,
+                WorldIronDimension.IRON_OCEAN
+        };
+        LevelProperties levelProperties_1 = ironBiomeSourceConfig.getLevelProperties();
+        IronDimensionChunkGeneratorConfig chunkGeneratorConfig = ironBiomeSourceConfig.getGeneratorSettings();
+        BiomeLayerSampler[] biomeLayerSamplers_1 = BiomeLayers.build(levelProperties_1.getSeed(), levelProperties_1.getGeneratorType(), chunkGeneratorConfig);
+        this.noiseLayer = biomeLayerSamplers_1[0];
+        this.biomeLayer = biomeLayerSamplers_1[1];
     }
 
     public Biome getBiome(int int_1, int int_2) {
-        int random = new Random().nextInt(2);
-        return this.biomes[Math.abs(((int_1 >> this.gridSize) + (int_2 >> this.gridSize) + random) % this.biomes.length)];
+        return this.biomeLayer.sample(int_1, int_2);
+    }
+
+    public Biome getBiomeForNoiseGen(int int_1, int int_2) {
+        return this.noiseLayer.sample(int_1, int_2);
     }
 
     public Biome[] sampleBiomes(int int_1, int int_2, int int_3, int int_4, boolean boolean_1) {
-        Biome[] biomes_1 = new Biome[int_3 * int_4];
+        return this.biomeLayer.sample(int_1, int_2, int_3, int_4);
+    }
 
-        for(int int_5 = 0; int_5 < int_4; ++int_5) {
-            for(int int_6 = 0; int_6 < int_3; ++int_6) {
-                int random = new Random().nextInt(int_5 + int_6);
-                int int_7 = Math.abs(((int_1 + int_5 >> this.gridSize) + (int_2 + int_6 >> this.gridSize) + random) % this.biomes.length);
-                Biome biome_1 = this.biomes[int_7];
-                biomes_1[int_5 * int_3 + int_6] = biome_1;
-            }
-        }
-
-        return biomes_1;
+    public Set<Biome> getBiomesInArea(int int_1, int int_2, int int_3) {
+        int int_4 = int_1 - int_3 >> 2;
+        int int_5 = int_2 - int_3 >> 2;
+        int int_6 = int_1 + int_3 >> 2;
+        int int_7 = int_2 + int_3 >> 2;
+        int int_8 = int_6 - int_4 + 1;
+        int int_9 = int_7 - int_5 + 1;
+        Set<Biome> set_1 = Sets.newHashSet();
+        Collections.addAll(set_1, this.noiseLayer.sample(int_4, int_5, int_8, int_9));
+        return set_1;
     }
 
     public BlockPos locateBiome(int int_1, int int_2, int int_3, List<Biome> list_1, Random random_1) {
-        return null;
+        int int_4 = int_1 - int_3 >> 2;
+        int int_5 = int_2 - int_3 >> 2;
+        int int_6 = int_1 + int_3 >> 2;
+        int int_7 = int_2 + int_3 >> 2;
+        int int_8 = int_6 - int_4 + 1;
+        int int_9 = int_7 - int_5 + 1;
+        Biome[] biomes_1 = this.noiseLayer.sample(int_4, int_5, int_8, int_9);
+        BlockPos blockPos_1 = null;
+        int int_10 = 0;
+
+        for(int int_11 = 0; int_11 < int_8 * int_9; ++int_11) {
+            int int_12 = int_4 + int_11 % int_8 << 2;
+            int int_13 = int_5 + int_11 / int_8 << 2;
+            if (list_1.contains(biomes_1[int_11])) {
+                if (blockPos_1 == null || random_1.nextInt(int_10 + 1) == 0) {
+                    blockPos_1 = new BlockPos(int_12, 0, int_13);
+                }
+
+                ++int_10;
+            }
+        }
+
+        return blockPos_1;
     }
 
     public boolean hasStructureFeature(StructureFeature<?> structureFeature_1) {
@@ -73,9 +114,5 @@ public class IronBiomeSource extends BiomeSource {
         }
 
         return this.topMaterials;
-    }
-
-    public Set<Biome> getBiomesInArea(int int_1, int int_2, int int_3) {
-        return Sets.newHashSet(this.biomes);
     }
 }

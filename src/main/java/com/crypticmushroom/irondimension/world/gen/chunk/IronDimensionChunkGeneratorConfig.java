@@ -10,15 +10,15 @@ public class IronDimensionChunkGeneratorConfig extends ChunkGeneratorConfig {
         this.defaultFluid = BlocksID.iron_water_block.getDefaultState();
     }
 
-    public int method_12614() {
+    public int getBiomeSize() {
         return 4;
     }
 
-    public int method_12616() {
+    public int getRiverSize() {
         return 4;
     }
 
-    public int method_12615() {
+    public int getForcedBiome() {
         return -1;
     }
 
