@@ -75,6 +75,6 @@
 	],
 	"parent": "block/block",
 	"textures": {
-		"frame": "block/obsidian"
+		"frame": "block/iron_block"
 	}
 }

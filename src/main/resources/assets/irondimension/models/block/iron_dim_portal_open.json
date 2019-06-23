@@ -76,6 +76,6 @@
 	"parent": "block/block",
 	"textures": {
 		"portal": "irondimension:block/ironstone",
-		"frame": "block/obsidian"
+		"frame": "block/iron_block"
 	}
 }
