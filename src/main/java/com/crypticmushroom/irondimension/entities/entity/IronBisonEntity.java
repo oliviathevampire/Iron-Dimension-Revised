@@ -1,17 +1,10 @@
 package com.crypticmushroom.irondimension.entities.entity;
 
 import net.minecraft.block.BlockState;
+import net.minecraft.entity.EntityDimensions;
 import net.minecraft.entity.EntityPose;
-import net.minecraft.entity.EntitySize;
 import net.minecraft.entity.EntityType;
-import net.minecraft.entity.ai.goal.AnimalMateGoal;
-import net.minecraft.entity.ai.goal.EscapeDangerGoal;
-import net.minecraft.entity.ai.goal.FollowParentGoal;
-import net.minecraft.entity.ai.goal.LookAroundGoal;
-import net.minecraft.entity.ai.goal.LookAtEntityGoal;
-import net.minecraft.entity.ai.goal.SwimGoal;
-import net.minecraft.entity.ai.goal.TemptGoal;
-import net.minecraft.entity.ai.goal.WanderAroundFarGoal;
+import net.minecraft.entity.ai.goal.*;
 import net.minecraft.entity.attribute.EntityAttributes;
 import net.minecraft.entity.damage.DamageSource;
 import net.minecraft.entity.passive.PassiveEntity;
@@ -74,7 +67,7 @@ public class IronBisonEntity extends IronDimensionEntity {
         return 0.4F;
     }
 
-    protected float getActiveEyeHeight(EntityPose entityPose_1, EntitySize entitySize_1) {
+    protected float getActiveEyeHeight(EntityPose entityPose_1, EntityDimensions entitySize_1) {
         return this.isBaby() ? entitySize_1.height * 0.95F : 1.3F;
     }
 }
